@@ -46,12 +46,14 @@
             this.btBNDoSua = new DevExpress.XtraBars.BarButtonItem();
             this.bt_CTKM_TriAnKH_112015 = new DevExpress.XtraBars.BarButtonItem();
             this.bt_Insert_DS_NVBH = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_NVBH_CheckInOut = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection_64 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage_LookUp = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_POS = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_Promotion = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -64,8 +66,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer_10mins = new System.Windows.Forms.Timer(this.components);
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.bt_NVBH_CheckInOut = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_NVBH_Insert = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_64)).BeginInit();
@@ -92,10 +93,11 @@
             this.btBNDoSua,
             this.bt_CTKM_TriAnKH_112015,
             this.bt_Insert_DS_NVBH,
-            this.bt_NVBH_CheckInOut});
+            this.bt_NVBH_CheckInOut,
+            this.bt_NVBH_Insert});
             this.ribbon.LargeImages = this.imageCollection_64;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 23;
+            this.ribbon.MaxItemId = 24;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage_LookUp,
@@ -285,10 +287,20 @@
             // bt_Insert_DS_NVBH
             // 
             this.bt_Insert_DS_NVBH.Caption = "Add Doanh Số NVBH";
+            this.bt_Insert_DS_NVBH.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_Insert_DS_NVBH.Glyph")));
             this.bt_Insert_DS_NVBH.Id = 21;
             this.bt_Insert_DS_NVBH.Name = "bt_Insert_DS_NVBH";
             this.bt_Insert_DS_NVBH.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.bt_Insert_DS_NVBH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_Insert_DS_NVBH_ItemClick);
+            // 
+            // bt_NVBH_CheckInOut
+            // 
+            this.bt_NVBH_CheckInOut.Caption = "Chấm công";
+            this.bt_NVBH_CheckInOut.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_NVBH_CheckInOut.Glyph")));
+            this.bt_NVBH_CheckInOut.Id = 22;
+            this.bt_NVBH_CheckInOut.Name = "bt_NVBH_CheckInOut";
+            this.bt_NVBH_CheckInOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.bt_NVBH_CheckInOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NVBH_CheckInOut_ItemClick);
             // 
             // imageCollection_64
             // 
@@ -354,6 +366,12 @@
             this.ribbonPageGroup7.AllowTextClipping = false;
             this.ribbonPageGroup7.ItemLinks.Add(this.bt_Insert_DS_NVBH);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.bt_NVBH_CheckInOut);
+            this.ribbonPageGroup8.ItemLinks.Add(this.bt_NVBH_Insert);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             // 
             // ribbonPage_Promotion
             // 
@@ -446,20 +464,14 @@
             this.timer_10mins.Interval = 600000;
             this.timer_10mins.Tick += new System.EventHandler(this.timer_10mins_Tick);
             // 
-            // ribbonPageGroup8
+            // bt_NVBH_Insert
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.bt_NVBH_CheckInOut);
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
-            // 
-            // bt_NVBH_CheckInOut
-            // 
-            this.bt_NVBH_CheckInOut.Caption = "Chấm công";
-            this.bt_NVBH_CheckInOut.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_NVBH_CheckInOut.Glyph")));
-            this.bt_NVBH_CheckInOut.Id = 22;
-            this.bt_NVBH_CheckInOut.Name = "bt_NVBH_CheckInOut";
-            this.bt_NVBH_CheckInOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.bt_NVBH_CheckInOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NVBH_CheckInOut_ItemClick);
+            this.bt_NVBH_Insert.Caption = "Tạo mới NVBH";
+            this.bt_NVBH_Insert.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_NVBH_Insert.Glyph")));
+            this.bt_NVBH_Insert.Id = 23;
+            this.bt_NVBH_Insert.Name = "bt_NVBH_Insert";
+            this.bt_NVBH_Insert.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.bt_NVBH_Insert.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NVBH_Insert_ItemClick);
             // 
             // frmPOS_Main
             // 
@@ -523,5 +535,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem bt_NVBH_CheckInOut;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarButtonItem bt_NVBH_Insert;
     }
 }

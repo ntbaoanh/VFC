@@ -35,6 +35,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
@@ -53,7 +54,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -139,6 +140,16 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.Caption = "Working";
+            this.gridColumn4.FieldName = "Working";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
             // xtraScrollableControl1
             // 
             this.xtraScrollableControl1.Controls.Add(this.groupControl2);
@@ -159,7 +170,7 @@
             this.groupControl2.Controls.Add(this.lbLastIn);
             this.groupControl2.Controls.Add(this.labelControl15);
             this.groupControl2.Controls.Add(this.labelControl16);
-            this.groupControl2.Location = new System.Drawing.Point(0, 134);
+            this.groupControl2.Location = new System.Drawing.Point(0, 178);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(308, 174);
             this.groupControl2.TabIndex = 0;
@@ -229,6 +240,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.btRefresh);
             this.groupControl1.Controls.Add(this.lbGioiTinh);
             this.groupControl1.Controls.Add(this.lbPhone);
             this.groupControl1.Controls.Add(this.lbTen);
@@ -240,7 +252,7 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(0, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(308, 125);
+            this.groupControl1.Size = new System.Drawing.Size(308, 169);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin Nhân viên";
             // 
@@ -325,15 +337,17 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Họ :";
             // 
-            // gridColumn4
+            // btRefresh
             // 
-            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn4.Caption = "Working";
-            this.gridColumn4.FieldName = "Working";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.btRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRefresh.Appearance.Options.UseFont = true;
+            this.btRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btRefresh.Image")));
+            this.btRefresh.Location = new System.Drawing.Point(5, 122);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(298, 40);
+            this.btRefresh.TabIndex = 2;
+            this.btRefresh.Text = "Làm mới danh sách";
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
             // frmSale_NVBH_CheckInOut
             // 
@@ -386,5 +400,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.LabelControl lbNVID;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraEditors.SimpleButton btRefresh;
     }
 }

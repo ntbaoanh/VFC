@@ -710,7 +710,6 @@ G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Rap.frm_Rap_TraDoSua.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Rap.frm_Rap_Xem_NXT_TheoThang.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Report.rp_Rap_BienNhanDoSua.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Report.rp_SoLieu_XuLyCLKK.resources
-G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_DoanhSo_NV.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_NVBH_CheckInOut.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_XemDoanhThu_Region.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_XemDoanhThu_Store.resources
@@ -730,3 +729,5 @@ G:\DevExpress13\VFC\VFC\obj\Debug\VFC.csproj.GenerateResource.Cache
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC.exe.licenses
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC.exe
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC.pdb
+G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_Insert.resources
+G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_NVBH_DoanhSo_NV.resources

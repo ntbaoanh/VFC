@@ -22,7 +22,7 @@ namespace VFC
         private static _Admin.frmLogin frmLogin;
         private static _POS.frmPOS_BienNhanDoSua frmBNDoSua;
         private static _CTKM.frm_CTKM_TriAnKH_112015 frmCTKM112015;
-        public static _Sale.frmSale_DoanhSo_NV frmDSNVBH;
+        public static _Sale.frmSale_NVBH_DoanhSo_NV frmDSNVBH;
         private static _Sale.frmSale_NVBH_CheckInOut frmChamCong;
         #endregion
 
@@ -281,7 +281,7 @@ namespace VFC
             rbActive = ribbonPage_POS;
             if (frmDSNVBH == null || frmDSNVBH.IsDisposed)
             {
-                frmDSNVBH = new _Sale.frmSale_DoanhSo_NV();
+                frmDSNVBH = new _Sale.frmSale_NVBH_DoanhSo_NV();
                 frmDSNVBH.MdiParent = this;
                 frmDSNVBH.Show();
             }
@@ -303,6 +303,37 @@ namespace VFC
             else
             {
                 frmChamCong.Activate();
+            }
+        }
+
+        private void bt_NVBH_Insert_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DAL.cl_DAL_User user = new cl_DAL_User();
+            frmHO_Main._flagOverride = false;
+            _Admin.frmOverrideLogin overrideLogin = new _Admin.frmOverrideLogin();
+            overrideLogin.ShowDialog();
+            try
+            {
+                if (frmHO_Main._flagOverride == true)
+                {
+                    if (user.checkUserRole(overrideLogin.UserNameOverride, "44"))
+                    {
+                        _NhanSu.frmNS_NVBH_Insert posNVBH_Insert = new _NhanSu.frmNS_NVBH_Insert();
+                        posNVBH_Insert.ShowDialog();
+                    }
+                    else
+                    {
+                        frmMessageBox.Show("Thông báo", "Bạn không có quyền ghi đè.", "error");
+                    }
+                }
+                else
+                {
+                    frmMessageBox.Show("Thông báo", "Đăng nhập thất bại.", "error");
+                }
+            }
+            catch (Exception ex)
+            {
+                frmMessageBox.Show("Thông báo", ex.ToString(), "error");
             }
         }
     }

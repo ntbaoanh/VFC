@@ -15,7 +15,7 @@ namespace VFC._Sale
     {
         DAL.Utilities.SQLCon connSQL;
         DataTable dt;
-        cl_DAL_Sales_NVBH dalNvbh;
+        cl_DAL_NhanVienBanHang dalNvbh;
 
         public frmSale_NVBH_CheckInOut()
         {
@@ -25,14 +25,14 @@ namespace VFC._Sale
         #region Action
         private void LoadDSNhanVien()
         {
-            dalNvbh = new cl_DAL_Sales_NVBH();
+            dalNvbh = new cl_DAL_NhanVienBanHang();
 
             gridControl1.DataSource = dalNvbh.GET_NVBH_By_Store(frmMain._myAppConfig.StoreCode);
         }
 
         private void GET_NVBH_Working_Status(int nvid)
         {
-            dalNvbh = new cl_DAL_Sales_NVBH();
+            dalNvbh = new cl_DAL_NhanVienBanHang();
 
             try
             {
@@ -110,11 +110,12 @@ namespace VFC._Sale
         {
             if (this.iValidate().Equals(""))
             {
-                dalNvbh = new cl_DAL_Sales_NVBH();
+                dalNvbh = new cl_DAL_NhanVienBanHang();
 
                 if (!dalNvbh.CHECK_NVBH_DiLamSom())
                 {
                     frmMessageBox.Show("Thông báo", "Chưa tới giờ check in." + Environment.NewLine + "Vui lòng thử lại sau", "error");
+                    this.ClearData();
                     btIn.Enabled = false;
                     btOut.Enabled = false;
                 }
@@ -141,7 +142,7 @@ namespace VFC._Sale
         {
             if (this.iValidate().Equals(""))
             {
-                dalNvbh = new cl_DAL_Sales_NVBH();
+                dalNvbh = new cl_DAL_NhanVienBanHang();
 
                 if (!dalNvbh.CHECK_NVBH_DiLamSom())
                 {
@@ -166,6 +167,11 @@ namespace VFC._Sale
             {
                 frmMessageBox.Show("Thông báo", this.iValidate() , "error");
             }
+        }
+
+        private void btRefresh_Click(object sender, EventArgs e)
+        {
+            this.LoadDSNhanVien();
         }
     }
 }

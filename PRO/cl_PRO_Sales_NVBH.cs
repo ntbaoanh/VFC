@@ -8,39 +8,60 @@ namespace PRO
     public class cl_PRO_Sales_NVBH
     {
         string nvbhId;
+        string ho;
         string ten;
+        string ngaySinh;
         int storeNo;
         string cmnd;
-        string diaChi;
         string phone;
+        string diaChi;
         string gioiTinh;
-        int active;
-        string ngaySinh;
         string ngayBatDau;
+        string ngayNghiViec;
+        int active;
         string modifiedDate;
         string modifiedBy;
-        string ho;
+        string chucVu;
+
+        public string ChucVu
+        {
+            get { return chucVu; }
+            set { chucVu = value; }
+        }
+        string urlImage;
+
+        public string UrlImage
+        {
+            get { return urlImage; }
+            set { urlImage = value; }
+        }
+        int luongCanBan;
+
+        public int LuongCanBan
+        {
+            get { return luongCanBan; }
+            set { luongCanBan = value; }
+        }
+        int approve;
+
+        public int Approve
+        {
+            get { return approve; }
+            set { approve = value; }
+        }
+        string ghiChu;
+
+        public string GhiChu
+        {
+            get { return ghiChu; }
+            set { ghiChu = value; }
+        }
         string storeCode;
-        int doanhSoNgay;
-        int doanhSoThang;
-        int doanhSoNam;
 
-        public int DoanhSoNam
+        public string NgayNghiViec
         {
-            get { return doanhSoNam; }
-            set { doanhSoNam = value; }
-        }
-
-        public int DoanhSoThang
-        {
-            get { return doanhSoThang; }
-            set { doanhSoThang = value; }
-        }
-
-        public int DoanhSoNgay
-        {
-            get { return doanhSoNgay; }
-            set { doanhSoNgay = value; }
+            get { return ngayNghiViec; }
+            set { ngayNghiViec = value; }
         }
 
         public string StoreCode

@@ -55,6 +55,7 @@
     <Compile Include="cl_DAL_Invoice.cs" />
     <Compile Include="cl_DAL_KiemKe.cs" />
     <Compile Include="cl_DAL_NhaCungCap.cs" />
+    <Compile Include="cl_DAL_NhanVienBanHang.cs" />
     <Compile Include="cl_DAL_PromotionCode.cs" />
     <Compile Include="cl_DAL_RAP_DoSua.cs" />
     <Compile Include="cl_DAL_SystemMessage.cs" />

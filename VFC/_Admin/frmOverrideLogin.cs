@@ -18,6 +18,7 @@ namespace VFC._Admin
         cl_DAL_User _dalUser;
         cl_PRO_User _proUser;
         DAL.Utilities.Transaction rd;
+        public string UserNameOverride;
 
         public frmOverrideLogin()
         {
@@ -66,13 +67,8 @@ namespace VFC._Admin
                             rd.record("User override 43", "", _proUser.UserName, System.Environment.MachineName.ToString());
 
                             frmHO_Main._flagOverride = true;
-                            this.Close();
-
-                            //this.Hide();
-                            //VFC.frmHO_Main mainHO = new frmHO_Main();
-                            //System.IO.File.WriteAllText(Application.StartupPath.ToString() + @"\lastUser.txt", txtUser.Text);
-                            //frmHO_Main._userLogin = _proUser;
-                            //mainHO.Show();
+                            this.UserNameOverride = _proUser.UserName;
+                            this.Hide();
                         }
                         catch (Exception ex)
                         {

@@ -45,6 +45,7 @@
     <Compile Include="cl_PRO_Inventory.cs" />
     <Compile Include="cl_PRO_Invoice.cs" />
     <Compile Include="cl_PRO_NhaCungCap.cs" />
+    <Compile Include="cl_PRO_NhanVienBanHang.cs" />
     <Compile Include="cl_PRO_PromotionCode.cs" />
     <Compile Include="cl_PRO_Sales_NVBH.cs" />
     <Compile Include="cl_PRO_SystemMessage.cs" />
