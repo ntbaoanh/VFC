@@ -33,5 +33,37 @@ namespace DAL
 
             return dt;
         }
+
+        public bool MadeByMe(string listInvoice)
+        {
+            bool flag = false;
+
+            string temp = "select InvoiceSid"
+                        +" from SALES.v_NVBH_Invoice iv"
+                        +" where iv.InvoiceSid not in ("+ listInvoice +")"
+                        +" and iv.StoreNo = 238";
+
+            string temp2 = "";
+
+            DataTable _dt = new DataTable();
+            conn = new Utilities.SQLCon();
+            _dt = conn.returnDataTable(temp);
+
+            for (int i = 0; i < _dt.Rows.Count; i++)
+            {
+                temp2 += "'" + _dt.Rows[i]["InvoiceSid"] + "',";
+            }
+
+            string _query = "delete from SALES.NVBH_Invoice where InvoiceSid in (" + temp2.Substring(0, temp2.Length - 1) + ") and NVSID in (select NVSID from SALES.v_NVBH_Invoice where StoreNo = 238 group by NVSID)";
+
+            conn = new Utilities.SQLCon();
+
+            if (conn.excuteQuerry(_query) > 0)
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
     }
 }

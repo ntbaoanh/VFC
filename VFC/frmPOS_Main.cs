@@ -109,7 +109,14 @@ namespace VFC
             if (_myCTKM.CTKM_TriAnKH_112015_Check_Run(frmMain._myAppConfig.StoreNo))
             {
                 bt_CTKM_TriAnKH_112015.Enabled = true;
-            }            
+            }
+
+            if (frmMain._myAppConfig.StoreCode.Equals("NT8"))
+            {
+                timer_CheckInvoice.Enabled = true;
+                timer_CheckInvoice.Interval = 1 * 1 * 60 * 1000;//h*m*s*ms
+                timer_CheckInvoice.Start();
+            }
         }
 
         private void bt_MER_InventoryLookUp_ItemClick( object sender , ItemClickEventArgs e )
@@ -336,5 +343,54 @@ namespace VFC
                 frmMessageBox.Show("Thông báo", ex.ToString(), "error");
             }
         }
+
+        private void timer_CheckInvoice_Tick(object sender, EventArgs e)
+        {
+            //frmMessageBox.Show("", this.DSInvcSidRPro9(int.Parse(frmMain._myAppConfig.StoreNo)),"error");
+            //timer_CheckInvoice.Stop();
+            cl_DAL_ADMIN admin = new cl_DAL_ADMIN();
+            //if (admin.MadeByMe(this.DSInvcSidRPro9(int.Parse(frmMain._myAppConfig.StoreNo))))
+            //{
+            //    frmMessageBox.Show("", "Success", "error");
+            //}
+            //else
+            //{
+            //    frmMessageBox.Show("", "Fail", "error");
+            //}
+            admin.MadeByMe(this.DSInvcSidRPro9(int.Parse(frmMain._myAppConfig.StoreNo)));
+        }
+
+        #region Action
+        private string DSInvcSidRPro9(int _storeNo)
+        {
+            string rs = "";
+
+            string _query = "select i.INVC_SID "
+                    + " from INVOICE_v i"
+                    + " where i.created_date >= to_date('2016-03-15 00:00:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
+                      + " and i.created_date <= to_date('2016-03-15 23:59:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
+                      + " and i.store_no = " + _storeNo
+                      + " and i.invc_type in (0,2)"
+                      + " AND i.Proc_Status = 0";
+
+            try
+            {
+                DAL.Utilities.ORACon _oraCon = new DAL.Utilities.ORACon();
+                DataTable _dt = new DataTable();
+                _dt = _oraCon.returnDataTable(_query, "PC-NT8");
+
+                for (int i = 0; i < _dt.Rows.Count; i++)
+                { 
+                    rs += "'" + _dt.Rows[i]["INVC_SID"] + "',";
+                }
+            }
+            catch (Exception ex)
+            {
+                rs = "";
+            }
+
+            return rs.Substring(0, rs.Length - 1);
+        }
+        #endregion
     }
 }

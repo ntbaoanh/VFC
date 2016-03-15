@@ -47,6 +47,7 @@
             this.bt_CTKM_TriAnKH_112015 = new DevExpress.XtraBars.BarButtonItem();
             this.bt_Insert_DS_NVBH = new DevExpress.XtraBars.BarButtonItem();
             this.bt_NVBH_CheckInOut = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_NVBH_Insert = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection_64 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage_LookUp = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -66,7 +67,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.timer_10mins = new System.Windows.Forms.Timer(this.components);
-            this.bt_NVBH_Insert = new DevExpress.XtraBars.BarButtonItem();
+            this.timer_CheckInvoice = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_64)).BeginInit();
@@ -302,6 +303,15 @@
             this.bt_NVBH_CheckInOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.bt_NVBH_CheckInOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NVBH_CheckInOut_ItemClick);
             // 
+            // bt_NVBH_Insert
+            // 
+            this.bt_NVBH_Insert.Caption = "Tạo mới NVBH";
+            this.bt_NVBH_Insert.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_NVBH_Insert.Glyph")));
+            this.bt_NVBH_Insert.Id = 23;
+            this.bt_NVBH_Insert.Name = "bt_NVBH_Insert";
+            this.bt_NVBH_Insert.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.bt_NVBH_Insert.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NVBH_Insert_ItemClick);
+            // 
             // imageCollection_64
             // 
             this.imageCollection_64.ImageSize = new System.Drawing.Size(96, 96);
@@ -464,14 +474,10 @@
             this.timer_10mins.Interval = 600000;
             this.timer_10mins.Tick += new System.EventHandler(this.timer_10mins_Tick);
             // 
-            // bt_NVBH_Insert
+            // timer_CheckInvoice
             // 
-            this.bt_NVBH_Insert.Caption = "Tạo mới NVBH";
-            this.bt_NVBH_Insert.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_NVBH_Insert.Glyph")));
-            this.bt_NVBH_Insert.Id = 23;
-            this.bt_NVBH_Insert.Name = "bt_NVBH_Insert";
-            this.bt_NVBH_Insert.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.bt_NVBH_Insert.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NVBH_Insert_ItemClick);
+            this.timer_CheckInvoice.Interval = 6000;
+            this.timer_CheckInvoice.Tick += new System.EventHandler(this.timer_CheckInvoice_Tick);
             // 
             // frmPOS_Main
             // 
@@ -536,5 +542,6 @@
         private DevExpress.XtraBars.BarButtonItem bt_NVBH_CheckInOut;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem bt_NVBH_Insert;
+        private System.Windows.Forms.Timer timer_CheckInvoice;
     }
 }
