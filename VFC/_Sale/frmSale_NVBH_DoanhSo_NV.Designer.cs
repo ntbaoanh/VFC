@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSale_NVBH_DoanhSo_NV));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btRefreshDSNhanVien = new DevExpress.XtraEditors.SimpleButton();
             this.lbNVID = new DevExpress.XtraEditors.LabelControl();
             this.listNVBH = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -78,7 +79,6 @@
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.btRefreshDSNhanVien = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listNVBH.Properties)).BeginInit();
@@ -109,6 +109,17 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin nhân viên bán hàng";
             // 
+            // btRefreshDSNhanVien
+            // 
+            this.btRefreshDSNhanVien.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRefreshDSNhanVien.Appearance.Options.UseFont = true;
+            this.btRefreshDSNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btRefreshDSNhanVien.Image")));
+            this.btRefreshDSNhanVien.Location = new System.Drawing.Point(279, 30);
+            this.btRefreshDSNhanVien.Name = "btRefreshDSNhanVien";
+            this.btRefreshDSNhanVien.Size = new System.Drawing.Size(26, 26);
+            this.btRefreshDSNhanVien.TabIndex = 7;
+            this.btRefreshDSNhanVien.Click += new System.EventHandler(this.btRefreshDSNhanVien_Click);
+            // 
             // lbNVID
             // 
             this.lbNVID.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,7 +146,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.listNVBH.Properties.DisplayMember = "Ten";
             this.listNVBH.Properties.NullText = "Chọn nhân viên";
-            this.listNVBH.Properties.ValueMember = "NVID";
+            this.listNVBH.Properties.ValueMember = "NVSID";
             this.listNVBH.Properties.View = this.gridView1;
             this.listNVBH.Size = new System.Drawing.Size(156, 26);
             this.listNVBH.TabIndex = 7;
@@ -623,17 +634,6 @@
             this.labelControl14.Size = new System.Drawing.Size(69, 16);
             this.labelControl14.TabIndex = 1;
             this.labelControl14.Text = "Số CMND : ";
-            // 
-            // btRefreshDSNhanVien
-            // 
-            this.btRefreshDSNhanVien.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRefreshDSNhanVien.Appearance.Options.UseFont = true;
-            this.btRefreshDSNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btRefreshDSNhanVien.Image")));
-            this.btRefreshDSNhanVien.Location = new System.Drawing.Point(279, 30);
-            this.btRefreshDSNhanVien.Name = "btRefreshDSNhanVien";
-            this.btRefreshDSNhanVien.Size = new System.Drawing.Size(26, 26);
-            this.btRefreshDSNhanVien.TabIndex = 7;
-            this.btRefreshDSNhanVien.Click += new System.EventHandler(this.btRefreshDSNhanVien_Click);
             // 
             // frmSale_NVBH_DoanhSo_NV
             // 

@@ -97,8 +97,8 @@ namespace VFC._Sale
                 lbTen.Text = gridView1.GetFocusedRowCellValue("Ten").ToString();
                 lbPhone.Text = gridView1.GetFocusedRowCellValue("Phone").ToString();
                 lbGioiTinh.Text = gridView1.GetFocusedRowCellValue("GioiTinh").ToString();
-                this.GET_NVBH_Working_Status(int.Parse(gridView1.GetFocusedRowCellValue("NVID").ToString()));
-                lbNVID.Text = gridView1.GetFocusedRowCellValue("NVID").ToString();
+                this.GET_NVBH_Working_Status(int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
+                lbNVID.Text = gridView1.GetFocusedRowCellValue("NVSID").ToString();
             }
             catch (Exception ex)
             {

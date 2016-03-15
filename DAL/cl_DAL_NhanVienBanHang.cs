@@ -18,7 +18,7 @@ namespace DAL
             dt = new DataTable();
             _connSQL = new Utilities.SQLCon();
 
-            string query = "select * from sales.v_NhanVienBanHang where Store_Code = '" + _storeCode + "'";
+            string query = "select * from NHANSU.v_NhanVienBanHang where Store_Code = '" + _storeCode + "' and Active = 1";
             dt = _connSQL.returnDataTable(query);
 
             return dt;
@@ -29,7 +29,7 @@ namespace DAL
             dt = new DataTable();
             _connSQL = new Utilities.SQLCon();
 
-            string query = "select * from sales.v_NhanVienBanHang where Store_Code = '" + _storeCode + "' and working not in ('OFF')";
+            string query = "select * from NHANSU.v_NhanVienBanHang where Store_Code = '" + _storeCode + "' and working not in ('OFF') and Active = 1";
             dt = _connSQL.returnDataTable(query);
 
             return dt;
@@ -41,7 +41,7 @@ namespace DAL
 
             try
             {
-                string query = "select * from sales.v_nhanvienbanhang where nvsid = '" + nvsid + "'";
+                string query = "select * from NHANSU.v_nhanvienbanhang where nvsid = '" + nvsid + "'";
 
                 _connSQL = new Utilities.SQLCon();
                 dt = new DataTable();
@@ -292,7 +292,7 @@ namespace DAL
 
             try
             {
-                string[] names = new string[2] {"@IDNV"
+                string[] names = new string[2] {"@NVSID"
                                             , "@InvoiceSid"};
 
                 object[] values = new object[2] { Int32.Parse(_idnv), _invcSid };
@@ -388,7 +388,7 @@ namespace DAL
                 SqlCommand command = new SqlCommand();
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = "SALES.spud_NVBH_CheckInOut";
-                command.Parameters.AddWithValue("@NVID", nvid);
+                command.Parameters.AddWithValue("@NVSID", nvid);
                 command.Parameters.AddWithValue("@StoreNo", storeno);
                 command.Parameters.AddWithValue("@CheckStatus", status);
 
