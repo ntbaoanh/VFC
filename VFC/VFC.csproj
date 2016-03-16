@@ -401,6 +401,12 @@
     <Compile Include="_NhanSu\frmNS_NVBH_Insert.Designer.cs">
       <DependentUpon>frmNS_NVBH_Insert.cs</DependentUpon>
     </Compile>
+    <Compile Include="_NhanSu\frmNS_NVBH_QuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_NhanSu\frmNS_NVBH_QuanLy.Designer.cs">
+      <DependentUpon>frmNS_NVBH_QuanLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="_POS\frmPOS_BienNhanDoSua.cs">
       <SubType>Form</SubType>
     </Compile>

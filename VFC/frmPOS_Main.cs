@@ -367,8 +367,8 @@ namespace VFC
 
             string _query = "select i.INVC_SID "
                     + " from INVOICE_v i"
-                    + " where i.created_date >= to_date('2016-03-15 00:00:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
-                      + " and i.created_date <= to_date('2016-03-15 23:59:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
+                    + " where i.created_date >= to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + " 00:00:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
+                      + " and i.created_date <= to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
                       + " and i.store_no = " + _storeNo
                       + " and i.invc_type in (0,2)"
                       + " AND i.Proc_Status = 0";
