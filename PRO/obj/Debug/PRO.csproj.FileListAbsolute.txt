@@ -10,4 +10,3 @@ G:\DevExpress13\VFC\PRO\bin\Debug\PRO.dll
 G:\DevExpress13\VFC\PRO\bin\Debug\PRO.pdb
 G:\DevExpress13\VFC\PRO\obj\Debug\PRO.dll
 G:\DevExpress13\VFC\PRO\obj\Debug\PRO.pdb
-G:\DevExpress13\VFC\PRO\obj\Debug\PRO.csprojResolveAssemblyReference.cache

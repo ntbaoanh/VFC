@@ -49,18 +49,21 @@ namespace DAL
             conn = new Utilities.SQLCon();
             _dt = conn.returnDataTable(temp);
 
-            for (int i = 0; i < _dt.Rows.Count; i++)
+            if (_dt.Rows.Count > 0)
             {
-                temp2 += "'" + _dt.Rows[i]["InvoiceSid"] + "',";
-            }
+                for (int i = 0; i < _dt.Rows.Count; i++)
+                {
+                    temp2 += "'" + _dt.Rows[i]["InvoiceSid"] + "',";
+                }
 
-            string _query = "delete from SALES.NVBH_Invoice where InvoiceSid in (" + temp2.Substring(0, temp2.Length - 1) + ") and NVSID in (select NVSID from SALES.v_NVBH_Invoice where StoreNo = 238 group by NVSID)";
+                string _query = "delete from SALES.NVBH_Invoice where InvoiceSid in (" + temp2.Substring(0, temp2.Length - 1) + ") and NVSID in (select NVSID from SALES.v_NVBH_Invoice where StoreNo = 238 group by NVSID)";
 
-            conn = new Utilities.SQLCon();
+                conn = new Utilities.SQLCon();
 
-            if (conn.excuteQuerry(_query) > 0)
-            {
-                flag = true;
+                if (conn.excuteQuerry(_query) > 0)
+                {
+                    flag = true;
+                }
             }
 
             return flag;

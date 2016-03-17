@@ -103,6 +103,9 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage_NhanSu = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup18 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bt_NS_Manage = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_64)).BeginInit();
@@ -156,10 +159,11 @@
             this.bt_MER_InMaVach,
             this.btGenerateXXX,
             this.bt_TK_NhaCungCap_QLy,
-            this.bt_TK_Vai_QLy});
+            this.bt_TK_Vai_QLy,
+            this.bt_NS_Manage});
             this.ribbon.LargeImages = this.imageCollection_64;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 52;
+            this.ribbon.MaxItemId = 53;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage_Home,
@@ -168,7 +172,8 @@
             this.ribbonPage_Sale,
             this.ribbonPage_CS,
             this.ribbonPage_TK,
-            this.ribbonPage_Merchandise});
+            this.ribbonPage_Merchandise,
+            this.ribbonPage_NhanSu});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbon.Size = new System.Drawing.Size(886, 147);
             this.ribbon.StatusBar = this.ribbonStatusBar;
@@ -836,6 +841,27 @@
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // ribbonPage_NhanSu
+            // 
+            this.ribbonPage_NhanSu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup18});
+            this.ribbonPage_NhanSu.Name = "ribbonPage_NhanSu";
+            this.ribbonPage_NhanSu.Text = "Bp. Nhân sự";
+            // 
+            // ribbonPageGroup18
+            // 
+            this.ribbonPageGroup18.ItemLinks.Add(this.bt_NS_Manage);
+            this.ribbonPageGroup18.Name = "ribbonPageGroup18";
+            // 
+            // bt_NS_Manage
+            // 
+            this.bt_NS_Manage.Caption = "Quản lý NVBH";
+            this.bt_NS_Manage.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_NS_Manage.Glyph")));
+            this.bt_NS_Manage.Id = 52;
+            this.bt_NS_Manage.Name = "bt_NS_Manage";
+            this.bt_NS_Manage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.bt_NS_Manage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NS_Manage_ItemClick);
+            // 
             // frmHO_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -935,5 +961,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup19;
         private DevExpress.XtraBars.BarButtonItem bt_TK_NhaCungCap_QLy;
         private DevExpress.XtraBars.BarButtonItem bt_TK_Vai_QLy;
+        private DevExpress.XtraBars.BarButtonItem bt_NS_Manage;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage_NhanSu;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
     }
 }

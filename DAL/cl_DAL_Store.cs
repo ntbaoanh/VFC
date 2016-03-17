@@ -53,6 +53,16 @@ namespace DAL
             return dt;
         }
 
+        public DataTable returnSQL_AllStoreCode()
+        {
+            dt = new DataTable();
+            _connSQL = new Utilities.SQLCon();
+            string querry = "select Store_No, Store_Code, Region from tb_Stores where active = 1 order by Store_Code";
+
+            dt = _connSQL.returnDataTable(querry);
+            return dt;
+        }
+
         public string getITFromStore( string _store )
         {
             string _rs;

@@ -407,6 +407,12 @@
     <Compile Include="_NhanSu\frmNS_NVBH_QuanLy.Designer.cs">
       <DependentUpon>frmNS_NVBH_QuanLy.cs</DependentUpon>
     </Compile>
+    <Compile Include="_NhanSu\frmNS_NVBH_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_NhanSu\frmNS_NVBH_Update.Designer.cs">
+      <DependentUpon>frmNS_NVBH_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="_POS\frmPOS_BienNhanDoSua.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -737,6 +743,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_NhanSu\frmNS_NVBH_Insert.resx">
       <DependentUpon>frmNS_NVBH_Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_NhanSu\frmNS_NVBH_QuanLy.resx">
+      <DependentUpon>frmNS_NVBH_QuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_NhanSu\frmNS_NVBH_Update.resx">
+      <DependentUpon>frmNS_NVBH_Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_POS\frmPOS_BienNhanDoSua.resx">
       <DependentUpon>frmPOS_BienNhanDoSua.cs</DependentUpon>

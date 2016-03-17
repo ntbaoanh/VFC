@@ -61,7 +61,7 @@ namespace VFC
         private static _CTKM.frm_CTKM_Generate_XXX frmGenerateXXX;
         private static _Vai.frmVai_Manage frmManageVai;
         private static _NhaCungCap.frmNCC_NhaCungCap_Manage frmManage_NCC;
-
+        private static _NhanSu.frmNS_NVBH_QuanLy frmNS_NVBH_Manage;
         #endregion
 
         public static bool showMenu = false;
@@ -841,6 +841,28 @@ namespace VFC
             else
             {
                 frmMessageBox.Show("Thông báo", "Bạn chưa có quyền sử dụng module này. [42]", "error");
+            }
+        }
+
+        private void bt_NS_Manage_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (lbUserLogin.Caption.Equals(_sysadmin) || _dalUser.checkUserRole(lbUserLogin.Caption.ToString(), "45"))
+            {
+                rbActive = ribbonPage_NhanSu;
+                if (frmNS_NVBH_Manage == null || frmNS_NVBH_Manage.IsDisposed)
+                {
+                    frmNS_NVBH_Manage = new _NhanSu.frmNS_NVBH_QuanLy();
+                    frmNS_NVBH_Manage.MdiParent = this;
+                    frmNS_NVBH_Manage.Show();
+                }
+                else
+                {
+                    frmNS_NVBH_Manage.Activate();
+                }
+            }
+            else
+            {
+                frmMessageBox.Show("Thông báo", "Bạn chưa có quyền sử dụng module này. [45]", "error");
             }
         }
     }

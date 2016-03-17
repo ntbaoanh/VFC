@@ -56,7 +56,7 @@ namespace DAL
                 myNV.Phone = dt.Rows[0]["Phone"].ToString();
                 myNV.DiaChi = dt.Rows[0]["DiaChi"].ToString();
 
-                if (dt.Rows[0]["GioiTinh"].ToString() == "True")
+                if (dt.Rows[0]["GioiTinh"].ToString() == "Nam")
                 {
                     myNV.GioiTinh = 1;
                 }
@@ -93,7 +93,25 @@ namespace DAL
         {
             bool flag = false;
 
-            string query = "select NVSID from v_NhanVienBanHang where CMND = '" + cmnd + "'";
+            string query = "select NVSID from NHANSU.v_NhanVienBanHang where CMND = '" + cmnd + "'";
+            _connSQL = new Utilities.SQLCon();
+
+            dt = new DataTable();
+            dt = _connSQL.returnDataTable(query);
+
+            if (dt.Rows.Count == 1)
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
+
+        public bool CHECK_NVBH_Exists_ByNVID(int nvid)
+        {
+            bool flag = false;
+
+            string query = "select NVSID from NHANSU.v_NhanVienBanHang where NVID = " + nvid;
             _connSQL = new Utilities.SQLCon();
 
             dt = new DataTable();
@@ -117,7 +135,15 @@ namespace DAL
 
                 SqlCommand command = new SqlCommand();
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "[NHANSU].[spud_NVBH_Insert]";
+                if (_nvbh.NvbhId == null)
+                {
+                    command.CommandText = "[NHANSU].[spud_NVBH_Insert]";
+                }
+                else
+                {
+                    command.CommandText = "[NHANSU].[spud_NVBH_Insert_WithNVID]";
+                    command.Parameters.AddWithValue("@NVID", _nvbh.NvbhId);
+                }
                 command.Parameters.AddWithValue("@Ho", _nvbh.Ho);
                 command.Parameters.AddWithValue("@Ten", _nvbh.Ten);
                 command.Parameters.AddWithValue("@NgaySinh", _connSQL.ConvertDateToSQL(_nvbh.NgaySinh));
@@ -174,14 +200,14 @@ namespace DAL
                 command.Parameters.AddWithValue("@Ho", _nvbh.Ho);
                 command.Parameters.AddWithValue("@Ten", _nvbh.Ten);
                 command.Parameters.AddWithValue("@NgaySinh", _connSQL.ConvertDateToSQL(_nvbh.NgaySinh));
-                command.Parameters.AddWithValue("@StoreNo", _nvbh.StoreNo);
+                //command.Parameters.AddWithValue("@StoreNo", _nvbh.StoreNo);
                 command.Parameters.AddWithValue("@CMND", _nvbh.Cmnd);
                 command.Parameters.AddWithValue("@Phone", _nvbh.Phone);
                 command.Parameters.AddWithValue("@DiaChi", _nvbh.DiaChi);
                 command.Parameters.AddWithValue("@GioiTinh", _nvbh.GioiTinh);
-                command.Parameters.AddWithValue("@ChucVu", _nvbh.ChucVu);
+                //command.Parameters.AddWithValue("@ChucVu", _nvbh.ChucVu);
                 command.Parameters.AddWithValue("@urlImage", _nvbh.UrlImage);
-                command.Parameters.AddWithValue("@LuongCanBan", _nvbh.LuongCanBan);
+                //command.Parameters.AddWithValue("@LuongCanBan", _nvbh.LuongCanBan);
                 command.Parameters.AddWithValue("@GhiChu", _nvbh.GhiChu);
                 command.Parameters.AddWithValue("@ModifiedBy", _nvbh.ModifiedBy);
 
