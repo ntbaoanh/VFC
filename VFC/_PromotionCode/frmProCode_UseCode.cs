@@ -15,7 +15,6 @@ namespace VFC._PromotionCode
     public partial class frmProCode_UseCode : DevExpress.XtraEditors.XtraForm
     {
         DAL.Utilities.SQLCon _sqlCon;
-        DAL.Utilities.ORACon _oraCon;
         cl_DAL_PromotionCode _dalProCode;
         cl_PRO_PromotionCode _proProCode;
         cl_PRO_Invoice _proInvoice;
@@ -386,7 +385,7 @@ namespace VFC._PromotionCode
                     this.HO_UpdateForm();
                 }
             }               
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 frmMessageBox.Show( "Thông báo lỗi" , "Không có thông tin khách hàng đính kèm." 
                     + Environment.NewLine
@@ -569,7 +568,7 @@ namespace VFC._PromotionCode
                 lbProCode_DateExpire.Text = _proProCode.DateExpire.ToString();
                 lbProCodeSid.Text = _proProCode.ProCodeSid.ToString();
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
 
             }
@@ -595,7 +594,7 @@ namespace VFC._PromotionCode
                 lbProCode_CusPhone.Text = _dt.Rows[0]["Phone1"].ToString();
                 lbProCode_CusBirthday.Text = "Ngày " + _dt.Rows[0]["NgaySinh"].ToString() + " Tháng " + _dt.Rows[0]["ThangSinh"].ToString();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {   
                 lbProCode_CusAddress.Text = null;
                 lbProCode_CusCMND.Text = null;

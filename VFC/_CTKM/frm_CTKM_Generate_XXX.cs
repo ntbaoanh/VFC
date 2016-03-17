@@ -85,7 +85,7 @@ namespace VFC._CTKM
                     _rs += "Vui lòng loại Giá trị" + Environment.NewLine;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 
             }
@@ -109,7 +109,7 @@ namespace VFC._CTKM
                 rs[8] = int.Parse(txtLoaiQT9.Text);
                 rs[9] = int.Parse(txtLoaiQT10.Text);
             }
-            catch (Exception ex)
+            catch (Exception )
             { 
                 
             }
@@ -133,7 +133,7 @@ namespace VFC._CTKM
                 rs[8] = int.Parse(txtGiaTriQT9.Text);
                 rs[9] = int.Parse(txtGiaTriQT10.Text);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }

@@ -162,7 +162,7 @@ namespace VFC._Message
                 trackBarControl.Value = int.Parse( gridView1.GetFocusedRowCellValue( "Important" ).ToString() );
                 btSave.Enabled = true;
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 this.ClearData();
             }
@@ -218,7 +218,7 @@ namespace VFC._Message
                 _Message.frmMessage_Push frmPush = new frmMessage_Push( gridView1.GetFocusedRowCellValue( "MessageID" ).ToString() );
                 frmPush.ShowDialog();
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 frmMessageBox.Show( "Thông báo lỗi" , "Vui lòng chọn Thông báo." , "error" );
             }
@@ -270,7 +270,7 @@ namespace VFC._Message
                     btPushMessage.Enabled = true;
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
 
             }

@@ -57,7 +57,7 @@ namespace VFC._Customer
                                                 , gridView_Invoice.GetFocusedRowCellValue( "STORE_NO" ).ToString()
                                                 , gridView_Invoice.GetFocusedRowCellValue( "CREATED_DATE" ).ToString().Substring(0,10) );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
 
             }
@@ -83,11 +83,11 @@ namespace VFC._Customer
 
                 this.Text = "Thông tin khách hàng " + lbTen.Text;
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

@@ -53,7 +53,7 @@ namespace VFC._PromotionCode
 
                 gridControl1.ExportToXlsx( fileName );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

@@ -14,7 +14,6 @@ namespace VFC._NhaCungCap
 {
     public partial class frmNCC_NhaCungCap_Insert : DevExpress.XtraEditors.XtraForm
     {
-        DataTable dt;
         cl_DAL_ADMIN admin;
 
         public frmNCC_NhaCungCap_Insert()

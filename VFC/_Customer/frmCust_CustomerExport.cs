@@ -68,7 +68,7 @@ namespace VFC._Customer
 
                 gridControl1.ExportToXlsx( fileName );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -205,7 +205,7 @@ namespace VFC._Customer
                     int _number = Int16.Parse( txtTopCountBill.Text.Trim() );
                     _rs += " Order by cou.invc_count DESC) where rownum <= " + _number;
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     XtraMessageBox.Show( "Vui lòng nhập số tự nhiên !" , "Thông báo !" , MessageBoxButtons.OK , MessageBoxIcon.Error );
                 }
@@ -218,7 +218,7 @@ namespace VFC._Customer
                     int _number = Int16.Parse( txtTopAmount.Text.Trim() );
                     _rs += " Order by amou.total_money DESC) where rownum <= " + _number;
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     XtraMessageBox.Show( "Vui lòng nhập số tự nhiên !" , "Thông báo !" , MessageBoxButtons.OK , MessageBoxIcon.Error );
                 }

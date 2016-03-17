@@ -48,11 +48,11 @@ namespace VFC._IT
                 lbType.Text = gridView1.GetFocusedRowCellValue( "DocType" ).ToString();
                 txtNotes.Text = gridView1.GetFocusedRowCellValue( "Notes" ).ToString();
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -85,11 +85,11 @@ namespace VFC._IT
                 _dalHoTroKyThuat = new cl_DAL_HoTroKyThuat();
                 gridControl1.DataSource = _dalHoTroKyThuat.GetChinhSuaChungTuListByCondition( _fromDate , _toDate , _type.Substring(0, _type.Length -1) );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

@@ -82,7 +82,7 @@ namespace VFC._IT
                     btDone.Enabled = true;
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 
                 lbSTT.Text = "";

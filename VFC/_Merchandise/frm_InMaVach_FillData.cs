@@ -14,7 +14,6 @@ namespace VFC._Merchandise
     public partial class frm_InMaVach_FillData : DevExpress.XtraEditors.XtraForm
     {
         cl_DAL_InMaVach _dalInMV;
-        DataTable _dt;
 
         public frm_InMaVach_FillData()
         {
@@ -29,7 +28,7 @@ namespace VFC._Merchandise
                 _dalInMV = new cl_DAL_InMaVach();
                 gridControl1.DataSource = _dalInMV.GetDSachMaVach( _mtk , _active);
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -44,7 +43,7 @@ namespace VFC._Merchandise
                 _dalInMV = new cl_DAL_InMaVach();
                 gridControl1.DataSource = _dalInMV.GetDSachMaVach( txtMTK.Text.Trim() , this.getActiveCondition());
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -122,7 +121,7 @@ namespace VFC._Merchandise
                 lbKLTNo.Text = gridView1.GetFocusedRowCellValue( "STT" ).ToString();
                 lbSid.Text = gridView1.GetFocusedRowCellValue( "SID" ).ToString();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 lbMTK.Text = null;
                 lbUPC.Text = null;

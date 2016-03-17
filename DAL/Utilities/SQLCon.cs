@@ -94,7 +94,7 @@ namespace DAL.Utilities
                 _dt = new DataTable();
                 _adp.Fill( _dt );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -116,7 +116,7 @@ namespace DAL.Utilities
                 _cm = new SqlCommand( _querry , _conn );
                 count = _cm.ExecuteNonQuery();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -139,7 +139,7 @@ namespace DAL.Utilities
                 _cm.ExecuteNonQuery();
                 flag = true;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -167,7 +167,7 @@ namespace DAL.Utilities
                 _cm.ExecuteNonQuery();
                 flag = true;
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 flag = false;
             }

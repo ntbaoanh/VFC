@@ -62,7 +62,7 @@ namespace VFC._PromotionCode
                     this.FillPartNumberNote( selectedPartNumber );
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 gridControl2.DataSource = null;
             }

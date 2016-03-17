@@ -52,7 +52,7 @@ namespace VFC._IT
                 _dt = _conn.returnDataTable( sql );
 
                 gridControl1.DataSource = _dt;
-            }catch(Exception ex)
+            }catch(Exception )
             {
                 gridControl1.DataSource = null;
             }

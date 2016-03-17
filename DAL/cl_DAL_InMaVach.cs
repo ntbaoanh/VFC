@@ -42,7 +42,7 @@ namespace DAL
 
                 result = Result.Value.ToString();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -86,11 +86,11 @@ namespace DAL
 
                 adp.Fill( _dt );
             }
-            catch ( SqlException ex )
+            catch ( SqlException  )
             {
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -122,7 +122,7 @@ namespace DAL
 
                 result = Result.Value.ToString();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -155,7 +155,7 @@ namespace DAL
 
                 result = Result.Value.ToString();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -188,7 +188,7 @@ namespace DAL
 
                 result = Result.Value.ToString();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

@@ -23,7 +23,7 @@ namespace DAL
                 string _querry = "SELECT LoaiKMID, LoaiKMDescription FROM dbo.tb_CS_PromotionCode_PartNumber_LoaiKM";
                 _dt = _conn.returnDataTable( _querry );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -47,11 +47,11 @@ namespace DAL
 
                 _rs = _dt.Rows[0][0].ToString();
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 _rs = "No Record";
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rs = "Exception";
             }
@@ -173,7 +173,7 @@ namespace DAL
                 _dtResult = _conn.returnDataTable( "SELECT * " +
                                             "FROM v_CS_PromotionCode_ListPartNumber ORDER BY PartNumber " + _orderBy );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dtResult = null;
             }
@@ -194,7 +194,7 @@ namespace DAL
                                             " and sys_NgayTao <= '" + this.ConvertDateToSQL( _toDate ) + "'";
                 _dtResult = _conn.returnDataTable( _querry );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dtResult = null;
             }
@@ -212,7 +212,7 @@ namespace DAL
                 _dtResult = _conn.returnDataTable( "SELECT * " +
                                             "FROM v_CS_PromotionCode_Used_2Info WHERE PartNumber in (" + _partNumber + ")" );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dtResult = null;
             }
@@ -233,7 +233,7 @@ namespace DAL
                                             "AND sys_NgayTao >= '" + this.ConvertDateToSQL( _fromDate ) + "' " +
                                             "AND sys_NgayTao <= '" + this.ConvertDateToSQL( _toDate ) + "'" );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dtResult = null;
             }
@@ -251,7 +251,7 @@ namespace DAL
                 _dtResult = _conn.returnDataTable( "SELECT * " +
                                             "FROM v_CS_PromotionCode_Used_2Info " );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dtResult = null;
             }
@@ -297,7 +297,7 @@ namespace DAL
                 {
                     _rsInt = int.Parse( _dt.Rows[0]["ProCodeSid"].ToString() );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     _rsInt = 0;
                 }
@@ -325,7 +325,7 @@ namespace DAL
                 {
                     _rsInt = int.Parse( _dt.Rows[0]["PartNumber"].ToString() );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     _rsInt = 0;
                 }
@@ -375,7 +375,7 @@ namespace DAL
                     _rsFlag = 0;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rsFlag = 0;
             }
@@ -434,7 +434,7 @@ namespace DAL
                 _rsCode.AmountKM = int.Parse( _dt.Rows[0]["AmountKM"].ToString() );
                 _rsCode.ProCodeSid = int.Parse( _dt.Rows[0]["ProCodeSid"].ToString() );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 //throw new Exception( "[cl_DAL_PromotionCode-getProCodeInfo]" + ex.ToString() );
             }
@@ -592,7 +592,7 @@ namespace DAL
                 {
                     _rs = int.Parse( _dt.Rows[0]["QTY"].ToString() );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     
                 }
@@ -620,7 +620,7 @@ namespace DAL
                 {
                     _rs = int.Parse( _dt.Rows[0]["QTY"].ToString() );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     
                 }
@@ -648,7 +648,7 @@ namespace DAL
                 {
                     _rs = int.Parse( _dt.Rows[0]["QTY"].ToString() );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     
                 }
@@ -676,7 +676,7 @@ namespace DAL
                 {
                     _rs = int.Parse( _dt.Rows[0]["QTY"].ToString() );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     
                 }
@@ -704,7 +704,7 @@ namespace DAL
                 {
                     _rs = int.Parse( _dt.Rows[0]["QTY"].ToString() );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     
                 }
@@ -732,7 +732,7 @@ namespace DAL
                 {
                     _rs = int.Parse( _dt.Rows[0]["QTY"].ToString() );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                    
                 }
@@ -760,7 +760,7 @@ namespace DAL
                 {
                     _rs = int.Parse( _dt.Rows[0]["QTY"].ToString() );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     
                 }
@@ -788,7 +788,7 @@ namespace DAL
                 {
                     _rs = int.Parse( _dt.Rows[0]["QTY"].ToString() );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     
                 }
@@ -836,10 +836,10 @@ namespace DAL
 
                 _dt = _conn.returnDataTable( _sql );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
             }
 

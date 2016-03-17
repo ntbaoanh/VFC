@@ -44,11 +44,12 @@
             this.btDSNV_All = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.btDeBat = new DevExpress.XtraEditors.SimpleButton();
             this.btDeActive = new DevExpress.XtraEditors.SimpleButton();
             this.btChinhSua = new DevExpress.XtraEditors.SimpleButton();
             this.btTaoMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btThuyenChuyen = new DevExpress.XtraEditors.SimpleButton();
-            this.btDeBat = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -98,14 +99,15 @@
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.gridColumn7});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle);
             // 
             // gridColumn1
             // 
@@ -252,6 +254,18 @@
             this.groupControl3.TabIndex = 1;
             this.groupControl3.Text = "Tác vụ";
             // 
+            // btDeBat
+            // 
+            this.btDeBat.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDeBat.Appearance.Options.UseFont = true;
+            this.btDeBat.Image = ((System.Drawing.Image)(resources.GetObject("btDeBat.Image")));
+            this.btDeBat.Location = new System.Drawing.Point(5, 109);
+            this.btDeBat.Name = "btDeBat";
+            this.btDeBat.Size = new System.Drawing.Size(145, 35);
+            this.btDeBat.TabIndex = 0;
+            this.btDeBat.Text = "Đề bạt";
+            this.btDeBat.Click += new System.EventHandler(this.btDeBat_Click);
+            // 
             // btDeActive
             // 
             this.btDeActive.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -300,17 +314,11 @@
             this.btThuyenChuyen.Text = "Thuyên chuyển";
             this.btThuyenChuyen.Click += new System.EventHandler(this.btThuyenChuyen_Click);
             // 
-            // btDeBat
+            // gridColumn7
             // 
-            this.btDeBat.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDeBat.Appearance.Options.UseFont = true;
-            this.btDeBat.Image = ((System.Drawing.Image)(resources.GetObject("btDeBat.Image")));
-            this.btDeBat.Location = new System.Drawing.Point(5, 109);
-            this.btDeBat.Name = "btDeBat";
-            this.btDeBat.Size = new System.Drawing.Size(145, 35);
-            this.btDeBat.TabIndex = 0;
-            this.btDeBat.Text = "Đề bạt";
-            this.btDeBat.Click += new System.EventHandler(this.btDeBat_Click);
+            this.gridColumn7.Caption = "Approve";
+            this.gridColumn7.FieldName = "Approve";
+            this.gridColumn7.Name = "gridColumn7";
             // 
             // frmNS_NVBH_QuanLy
             // 
@@ -357,6 +365,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.SimpleButton btDeBat;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
 
     }
 }

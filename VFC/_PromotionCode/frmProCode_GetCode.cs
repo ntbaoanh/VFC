@@ -114,7 +114,7 @@ namespace VFC._PromotionCode
             {
                 dateExpire.EditValue = DateTime.Now.AddDays( int.Parse( txtSlgNgayHetHan.Text.Trim() ) );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 frmMessageBox.Show("Thông báo lỗi" , "Số ngày phải nhỏ hơn 9999 ngày !" , "error" );
             }
@@ -132,7 +132,7 @@ namespace VFC._PromotionCode
                     _rsString += " * Số lượng mã cần lấy phải lớn hơn 0 !" + Environment.NewLine;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rsString += " * Số lượng mã cần lấy phải là số tự nhiên !" + Environment.NewLine;
             }
@@ -144,7 +144,7 @@ namespace VFC._PromotionCode
                     _rsString += " * Số lượng ngày hết hạn phải lớn hơn 0 !" + Environment.NewLine;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rsString += " * Số lượng ngày hết hạn phải là số tự nhiến !" + Environment.NewLine;
             }
@@ -160,7 +160,7 @@ namespace VFC._PromotionCode
                             _rsString += " * Giảm giá % phải từ 0 đến 100 !" + Environment.NewLine;
                         }
                     }
-                    catch ( Exception ex )
+                    catch ( Exception  )
                     {
                         _rsString += " * Nhập vào số % giảm giá !" + Environment.NewLine;
                     }
@@ -191,7 +191,7 @@ namespace VFC._PromotionCode
                     _rsString += " * Xin chọn loại khuyến mãi !" + Environment.NewLine;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rsString += " * Xin chọn loại khuyến mãi !" + Environment.NewLine;
             }
@@ -220,7 +220,7 @@ namespace VFC._PromotionCode
                     _rs = _dt.Rows[0][0].ToString();
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rs = "";
             }

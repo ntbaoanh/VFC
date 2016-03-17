@@ -82,7 +82,7 @@ namespace DAL.Utilities
                 _dt = new DataTable();
                 _adp.Fill( _dt );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -105,7 +105,7 @@ namespace DAL.Utilities
                 OracleCommand command = new OracleCommand( _querry , _conn );
                 command.ExecuteNonQuery();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rsFlag = false;
             }
@@ -124,7 +124,7 @@ namespace DAL.Utilities
 
                 this.executeOraQuery( _dtSQL.Rows[0]["Querry"].ToString() , _ip );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rsFlag = false;
             }
@@ -151,7 +151,7 @@ namespace DAL.Utilities
                     _rsFlag = false;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rsFlag = false;
             }

@@ -81,7 +81,7 @@ namespace DAL
                 myNV.ChucVu = dt.Rows[0]["ChucVu"].ToString();
                 myNV.StoreCode = dt.Rows[0]["Store_Code"].ToString();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 myNV = null;
             }
@@ -327,7 +327,7 @@ namespace DAL
 
                 flag = _connSQL.execStoreProcedure("SALES.spud_NVBH_Insert_NVBH_Invc", names, values);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }

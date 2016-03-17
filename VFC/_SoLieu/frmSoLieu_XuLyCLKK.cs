@@ -242,7 +242,7 @@ namespace VFC._SoLieu
                     rdOld.Checked = false;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 lbSoCLKK.Text = "";
                 lbStore.Text = "";
@@ -286,7 +286,7 @@ namespace VFC._SoLieu
                     btMailResult.Enabled = true;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

@@ -73,7 +73,7 @@ namespace VFC._Vai
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -137,7 +137,7 @@ namespace VFC._Vai
                     rs += "Vui lòng nhập vào màu." + Environment.NewLine;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 rs += "Vui lòng nhập vào màu." + Environment.NewLine;
             }

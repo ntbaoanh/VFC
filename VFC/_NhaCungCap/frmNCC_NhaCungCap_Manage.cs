@@ -205,7 +205,7 @@ namespace VFC._NhaCungCap
                             rs = "fail";
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
                         rs = "fail";
                     }
@@ -295,7 +295,7 @@ namespace VFC._NhaCungCap
                 txtNguoiThuHuong.Text = gridView2.GetFocusedRowCellValue("TT_NguoiNhan").ToString();
                 lbNCC_SID.Text = gridView2.GetFocusedRowCellValue("NCC_SID").ToString();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 this.ClearDetail();
             }

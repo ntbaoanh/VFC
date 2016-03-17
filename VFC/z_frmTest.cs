@@ -10,7 +10,6 @@ using DevExpress.XtraEditors;
 using DAL;
 using PRO;
 using System.Data.SqlClient;
-using System.Data;
 
 namespace VFC
 {

@@ -15,7 +15,6 @@ namespace VFC._Rap
     public partial class frm_Rap_TraDoSua : DevExpress.XtraEditors.XtraForm
     {
         int qtyAo , qtyDam , qtyVay , qtyQuan , qtyKhac;
-        string _udf10;
         DAL.Utilities.Transaction rd;
         cl_DAL_RAP_DoSua doSua;
         cl_DAL_Inventory ivt;
@@ -322,7 +321,7 @@ namespace VFC._Rap
                 _store = new cl_DAL_Store();
                 cbbStores.Properties.DataSource = _store.returnSQL_AllStoreCodeHCM();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 frmMessageBox.Show("Thông báo lỗi", "Không có kết nối với máy chủ."
                             + Environment.NewLine

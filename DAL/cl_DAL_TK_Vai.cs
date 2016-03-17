@@ -43,7 +43,7 @@ namespace DAL
 
                 conn.closeConnection();
             }
-            catch (Exception ex)
+            catch (Exception )
             { 
             
             }
@@ -80,7 +80,7 @@ namespace DAL
 
                 conn.closeConnection();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -97,7 +97,7 @@ namespace DAL
 
                 return dt = conn.returnDataTable(query);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return dt = null;
             }
@@ -112,7 +112,7 @@ namespace DAL
 
                 return dt = conn.returnDataTable(query);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 return dt = null;
             }

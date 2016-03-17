@@ -104,7 +104,7 @@ namespace VFC._Sale
                                 txtProcess.Text += listStores.Items[i].Value.ToString() + " : Done !" + Environment.NewLine;
                             }
                         }
-                        catch ( Exception ex )
+                        catch ( Exception  )
                         {
                             txtProcess.Text += listStores.Items[i].Value.ToString() + " : Lost Connection !" + Environment.NewLine;
                         }
@@ -239,7 +239,7 @@ namespace VFC._Sale
                     flag = false;
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 _result += " * Chọn [Từ ngày] / [Đến ngày] " + Environment.NewLine;
                 flag = false;
@@ -254,7 +254,7 @@ namespace VFC._Sale
                     flag = false;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _result += " * Vui lòng chọn cửa hàng." + Environment.NewLine;
                 flag = false;

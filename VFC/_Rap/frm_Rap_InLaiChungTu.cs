@@ -97,11 +97,11 @@ namespace VFC._Rap
                                 _ds ,
                                 _dt );
             }
-            catch ( ArgumentOutOfRangeException ex )
+            catch ( ArgumentOutOfRangeException  )
             {
                 frmMessageBox.Show( "Thông báo lỗi" , "Bạn chưa chọn chứng từ." , "error" );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 frmMessageBox.Show( "Thông báo lỗi" , "Bạn chưa chọn chứng từ." , "error" );
             }
@@ -129,7 +129,7 @@ namespace VFC._Rap
                 _store = new cl_DAL_Store();
                 cbbStores.Properties.DataSource = _store.returnSQL_AllStoreCodeHCM();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 frmMessageBox.Show("Thông báo lỗi", "Không có kết nối với máy chủ."
                             + Environment.NewLine
@@ -227,7 +227,7 @@ namespace VFC._Rap
                 lbStore.Text = cbbStores.EditValue.ToString();
                 lbCreateDate.Text = gridView1.GetFocusedRowCellValue( "Created_Date" ).ToString().Substring( 0 , 10 );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
 
             }

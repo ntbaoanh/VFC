@@ -110,11 +110,11 @@ namespace DAL
                     rs += _dt.Rows[i]["InvcSid"].ToString() + ",";
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -231,7 +231,7 @@ namespace DAL
                 _rsInvoice.Time = dt.Rows[0]["CREATED_TIME"].ToString();
                 _rsInvoice.Invc_sid = dt.Rows[0]["INVC_SID"].ToString();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rsInvoice = null;
             }
@@ -368,7 +368,7 @@ namespace DAL
                 _rsInvoice.StoreNo = dt.Rows[0]["STORE_NO"].ToString();
                 _rsInvoice.Time = dt.Rows[0]["CREATED_TIME"].ToString();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 _rsInvoice = null;
             }
@@ -436,7 +436,7 @@ namespace DAL
                 _dt = new DataTable();
                 _dt = oraCon.returnDataTable( sqlReciept , _ipConfigName );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -476,7 +476,7 @@ namespace DAL
                 OracleDataAdapter da = new OracleDataAdapter( command );
                 da.Fill( _dt );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -558,7 +558,7 @@ namespace DAL
 
                 dt = oraCon.returnDataTable( sqlReciept , _ipConfigName );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 dt = null;
             }
@@ -644,7 +644,7 @@ namespace DAL
 
                 dt = oraCon.returnDataTable(sqlReciept, _ipConfigName);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 dt = null;
             }
@@ -709,7 +709,7 @@ namespace DAL
 
                 dt = oraCon.returnDataTable( sqlReciept , _ipConfigName );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 dt = null;
             }
@@ -757,7 +757,7 @@ namespace DAL
 
                 dt = oraCon.returnDataTable( sqlReciept , _ipConfigName );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 dt = null;
             }
@@ -845,7 +845,7 @@ namespace DAL
                     da.Fill( _dt );
                 }                
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -911,7 +911,7 @@ namespace DAL
 
                 dt = oraCon.returnDataTable(sqlReciept, _ipConfigName);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 dt = null;
             }

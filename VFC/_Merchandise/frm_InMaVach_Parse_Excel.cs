@@ -120,14 +120,14 @@ namespace VFC._Merchandise
                                                     );
                             _no++;
                         }
-                        catch ( Exception ex )
+                        catch ( Exception  )
                         {
 
                         }
                     }
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -150,7 +150,7 @@ namespace VFC._Merchandise
 
                 gridControl1.ExportToXlsx( fileName );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

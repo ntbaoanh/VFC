@@ -14,7 +14,6 @@ namespace VFC._Admin
 {
     public partial class frmPOS_Welcome : DevExpress.XtraEditors.XtraForm
     {
-        DataTable _dt;
         cl_DAL_SystemMessage _dalSystemMessage;
         cl_DAL_Voucher _dalVoucher;
         _Message.frmMessage_ShowMessageInfo frmMessageInfo;
@@ -64,7 +63,7 @@ namespace VFC._Admin
                     }
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 lbCountMessage.Text = "Hiện tại chưa có thông báo mới.";
             }
@@ -83,15 +82,15 @@ namespace VFC._Admin
                     _Message.frmMessage_ShowMessageInfo frmMessage = new _Message.frmMessage_ShowMessageInfo( gridView_SystemMessage.GetFocusedRowCellValue( "No" ).ToString() );
                     frmMessage.ShowDialog();
                 }
-                catch ( NullReferenceException ex )
+                catch ( NullReferenceException  )
                 {
                     frmMessageBox.Show( "Thông báo lỗi" , "Bạn chưa chọn thông báo để xem" , "error" );
                 }
-                catch ( ObjectDisposedException ex )
+                catch ( ObjectDisposedException  )
                 {
 
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     //frmMessageBox.Show( "Thông báo lỗi" , ex.ToString() , "error" );
                 }

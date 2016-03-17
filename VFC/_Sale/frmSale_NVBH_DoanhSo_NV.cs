@@ -15,7 +15,6 @@ namespace VFC._Sale
     public partial class frmSale_NVBH_DoanhSo_NV : DevExpress.XtraEditors.XtraForm
     {
         DAL.Utilities.SQLCon _sqlCon;
-        DAL.Utilities.ORACon _oraCon;
         cl_PRO_Invoice _proInvoice;
         cl_DAL_Invoice _dalInvoice;
         cl_DAL_Customer _dalCustomer;
@@ -44,7 +43,7 @@ namespace VFC._Sale
                                                                                     frmMain._myAppConfig.SbsNo,
                                                                                     999);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 frmMessageBox.Show("Thông báo lỗi", "Không thể lấy danh sách hóa đơn.", "error");
             }
@@ -131,7 +130,7 @@ namespace VFC._Sale
                     lbCusCMND.Text = _proCustomer.Cmnd;
                     lbCusPhone.Text = _proCustomer.Phone1;
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     lbCusFName.Text = null;
                     lbCusAddress.Text = null;
@@ -140,7 +139,7 @@ namespace VFC._Sale
                     lbCusPhone.Text = null;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 //frmMessageBox.Show("Thông báo lỗi", ex.ToString(), "error");
             }
@@ -197,11 +196,11 @@ namespace VFC._Sale
                 
                 }
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException )
             {
                 frmMessageBox.Show("Lỗi !", "Vui lòng chọn hóa đơn.", "error");
             }
-            catch (FormatException ex)
+            catch (FormatException )
             {
                 frmMessageBox.Show("Lỗi !", "Vui lòng chọn nhân viên.", "error");
             }
@@ -222,7 +221,7 @@ namespace VFC._Sale
                         _dalCustomer.insertCustomer(_proCustomer);
                     }                              
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     //frmMessageBox.Show("Thông báo lỗi", ex.ToString(), "error");
                 }
@@ -249,7 +248,7 @@ namespace VFC._Sale
                 lbNV_Ten.Text = _proNVBH.Ho + " " + _proNVBH.Ten;
                 lbNV_Store.Text = _proNVBH.StoreCode;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 lbNVID.Text = null;
                 lbNV_Ten.Text = null;

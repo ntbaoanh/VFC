@@ -97,7 +97,7 @@ namespace VFC._PromotionCode
 
                 this.FillPartNumberNote( int.Parse( _partNumber ) );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 this.ClearLabelData();
             }

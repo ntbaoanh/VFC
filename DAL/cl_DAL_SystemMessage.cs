@@ -37,11 +37,11 @@ namespace DAL
                     _proMessage.Title = _dt.Rows[0]["Title"].ToString();
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -77,11 +77,11 @@ namespace DAL
                     _proMessage.PushStore = _dt.Rows[0]["StoreCode"].ToString();
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -139,11 +139,11 @@ namespace DAL
 
                 _rs = int.Parse( _dt.Rows[0][0].ToString() );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 _rs = -2;
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rs = -1;
             }

@@ -36,7 +36,7 @@ namespace DAL
                     upc.Desc2 = _dt.Rows[0]["description2"].ToString();
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 upc.UPC = null;
                 upc.PriceList = null;
@@ -70,7 +70,7 @@ namespace DAL
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 flag = false;
             }
@@ -100,7 +100,7 @@ namespace DAL
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 flag = false;
             }

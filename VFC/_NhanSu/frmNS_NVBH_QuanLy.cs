@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DAL;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace VFC._NhanSu
 {
@@ -24,7 +25,7 @@ namespace VFC._NhanSu
         #region Action
         private void LoadDSNhanVien(string _type)
         {
-            string _query = "select NVSID, Active, GioiTinh, Store_Code, Ho, Ten, ChucVu from NHANSU.v_NhanVienBanHang ";
+            string _query = "select NVSID, Active, GioiTinh, Store_Code, Ho, Ten, ChucVu, Approve from NHANSU.v_NhanVienBanHang ";
 
             if (_type.Equals("new"))
             {
@@ -79,8 +80,15 @@ namespace VFC._NhanSu
 
         private void btChinhSua_Click(object sender, EventArgs e)
         {
-            _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("edit", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
-            myFrm.ShowDialog();
+            try
+            {
+                _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("edit", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
+                myFrm.ShowDialog();
+            }
+            catch (NullReferenceException)
+            {
+                frmMessageBox.Show("Thông báo","Vui lòng chọn nhân viên muốn chỉnh sửa.","error");
+            }
         }
 
         private void btTaoMoi_Click(object sender, EventArgs e)
@@ -97,6 +105,21 @@ namespace VFC._NhanSu
         private void btThuyenChuyen_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string approve = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Approve"]);
+
+                if (!approve.Equals("Checked"))
+                {
+                    e.Appearance.BackColor = Color.Salmon;
+                    e.Appearance.BackColor2 = Color.SeaShell;
+                }
+            }
         }
     }
 }

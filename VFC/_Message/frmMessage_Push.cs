@@ -177,7 +177,7 @@ namespace VFC._Message
             {
                 lbID.Text = gridView1.GetFocusedRowCellValue( "MessageID" ).ToString();
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 frmMessageBox.Show( "Thông báo lỗi" , "Vui lòng chọn Thông báo." , "error" );
             }

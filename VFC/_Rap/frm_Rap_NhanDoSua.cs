@@ -44,7 +44,7 @@ namespace VFC._Rap
                 btInsertUPC.Enabled = true;
                 lbSoChungTu.Text = doSua.GetDocSid( "IN" , cbbStores.EditValue.ToString() );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 frmMessageBox.Show("Thông báo." , "Xin chọn cửa hàng." , "error" );
             }
@@ -308,7 +308,7 @@ namespace VFC._Rap
                 cl_DAL_Store _dalStore = new cl_DAL_Store();
                 cbbStores.Properties.DataSource = _dalStore.returnSQL_AllStoreCodeHCM();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 frmMessageBox.Show( "Thông báo lỗi" , "Không có kết nối với máy chủ."                             
                             + Environment.NewLine

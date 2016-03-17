@@ -69,11 +69,11 @@ namespace VFC._PromotionCode
                         break;
                 }                  
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 this.ClearLabel();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -113,10 +113,10 @@ namespace VFC._PromotionCode
                     txtPhone1.Focus();
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
             }
         }

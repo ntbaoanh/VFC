@@ -28,7 +28,7 @@ namespace DAL
 
                 _dt = _conn.returnDataTable( _sql );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -48,7 +48,7 @@ namespace DAL
 
                 _dt = _conn.returnDataTable( _sql );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -479,7 +479,7 @@ namespace DAL
                     _result = int.Parse( _dt.Rows[0][0].ToString() );
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

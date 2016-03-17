@@ -33,7 +33,7 @@ namespace DAL
 
                 adp.Fill( _dt );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -101,7 +101,7 @@ namespace DAL
                         return flag = false;
                     }
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     return flag = false;
                 }
@@ -153,7 +153,7 @@ namespace DAL
                         return flag = false;
                     }
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     return flag = false;
                 }
@@ -183,7 +183,7 @@ namespace DAL
                     flag = false;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -244,7 +244,7 @@ namespace DAL
                         }
                     }
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     return flag = false;
                 }
@@ -289,7 +289,7 @@ namespace DAL
                         }
                     }
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     return flag = false;
                 }
@@ -340,7 +340,7 @@ namespace DAL
                         return flag = false;
                     }
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     return flag = false;
                 }
@@ -375,7 +375,7 @@ namespace DAL
                         rs.Rows.Add( _dt.Rows[i][1] );
                     }
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
 
                 }
@@ -411,7 +411,7 @@ namespace DAL
 
                     }
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     _rs = _store + "_IN_1";
                 }
@@ -439,7 +439,7 @@ namespace DAL
 
                     }
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     _rs = _store + "_OUT_1";
                 }

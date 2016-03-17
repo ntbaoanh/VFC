@@ -44,7 +44,7 @@ namespace VFC
                 cl_DAL_AppConfig _dalAppConfig = new cl_DAL_AppConfig();
                 _myAppConfig = _dalAppConfig.readAllConfig( _appConfigUrl , _mySecrect );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 frmMessageBox.Show( "Thông báo lỗi" , "Có vấn đề trong khi mở chương trình VFC."
                                 + Environment.NewLine
@@ -119,13 +119,13 @@ namespace VFC
                     Application.Exit();
                 }
             }
-            catch ( System.IO.IOException ex )
+            catch ( System.IO.IOException  )
             {
                 //frmMessageBox.Show( "Thông báo lỗi" , "Không kết nối được với máy chủ."
                 //    + Environment.NewLine
                 //    + " - Vui lòng kết nối VPN và thử lại.", "error" );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 //MessageBox.Show( ex.ToString() );
             }

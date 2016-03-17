@@ -102,13 +102,13 @@ namespace VFC._CTKM
                     lbCusCMND.Text = _proCustomer.Cmnd;
                     lbCusPhone.Text = _proCustomer.Phone1;
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     frmMessageBox.Show("Thông báo", "Hóa đơn không có thông tin khách hàng.", "error");
                     this.ClearLabel();
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 this.ClearLabel();
             }
@@ -143,7 +143,7 @@ namespace VFC._CTKM
                             _myCTKM.CTKM_TriAnKH_112015_Customer_Insert(_proCustomer);
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
                         flag = false;
                     }

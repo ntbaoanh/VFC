@@ -23,11 +23,11 @@ namespace DAL
 
                 _dt = _conn.returnDataTable( _sql );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 _dt = null;
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -47,11 +47,11 @@ namespace DAL
 
                 _dt = _conn.returnDataTable( _sql );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 _dt = null;
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }

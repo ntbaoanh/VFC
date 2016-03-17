@@ -16,7 +16,6 @@ namespace VFC._Merchandise
     {
         string _mathietke;
         cl_DAL_Inventory _dalInventory;
-        _Merchandise.frmMER_ImportImageToMTK frmThemHinh;
 
         public frmMER_DeleteImageToMTK(string _mtk)
         {
@@ -68,7 +67,7 @@ namespace VFC._Merchandise
                 _dalInventory = new cl_DAL_Inventory();
                 cbbAttr.Properties.DataSource = _dalInventory.GetColorListByMTK( _mtk );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -90,7 +89,7 @@ namespace VFC._Merchandise
 
                 _rsFlag = true;
             }
-            catch ( DirectoryNotFoundException dirNotFound )
+            catch ( DirectoryNotFoundException  )
             {
                 frmMessageBox.Show( "Thông báo lỗi" , "Không tìm thấy thư mục gốc" , "error" );
             }

@@ -75,11 +75,11 @@ namespace DAL
                     rs = false;
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 rs = false;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 rs = false;
             }
@@ -122,11 +122,11 @@ namespace DAL
                     rs = false;
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 rs = false;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 rs = false;
             }
@@ -193,11 +193,11 @@ namespace DAL
                     rs = false;
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 rs = false;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 rs = false;
             }
@@ -282,11 +282,11 @@ namespace DAL
                     rs = false;
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 rs = false;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 rs = false;
             }
@@ -349,11 +349,11 @@ namespace DAL
                     rs = false;
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
                 rs = false;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 rs = false;
             }
@@ -378,11 +378,11 @@ namespace DAL
 
                 adp.Fill(_dt);
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -407,11 +407,11 @@ namespace DAL
 
                 adp.Fill(_dt);
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -443,11 +443,11 @@ namespace DAL
 
                 adp.Fill(_dt);
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -483,11 +483,11 @@ namespace DAL
 
                 rs = _dt.Rows[0]["SoLan_Quay"].ToString();
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -516,11 +516,11 @@ namespace DAL
 
                 rs = _dt.Rows[0]["SoLan_DaQuay"].ToString();
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -548,11 +548,11 @@ namespace DAL
 
                 rs = int.Parse( _dt.Rows[0]["SumLanQuay"].ToString());
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -582,11 +582,11 @@ namespace DAL
 
                 rs = int.Parse(_dt.Rows[0]["LoaiID"].ToString());
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -616,11 +616,11 @@ namespace DAL
 
                 rs = int.Parse(_dt.Rows[0]["GiaTriID"].ToString());
             }
-            catch (SqlException ex)
+            catch (SqlException )
             {
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -654,7 +654,7 @@ namespace DAL
                     rs = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -777,7 +777,7 @@ namespace DAL
                     }
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ) {
                 _rs = false;
             }
 

@@ -7,14 +7,13 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 using DAL;
 
 namespace VFC._Sale
 {
     public partial class frmSale_NVBH_CheckInOut : DevExpress.XtraEditors.XtraForm
     {
-        DAL.Utilities.SQLCon connSQL;
-        DataTable dt;
         cl_DAL_NhanVienBanHang dalNvbh;
 
         public frmSale_NVBH_CheckInOut()
@@ -49,7 +48,7 @@ namespace VFC._Sale
                     btOut.Enabled = false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 btIn.Enabled = false;
                 btOut.Enabled = false;
@@ -100,7 +99,7 @@ namespace VFC._Sale
                 this.GET_NVBH_Working_Status(int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
                 lbNVID.Text = gridView1.GetFocusedRowCellValue("NVSID").ToString();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 this.ClearData();
             }
@@ -172,6 +171,21 @@ namespace VFC._Sale
         private void btRefresh_Click(object sender, EventArgs e)
         {
             this.LoadDSNhanVien();
+        }
+
+        private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
+        {
+            GridView View = sender as GridView;
+            if (e.RowHandle >= 0)
+            {
+                string approve = View.GetRowCellDisplayText(e.RowHandle, View.Columns["Approve"]);
+                
+                if (!approve.Equals("Checked"))
+                {
+                    e.Appearance.BackColor = Color.Salmon;
+                    e.Appearance.BackColor2 = Color.SeaShell;
+                }
+            }
         }
     }
 }

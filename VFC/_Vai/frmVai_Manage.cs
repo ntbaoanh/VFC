@@ -100,7 +100,7 @@ namespace VFC._Vai
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
             }
@@ -167,7 +167,7 @@ namespace VFC._Vai
                     rs += "Vui lòng nhập vào màu." + Environment.NewLine;
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 rs += "Vui lòng nhập vào màu." + Environment.NewLine;
             }
@@ -211,7 +211,7 @@ namespace VFC._Vai
                 listSuppliers.EditValue = gridView_Vai.GetFocusedRowCellValue("DonViCungCapID").ToString();
                 lbVaiID.Text = gridView_Vai.GetFocusedRowCellValue("VaiID").ToString();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 this.ClearDetail();
             }
@@ -326,7 +326,7 @@ namespace VFC._Vai
                     _dt = (DataTable)gridControl1.DataSource;
                     lbColorCount.Text = _dt.Rows.Count.ToString();
                 }
-                catch (Exception ex)
+                catch (Exception )
                 { 
                     
                 }

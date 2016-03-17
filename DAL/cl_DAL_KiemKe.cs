@@ -22,11 +22,11 @@ namespace DAL
 
                 _dt = _conn.returnDataTable( _sql );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException )
             {
                 _dt = null;
             }
-            catch ( Exception ex )
+            catch ( Exception )
             {
                 _dt = null;
             }
@@ -55,11 +55,11 @@ namespace DAL
 
                 _dt = _conn.returnDataTable( _sql );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 _dt = null;
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -113,7 +113,7 @@ namespace DAL
                     _result = int.Parse( _dt.Rows[0][0].ToString() );
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -136,7 +136,7 @@ namespace DAL
                     _result = int.Parse( _dt.Rows[0][0].ToString() );
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -159,7 +159,7 @@ namespace DAL
                     _result = _dt.Rows[0][0].ToString();
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

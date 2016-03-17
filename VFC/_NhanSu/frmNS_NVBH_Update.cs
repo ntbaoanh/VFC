@@ -49,7 +49,7 @@ namespace VFC._NhanSu
 
                 // 1, where my other algorithm resulted in 0.
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 years = 0;
             }
@@ -97,7 +97,7 @@ namespace VFC._NhanSu
                             rs += "Thông tin nhân viên đã có. Vui lòng kiểm tra lại." + Environment.NewLine;
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
                         rs += "Lỗi không xác định.[Check Duplicate CMND]" + Environment.NewLine;
                     }
@@ -132,7 +132,7 @@ namespace VFC._NhanSu
                             rs += "ID đã tồn tại. Vui lòng kiểm tra lại." + Environment.NewLine;
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
                         rs += "Lỗi không xác định.[Check Duplicate NVID]" + Environment.NewLine;
                     }
@@ -142,7 +142,7 @@ namespace VFC._NhanSu
                 {
                     int.Parse(txtInfo_LuongCanBan.Text.Trim());
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     rs += "Lương căn bản phải là số tự nhiên.";
                 }

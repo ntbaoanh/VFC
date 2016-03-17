@@ -39,7 +39,7 @@ namespace VFC._Sale
                     lbFromDate.ForeColor = Color.Blue;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -60,7 +60,7 @@ namespace VFC._Sale
                     lbToDate.ForeColor = Color.Blue;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -149,7 +149,7 @@ namespace VFC._Sale
                     flag = false;
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 _result += " * Chọn [Từ ngày] / [Đến ngày] " + Environment.NewLine;
                 flag = false;
@@ -163,7 +163,7 @@ namespace VFC._Sale
                     flag = false;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 if ( _type.Equals( "Local" ) )
                 {

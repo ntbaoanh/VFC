@@ -27,7 +27,7 @@ namespace VFC._Rap
                 cbbMonth.SelectedIndex = currentMonth - 1 ;
                 txtYear.Text = DateTime.Now.Year.ToString();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 frmMessageBox.Show( "Thông báo" , DateTime.Now.Month.ToString() , "Error" );
             }

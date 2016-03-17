@@ -36,11 +36,11 @@ namespace DAL
 
                 rs = int.Parse(Result.Value.ToString());
             }
-            catch ( SqlException ex )
+            catch ( SqlException  )
             {
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

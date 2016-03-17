@@ -47,7 +47,7 @@ namespace VFC._Admin
                     rd.record( "User changed password." , "0" , frmHO_Main._userLogin.UserName , System.Environment.MachineName.ToString() );
                     this.Dispose();
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     XtraMessageBox.Show( "Đổi mật khẩu không thành công." , "Thông báo !" , MessageBoxButtons.OK , MessageBoxIcon.Error );
                     this.Dispose();

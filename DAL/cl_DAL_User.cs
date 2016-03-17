@@ -34,7 +34,7 @@ namespace DAL
                 }
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 flag = false;
             }
@@ -62,7 +62,7 @@ namespace DAL
                     _uLogin.ForceChangePass = _dt.Rows[0]["ForceChangePass"].ToString();
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -129,7 +129,7 @@ namespace DAL
                 }
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 check = false;
             }
@@ -158,7 +158,7 @@ namespace DAL
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 check = false;
             }
@@ -187,7 +187,7 @@ namespace DAL
                 }
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 check = false;
             }

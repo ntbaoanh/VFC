@@ -35,7 +35,7 @@ namespace VFC._SoLieu
             {
                 lbITPhuTrach.Text = _store.getITFromStore( cbbStores.EditValue.ToString() );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -105,7 +105,7 @@ namespace VFC._SoLieu
                     rs += " + Bạn chọn ngày ở tương lai " + Environment.NewLine;
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 rs += " + Bạn chưa chọn ngày." + Environment.NewLine;
             }
@@ -122,7 +122,7 @@ namespace VFC._SoLieu
                     rs += " + Số lượng kiểm kê không được âm " + Environment.NewLine;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 rs += " + Số lượng kiểm kê phải là số tự nhiên" + Environment.NewLine;
             }

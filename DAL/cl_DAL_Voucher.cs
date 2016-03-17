@@ -27,7 +27,7 @@ namespace DAL
                 _dt = _oraCon.returnDataTable( _sql , _ip );
                 _rs = int.Parse( _dt.Rows[0][0].ToString() );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rs = 0;
             }
@@ -76,7 +76,7 @@ namespace DAL
 
                 _dt = _oraCon.returnDataTable( _sql , _ip );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -113,7 +113,7 @@ namespace DAL
 
                 _dt = _oraCon.returnDataTable( _sql , _ip );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _dt = null;
             }
@@ -170,7 +170,7 @@ namespace DAL
                 _proVoucher.SumQty = int.Parse( _dt.Rows[0]["SumQty"].ToString() );
                 _proVoucher.VouSid = _dt.Rows[0]["vou_sid"].ToString();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _proVoucher.SlipCreatedDate = null;
                 _proVoucher.SlipNo = null;

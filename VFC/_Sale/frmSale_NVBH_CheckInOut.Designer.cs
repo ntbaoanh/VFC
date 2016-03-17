@@ -36,6 +36,7 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
@@ -45,6 +46,7 @@
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.lbGioiTinh = new DevExpress.XtraEditors.LabelControl();
             this.lbPhone = new DevExpress.XtraEditors.LabelControl();
             this.lbTen = new DevExpress.XtraEditors.LabelControl();
@@ -54,7 +56,6 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -103,13 +104,14 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
-            this.gridColumn4});
+            this.gridColumn4,
+            this.gridColumn5});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
-            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.gridView1_RowStyle);
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // gridColumn1
@@ -149,6 +151,12 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Approve";
+            this.gridColumn5.FieldName = "Approve";
+            this.gridColumn5.Name = "gridColumn5";
             // 
             // xtraScrollableControl1
             // 
@@ -256,6 +264,18 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin Nhân viên";
             // 
+            // btRefresh
+            // 
+            this.btRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRefresh.Appearance.Options.UseFont = true;
+            this.btRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btRefresh.Image")));
+            this.btRefresh.Location = new System.Drawing.Point(5, 122);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(298, 40);
+            this.btRefresh.TabIndex = 2;
+            this.btRefresh.Text = "Làm mới danh sách";
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
+            // 
             // lbGioiTinh
             // 
             this.lbGioiTinh.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -337,18 +357,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Họ :";
             // 
-            // btRefresh
-            // 
-            this.btRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRefresh.Appearance.Options.UseFont = true;
-            this.btRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btRefresh.Image")));
-            this.btRefresh.Location = new System.Drawing.Point(5, 122);
-            this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(298, 40);
-            this.btRefresh.TabIndex = 2;
-            this.btRefresh.Text = "Làm mới danh sách";
-            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
-            // 
             // frmSale_NVBH_CheckInOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,5 +409,6 @@
         private DevExpress.XtraEditors.LabelControl lbNVID;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.SimpleButton btRefresh;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
     }
 }

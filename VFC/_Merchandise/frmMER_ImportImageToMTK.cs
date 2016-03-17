@@ -15,7 +15,6 @@ namespace VFC._Merchandise
     public partial class frmMER_ImportImageToMTK : DevExpress.XtraEditors.XtraForm
     {
         string _mtk;
-        cl_DAL_Inventory _dalInventory;
 
         public frmMER_ImportImageToMTK( string _mathietke )
         {
@@ -42,7 +41,7 @@ namespace VFC._Merchandise
                     imageBox.Image = img;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -65,7 +64,7 @@ namespace VFC._Merchandise
                     File.Copy( lbImageURL.Text , Path.Combine( _destDir , lbMTK.Text + ".jpg" ) , true );
                     frmMessageBox.Show( "Thông báo" , "Lưu thành công" , "done" );
                 }
-                catch ( Exception ex )
+                catch ( Exception  )
                 {
                     frmMessageBox.Show( "Thông báo lỗi" , "Lưu thất bại. Vui lòng chọn lại hình." , "error" );
                     this.DisposeImageFromImageBox();

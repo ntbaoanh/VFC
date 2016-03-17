@@ -155,7 +155,7 @@ namespace VFC._CTKM
 
                     clickCount = -1;
                 }
-                catch (Exception ex)
+                catch (Exception )
                 { 
                     
                 }

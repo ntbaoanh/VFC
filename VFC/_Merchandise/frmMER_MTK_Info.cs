@@ -65,7 +65,7 @@ namespace VFC._Merchandise
                 frmMER_ShowImage frmShowImage = new frmMER_ShowImage( imageBox.Image , txtMTK.Text.Trim() );
                 frmShowImage.ShowDialog();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -79,7 +79,7 @@ namespace VFC._Merchandise
                 _dalInventory = new cl_DAL_Inventory();
                 gridControl_Color.DataSource = _dalInventory.GetColorListByMTK( _mtk );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -122,12 +122,12 @@ namespace VFC._Merchandise
                 img = Image.FromFile( _urlIma );
                 imageBox.Image = img;
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 img = Image.FromFile( frmHO_Main._serverImageUrl + "no_images.jpg" );
                 imageBox.Image = img;
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 img = Image.FromFile( frmHO_Main._serverImageUrl + "no_images.jpg" );
                 imageBox.Image = img;
@@ -158,12 +158,12 @@ namespace VFC._Merchandise
                 img = Image.FromFile( _urlIma );
                 imageBox.Image = img;
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 img = Image.FromFile( frmHO_Main._serverImageUrl + "no_images.jpg" );
                 imageBox.Image = img;
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 img = Image.FromFile( frmHO_Main._serverImageUrl + "no_images.jpg" );
                 imageBox.Image = img;

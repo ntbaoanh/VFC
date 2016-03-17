@@ -10,9 +10,6 @@ namespace DAL
 {
     public class cl_DAL_Sales_NVBH
     {
-        Utilities.SQLCon _connSQL;
-        DataTable dt;
-
         
     }
 }

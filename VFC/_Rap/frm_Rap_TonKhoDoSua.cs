@@ -35,7 +35,7 @@ namespace VFC._Rap
                 this.FillDataToDetail( lbStore.Text );
                 this.countUDF();
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

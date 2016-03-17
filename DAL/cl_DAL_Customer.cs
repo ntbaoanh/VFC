@@ -27,7 +27,7 @@ namespace DAL
             {
 
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -66,7 +66,7 @@ namespace DAL
                     _rsFlag = 0;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rsFlag = 0;
             }
@@ -178,7 +178,7 @@ namespace DAL
                         int ngaySinh = int.Parse( _dt.Rows[0]["NgaySinh"].ToString() );
                         _myCustomer.NgaySinh = ngaySinh;
                     }
-                    catch ( Exception ex )
+                    catch ( Exception  )
                     {
                         _myCustomer.NgaySinh = 0;
                     }
@@ -188,7 +188,7 @@ namespace DAL
                         int thangSinh = int.Parse( _dt.Rows[0]["ThangSinh"].ToString() );
                         _myCustomer.ThangSinh = thangSinh;
                     }
-                    catch ( Exception ex )
+                    catch ( Exception  )
                     {
                         _myCustomer.ThangSinh = 0;
                     }
@@ -198,7 +198,7 @@ namespace DAL
                         int namSinh = int.Parse( _dt.Rows[0]["NamSinh"].ToString() );
                         _myCustomer.NamSinh = namSinh;
                     }
-                    catch ( Exception ex )
+                    catch ( Exception  )
                     {
                         _myCustomer.NamSinh = 0;
                     }
@@ -252,7 +252,7 @@ namespace DAL
                         int ngaySinh = int.Parse( _dt.Rows[0]["UDF_5"].ToString() );
                         _myCustomer.NgaySinh = ngaySinh;
                     }
-                    catch ( Exception ex )
+                    catch ( Exception  )
                     {
                         _myCustomer.NgaySinh = 0;
                     }
@@ -262,7 +262,7 @@ namespace DAL
                         int thangSinh = int.Parse( _dt.Rows[0]["UDF_6"].ToString() );
                         _myCustomer.ThangSinh = thangSinh;
                     }
-                    catch ( Exception ex )
+                    catch ( Exception  )
                     {
                         _myCustomer.ThangSinh = 0;
                     }
@@ -272,7 +272,7 @@ namespace DAL
                         int namSinh = int.Parse( _dt.Rows[0]["UDF_7"].ToString() );
                         _myCustomer.NamSinh = namSinh;
                     }
-                    catch ( Exception ex )
+                    catch ( Exception  )
                     {
                         _myCustomer.NamSinh = 0;
                     }
@@ -297,10 +297,10 @@ namespace DAL
 
                 _dt = _sqlCon.returnDataTable( _sql );
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
             }
 

@@ -14,8 +14,6 @@ namespace VFC._NhanSu
 {
     public partial class frmNS_NVBH_Insert : DevExpress.XtraEditors.XtraForm
     {
-        cl_DAL_ADMIN admin;
-
         public frmNS_NVBH_Insert()
         {
             InitializeComponent();
@@ -46,7 +44,7 @@ namespace VFC._NhanSu
 
                 // 1, where my other algorithm resulted in 0.
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 years = 0;
             }
@@ -90,7 +88,7 @@ namespace VFC._NhanSu
                         rs += "Thông tin nhân viên đã có. Vui lòng kiểm tra lại." + Environment.NewLine;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     rs += "Lỗi không xác định.[Check Duplicate CMND]" + Environment.NewLine;
                 }
@@ -115,7 +113,7 @@ namespace VFC._NhanSu
             {
                 listThanhPho.EditValue.ToString();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 rs += "Vui lòng chọn thành phố." + Environment.NewLine; 
             }

@@ -117,7 +117,7 @@ namespace VFC._PromotionCode
                 gridView2.BestFitColumns();
                 gridControl2.ExportToXlsx( fileName );
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -143,7 +143,7 @@ namespace VFC._PromotionCode
                     }
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rs = "";
             }
@@ -162,7 +162,7 @@ namespace VFC._PromotionCode
                     _rs += " * [Đến ngày] trước [Từ ngày]" + Environment.NewLine;
                 }
             }
-            catch ( NullReferenceException ex )
+            catch ( NullReferenceException  )
             {
                 if ( fromDate.EditValue == null )
                 {

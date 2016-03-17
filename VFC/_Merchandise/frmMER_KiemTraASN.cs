@@ -152,7 +152,7 @@ namespace VFC._Merchandise
                 
                 gridControl_Compare.DataSource = _compareDt;
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }
@@ -203,7 +203,7 @@ namespace VFC._Merchandise
                     goto StepB;
                 }                
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
 
             }

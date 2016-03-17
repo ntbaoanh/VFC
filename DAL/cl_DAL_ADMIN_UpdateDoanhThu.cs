@@ -8,9 +8,6 @@ namespace DAL
 {
     public class cl_DAL_ADMIN_UpdateDoanhThu
     {
-        Utilities.SQLCon _conn;
-        DataTable _dt;
-
 
     }
 }

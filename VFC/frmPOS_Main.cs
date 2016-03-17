@@ -241,7 +241,7 @@ namespace VFC
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     frmMessageBox.Show("Thông báo", "Có lỗi trong quá trình cập nhật.", "error");
                 }
@@ -384,7 +384,7 @@ namespace VFC
                     rs += "'" + _dt.Rows[i]["INVC_SID"] + "',";
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 rs = "";
             }

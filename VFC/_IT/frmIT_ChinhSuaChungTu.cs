@@ -358,7 +358,7 @@ namespace VFC._IT
                     }
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 return flag = false;
             }

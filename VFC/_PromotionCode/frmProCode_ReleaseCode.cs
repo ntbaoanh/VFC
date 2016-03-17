@@ -13,7 +13,6 @@ namespace VFC._PromotionCode
 {
     public partial class frmProCode_ReleaseCode : DevExpress.XtraEditors.XtraForm
     {
-        cl_DAL_Store _dalStore;
         cl_DAL_PromotionCode _dalProcode;
         DAL.Utilities.Transaction rd;
 
@@ -110,7 +109,7 @@ namespace VFC._PromotionCode
                     _rs += " * Giá trị hóa đơn phải lớn hơn 0." + Environment.NewLine;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rs += " * Giá trị hóa đơn phải là số tự nhiên." + Environment.NewLine;
             }
@@ -130,7 +129,7 @@ namespace VFC._PromotionCode
                     _rs += " * Số hóa đơn không đúng." + Environment.NewLine;
                 }
             }
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 _rs += " * Số hóa đơn không đúng." + Environment.NewLine;
             }
@@ -185,7 +184,7 @@ namespace VFC._PromotionCode
                     btReleaseCode.Enabled = false;
                 }
             }               
-            catch ( Exception ex )
+            catch ( Exception  )
             {
                 frmMessageBox.Show( "Thông báo lỗi" , "Không có thông tin khách hàng đính kèm." 
                     + Environment.NewLine
