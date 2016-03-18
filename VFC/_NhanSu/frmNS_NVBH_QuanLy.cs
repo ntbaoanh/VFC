@@ -16,6 +16,7 @@ namespace VFC._NhanSu
     public partial class frmNS_NVBH_QuanLy : DevExpress.XtraEditors.XtraForm
     {
         DAL.Utilities.SQLCon _conn;
+        public static bool updateGridFlag = false;
 
         public frmNS_NVBH_QuanLy()
         {
@@ -46,10 +47,14 @@ namespace VFC._NhanSu
 
             gridControl1.DataSource = _conn.returnDataTable(_query);
         }
+
+           
         #endregion
 
         private void frmNS_NVBH_QuanLy_Load(object sender, EventArgs e)
         {
+            timer_UpdateGrid.Enabled = true;
+            timer_UpdateGrid.Interval = 1000;//=1s
             this.LoadDSNhanVien("new");
         }
 
@@ -75,13 +80,23 @@ namespace VFC._NhanSu
 
         private void btDeActive_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                timer_UpdateGrid.Start();
+                _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("active", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
+                myFrm.ShowDialog();
+            }
+            catch (NullReferenceException)
+            {
+                frmMessageBox.Show("Thông báo", "Vui lòng chọn nhân viên muốn chỉnh sửa [Active - DeActive].", "error");
+            }
         }
 
         private void btChinhSua_Click(object sender, EventArgs e)
         {
             try
             {
+                timer_UpdateGrid.Start();
                 _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("edit", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
                 myFrm.ShowDialog();
             }
@@ -93,18 +108,30 @@ namespace VFC._NhanSu
 
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
+            timer_UpdateGrid.Start();
             _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update();
             myFrm.ShowDialog();
         }
 
         private void btDeBat_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                timer_UpdateGrid.Start();
+                _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("debat", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
+                myFrm.ShowDialog();
+            }
+            catch (NullReferenceException)
+            {
+                frmMessageBox.Show("Thông báo", "Vui lòng chọn nhân viên muốn chỉnh sửa [Đề bạt Nhân Viên].", "error");
+            }
         }
 
         private void btThuyenChuyen_Click(object sender, EventArgs e)
         {
-
+            timer_UpdateGrid.Start();
+            _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("luanchuyen", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
+            myFrm.ShowDialog();
         }
 
         private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
@@ -119,6 +146,16 @@ namespace VFC._NhanSu
                     e.Appearance.BackColor = Color.Salmon;
                     e.Appearance.BackColor2 = Color.SeaShell;
                 }
+            }
+        }
+
+        private void timer_UpdateGrid_Tick(object sender, EventArgs e)
+        {
+            if (updateGridFlag)
+            {
+                this.LoadDSNhanVien("new");
+                updateGridFlag = false;
+                timer_UpdateGrid.Stop();
             }
         }
     }

@@ -107,6 +107,24 @@ namespace DAL
             return flag;
         }
 
+        public bool CHECK_NVBH_Exists_ByCMND_Update(string cmnd, int nvsid)
+        {
+            bool flag = false;
+
+            string query = "select NVSID, CMND from NHANSU.v_NhanVienBanHang where NVSID = " + nvsid;
+            _connSQL = new Utilities.SQLCon();
+
+            dt = new DataTable();
+            dt = _connSQL.returnDataTable(query);
+
+            if (dt.Rows[0]["CMND"].ToString().Equals(cmnd))
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
+
         public bool CHECK_NVBH_Exists_ByNVID(int nvid)
         {
             bool flag = false;
@@ -118,6 +136,24 @@ namespace DAL
             dt = _connSQL.returnDataTable(query);
 
             if (dt.Rows.Count == 1)
+            {
+                flag = true;
+            }
+
+            return flag;
+        }
+
+        public bool CHECK_NVBH_Exists_ByNVID_Update(int nvid, int nvsid)
+        {
+            bool flag = false;
+
+            string query = "select NVSID, NVID from NHANSU.v_NhanVienBanHang where NVSID = " + nvsid;
+            _connSQL = new Utilities.SQLCon();
+
+            dt = new DataTable();
+            dt = _connSQL.returnDataTable(query);
+
+            if (dt.Rows[0]["NVID"].ToString().Equals(nvid.ToString()))
             {
                 flag = true;
             }
@@ -209,7 +245,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@urlImage", _nvbh.UrlImage);
                 //command.Parameters.AddWithValue("@LuongCanBan", _nvbh.LuongCanBan);
                 command.Parameters.AddWithValue("@GhiChu", _nvbh.GhiChu);
-                command.Parameters.AddWithValue("@ModifiedBy", _nvbh.ModifiedBy);
+                command.Parameters.AddWithValue("@MofifiedBy", _nvbh.ModifiedBy);
 
                 SqlParameter _output = command.Parameters.Add("@output", SqlDbType.NVarChar, 20);
 
@@ -442,6 +478,57 @@ namespace DAL
             }
 
             return check;
+        }
+
+        public bool UPDATE_LuanChuyen_NVBH(int _storeNo, string _ghiChu, string _modifiedBy, int _nvSid, string _dateLC, int _fromStore)
+        {
+            bool flag = false;
+
+            try
+            {
+                _connSQL = new Utilities.SQLCon();
+
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                if (_dateLC.Equals(""))
+                {
+                    command.CommandText = "[NHANSU].[spud_NVBH_LuanChuyen_Now]";
+                }
+                else
+                {
+                    command.CommandText = "[NHANSU].[spud_NVBH_LuanChuyen_Insert_Queue]";
+                    command.Parameters.AddWithValue("@DateQueue", _dateLC);
+                    command.Parameters.AddWithValue("@FromStoreNo", _fromStore);
+                }
+                command.Parameters.AddWithValue("@NVSID", _nvSid);
+                command.Parameters.AddWithValue("@StoreNo", _storeNo);
+                command.Parameters.AddWithValue("@GhiChu", _ghiChu);
+                command.Parameters.AddWithValue("@ModifiedBy", _modifiedBy);
+
+                SqlParameter _output = command.Parameters.Add("@output", SqlDbType.NVarChar, 20);
+
+                _output.Direction = ParameterDirection.Output;
+
+                command.Connection = _connSQL.getConnection();
+
+                command.ExecuteNonQuery();
+
+                if (_output.Value.Equals("success"))
+                {
+                    flag = true;
+                }
+                else
+                {
+                    flag = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                flag = false;
+                throw new Exception(ex.Message);
+            }
+
+            return flag;
         }
     }
 }

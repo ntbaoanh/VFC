@@ -335,7 +335,6 @@ namespace DAL
             catch ( Exception ex )
             {
                 throw new Exception( ex.Message );
-                _dt = null;
             }
 
             return _dt;
@@ -354,7 +353,6 @@ namespace DAL
             catch ( Exception ex )
             {
                 throw new Exception( ex.Message );
-                _dt = null;
             }
 
             return _dt;

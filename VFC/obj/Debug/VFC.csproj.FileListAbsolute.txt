@@ -726,10 +726,10 @@ G:\DevExpress13\VFC\VFC\obj\Debug\VFC._ThietKe.frmTK_MTK_Manage.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Vai.frmVai_Insert.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Vai.frmVai_Manage.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC.csproj.GenerateResource.Cache
-G:\DevExpress13\VFC\VFC\obj\Debug\VFC.exe.licenses
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC.exe
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC.pdb
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_Insert.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_NVBH_DoanhSo_NV.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_QuanLy.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_Update.resources
+G:\DevExpress13\VFC\VFC\obj\Debug\VFC.exe.licenses

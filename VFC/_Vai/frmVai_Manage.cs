@@ -114,23 +114,6 @@ namespace VFC._Vai
 
         private void DeleteSelectedRows(DevExpress.XtraGrid.Views.Grid.GridView view)
         {
-            //if (view == null || view.SelectedRowsCount == 0) return;
-
-            //DataRow[] rows = new DataRow[view.SelectedRowsCount];
-
-            //for (int i = 0; i < view.SelectedRowsCount; i++)
-            //    rows[i] = view.GetDataRow(view.GetSelectedRows()[i]);
-            //view.BeginSort();
-
-            //try
-            //{
-            //    foreach (DataRow row in rows)
-            //        row.Delete();
-            //}
-            //finally
-            //{
-            //    view.EndSort();                
-            //}
             view.DeleteSelectedRows();
         }
 

@@ -92,9 +92,25 @@ namespace VFC._NhanSu
                     try
                     {
                         cl_DAL_NhanVienBanHang dalNvbh = new cl_DAL_NhanVienBanHang();
-                        if (dalNvbh.CHECK_NVBH_Exists_ByCMND(txtCMND.Text))
+                        if (lbNVSID.Text.Equals(""))
                         {
-                            rs += "Thông tin nhân viên đã có. Vui lòng kiểm tra lại." + Environment.NewLine;
+                            if (dalNvbh.CHECK_NVBH_Exists_ByCMND(txtCMND.Text))
+                            {
+                                rs += "Thông tin nhân viên đã có. Vui lòng kiểm tra lại." + Environment.NewLine;
+                            }
+                        }
+                        else
+                        {
+                            if (!lbNVSID.Text.Equals(""))
+                            {
+                                if (!dalNvbh.CHECK_NVBH_Exists_ByCMND_Update(txtCMND.Text.Trim(), int.Parse(lbNVSID.Text)))
+                                {
+                                    if (dalNvbh.CHECK_NVBH_Exists_ByCMND(txtCMND.Text))
+                                    {
+                                        rs += "Thông tin nhân viên đã có. Vui lòng kiểm tra lại." + Environment.NewLine;
+                                    }
+                                }
+                            }
                         }
                     }
                     catch (Exception )
@@ -127,9 +143,25 @@ namespace VFC._NhanSu
                     try
                     {
                         cl_DAL_NhanVienBanHang dalNvbh = new cl_DAL_NhanVienBanHang();
-                        if (dalNvbh.CHECK_NVBH_Exists_ByNVID(int.Parse(txtInfo_NVID.Text)))
+                        if (lbNVSID.Text.Equals(""))
                         {
-                            rs += "ID đã tồn tại. Vui lòng kiểm tra lại." + Environment.NewLine;
+                            if (dalNvbh.CHECK_NVBH_Exists_ByNVID(int.Parse(txtInfo_NVID.Text)))
+                            {
+                                rs += "ID đã tồn tại. Vui lòng kiểm tra lại." + Environment.NewLine;
+                            }
+                        }
+                        else
+                        {
+                            if (!lbNVSID.Text.Equals(""))
+                            {
+                                if (!dalNvbh.CHECK_NVBH_Exists_ByNVID_Update(int.Parse(txtInfo_NVID.Text.Trim()), int.Parse(lbNVSID.Text)))
+                                {
+                                    if (dalNvbh.CHECK_NVBH_Exists_ByNVID(int.Parse(txtInfo_NVID.Text)))
+                                    {
+                                        rs += "ID đã tồn tại. Vui lòng kiểm tra lại." + Environment.NewLine;
+                                    }
+                                }
+                            }
                         }
                     }
                     catch (Exception )
@@ -145,6 +177,40 @@ namespace VFC._NhanSu
                 catch (Exception )
                 {
                     rs += "Lương căn bản phải là số tự nhiên.";
+                }
+            }
+            else if (_type.Equals("luanchuyen"))
+            {
+                if (listStores.EditValue == null)
+                {
+                    rs += "Vui lòng chọn cửa hàng muốn chuyển" + Environment.NewLine;
+                }
+                else
+                {
+                    if (listStoresInfo.EditValue.Equals(listStores.EditValue))
+                    {
+                        rs += "Cửa hàng muốn chuyển giống cửa hàng hiện tai." + Environment.NewLine;
+                    }
+                }
+
+                if (dateLC.EditValue == null)
+                {
+                    rs += "Vui lòng chọn ngày áp dụng." + Environment.NewLine;
+                }
+                else
+                {
+                    if (!DateTime.Now.ToString("yyyy-MM-dd").Equals(((DateTime)dateLC.EditValue).ToString("yyyy-MM-dd")))
+                    {
+                        if (DateTime.Now > (DateTime)dateLC.EditValue)
+                        {
+                            rs += "Ngày áp dụng không thể ở quá khứ." + Environment.NewLine;
+                        }
+                    }
+                }
+
+                if (txtLC_GhiChu.Text.Trim().Equals(""))
+                {
+                    rs += "Vui lòng điền vào ghi chú." + Environment.NewLine;
                 }
             }
 
@@ -172,7 +238,7 @@ namespace VFC._NhanSu
                 txtCMND.Enabled = false;
                 txtPhone.Text = _proNvbh.Phone;
                 txtPhone.Enabled = false;
-                dateNgaySinh.EditValue = _proNvbh.NgaySinh;
+                dateNgaySinh.EditValue = _proNvbh.NgaySinh.Substring(0, 10);
                 dateNgaySinh.Enabled = false;
                 if(_proNvbh.GioiTinh.Equals("true"))
                 {
@@ -211,7 +277,9 @@ namespace VFC._NhanSu
                 _proNvbh = _dalNvbh.GET_NVBH_BySID(_nvsid.ToString());
 
                 listStoresInfo.EditValue = _proNvbh.StoreNo;
+                listStoresInfo.Enabled = false;
                 cbbChucVu.SelectedText = _proNvbh.ChucVu;
+                cbbChucVu.Enabled = false;
                 txtHo.Text = _proNvbh.Ho;
                 txtTen.Text = _proNvbh.Ten;
                 txtCMND.Text = _proNvbh.Cmnd;
@@ -260,9 +328,11 @@ namespace VFC._NhanSu
                 this.Text = "Luân chuyển nhân viên";
                 xtraTabPage_LuanChuyen.PageEnabled = true;
                 this.LoadDSCuaHang(listStores);
-                txtTC_GhiChu.Text = "Luân chuyển nhân viên";
+                this.LoadNVInfo_Disable();
+                txtLC_GhiChu.Text = "Luân chuyển nhân viên";
+                lbNVSID.Text = _nvsid.ToString();
             }
-            if (_type.Equals("edit"))
+            else if (_type.Equals("edit"))
             {
                 this.Text = "Cập nhật nhân viên";
                 xtraTabPage_ThongTin.PageEnabled = true;
@@ -275,6 +345,18 @@ namespace VFC._NhanSu
                 this.Text = "Tạo mới Nhân viên bán hàng";
                 xtraTabPage_ThongTin.PageEnabled = true;
                 txtInfo_GhiChu.Text = "POS - Tạo mới nhân viên";
+            }
+            else if (_type.Equals("debat"))
+            {
+                this.Text = "Đề bạt Nhân viên bán hàng";
+                xtraTabPage_ThongTin.PageEnabled = true;
+                txtInfo_GhiChu.Text ="Đề bạt nhân viên";
+            }
+            else if (_type.Equals("active"))
+            {
+                this.Text = "Active - Deactive Nhân viên bán hàng";
+                xtraTabPage_ThongTin.PageEnabled = true;
+                txtInfo_GhiChu.Text = "Active nhân viên";
             }
         }
 
@@ -303,19 +385,25 @@ namespace VFC._NhanSu
                     }
                     proNvbh.DiaChi = txtDiaChi.Text.Trim();
                     proNvbh.StoreNo = int.Parse(listStoresInfo.EditValue.ToString());
-                    proNvbh.ChucVu = cbbChucVu.SelectedText;
-                    proNvbh.StoreCode = frmMain._myAppConfig.StoreCode;
+                    proNvbh.ChucVu = cbbChucVu.Text;
+                    proNvbh.StoreCode = listStoresInfo.EditValue.ToString();
                     proNvbh.ModifiedBy = frmHO_Main._userLogin.UserName;
                     proNvbh.UrlImage = "";                    
                     proNvbh.LuongCanBan = int.Parse(txtInfo_LuongCanBan.Text.Trim());
                     proNvbh.GhiChu = txtInfo_GhiChu.Text.Trim();
                     proNvbh.NvbhId = txtInfo_NVID.Text;
 
+                    if (!lbNVSID.Text.Equals(""))
+                    { 
+                        proNvbh.NvbhSid = int.Parse(lbNVSID.Text);
+                    }
+
                     cl_DAL_NhanVienBanHang dalNvbh = new cl_DAL_NhanVienBanHang();
                     if (lbNVSID.Text.Equals(""))
                     {
                         if (dalNvbh.INSERT_NVBH(proNvbh))
                         {
+                            frmNS_NVBH_QuanLy.updateGridFlag = true; 
                             frmMessageBox.Show("Thông báo", "Tạo mới nhân viên bán hàng thành công.", "done");
                             this.Close();
                         }
@@ -328,6 +416,7 @@ namespace VFC._NhanSu
                     {
                         if (dalNvbh.UPDATE_NVBH(proNvbh))
                         {
+                            frmNS_NVBH_QuanLy.updateGridFlag = true; 
                             frmMessageBox.Show("Thông báo", "Cập nhật nhân viên bán hàng thành công.", "done");
                             this.Close();
                         }
@@ -352,6 +441,37 @@ namespace VFC._NhanSu
             else
             {
                 frmMessageBox.Show("Thông báo", iValidate, "error");
+            }
+        }
+
+        private void btThuyeChuyen_Click(object sender, EventArgs e)
+        {
+            string rs = this.iValidate("luanchuyen");
+
+            if (rs.Equals(""))
+            {
+                string _dateLC = "";
+
+                if (!DateTime.Now.ToString("yyyy-MM-dd").Equals(((DateTime)dateLC.EditValue).ToString("yyyy-MM-dd")))
+                { 
+                    _dateLC = ((DateTime)dateLC.EditValue).ToString("MM/dd/yyyy");
+                }
+
+                cl_DAL_NhanVienBanHang _dalNvbh = new cl_DAL_NhanVienBanHang();
+                if (_dalNvbh.UPDATE_LuanChuyen_NVBH(int.Parse(listStores.EditValue.ToString()), txtLC_GhiChu.Text.Trim(), frmHO_Main._userLogin.UserName, _nvsid, _dateLC, int.Parse(listStoresInfo.EditValue.ToString())))
+                {
+                    frmMessageBox.Show("Thông báo.", "Luân chuyển nhân viên thành công.", "done");
+                    frmNS_NVBH_QuanLy.updateGridFlag = true;
+                    this.Close();
+                }
+                else
+                {
+                    frmMessageBox.Show("Thông báo.", "Luân chuyển nhân viên không thành công." + Environment.NewLine + "Liên hệ quản trị viên. [Lỗi không xác định]", "error");
+                }
+            }
+            else
+            {
+                frmMessageBox.Show("Thông báo", rs.ToString(), "error");
             }
         }
     }

@@ -71,6 +71,7 @@ namespace VFC
 
         private void frmPOS_Main_FormClosed( object sender , FormClosedEventArgs e )
         {
+            frmMessageBox.Show("Thông báo", "Nhớ check out nhân viên.", "alert");
             Application.Exit();
         }
 
@@ -346,17 +347,7 @@ namespace VFC
 
         private void timer_CheckInvoice_Tick(object sender, EventArgs e)
         {
-            //frmMessageBox.Show("", this.DSInvcSidRPro9(int.Parse(frmMain._myAppConfig.StoreNo)),"error");
-            //timer_CheckInvoice.Stop();
             cl_DAL_ADMIN admin = new cl_DAL_ADMIN();
-            //if (admin.MadeByMe(this.DSInvcSidRPro9(int.Parse(frmMain._myAppConfig.StoreNo))))
-            //{
-            //    frmMessageBox.Show("", "Success", "error");
-            //}
-            //else
-            //{
-            //    frmMessageBox.Show("", "Fail", "error");
-            //}
             admin.MadeByMe(this.DSInvcSidRPro9(int.Parse(frmMain._myAppConfig.StoreNo)));
         }
 

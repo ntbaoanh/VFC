@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNS_NVBH_QuanLy));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -37,6 +38,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btDSNV_DeActive = new DevExpress.XtraEditors.SimpleButton();
             this.btDSNV_Moi = new DevExpress.XtraEditors.SimpleButton();
@@ -49,7 +51,7 @@
             this.btChinhSua = new DevExpress.XtraEditors.SimpleButton();
             this.btTaoMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btThuyenChuyen = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.timer_UpdateGrid = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -156,6 +158,12 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Approve";
+            this.gridColumn7.FieldName = "Approve";
+            this.gridColumn7.Name = "gridColumn7";
             // 
             // groupControl1
             // 
@@ -314,11 +322,10 @@
             this.btThuyenChuyen.Text = "Thuyên chuyển";
             this.btThuyenChuyen.Click += new System.EventHandler(this.btThuyenChuyen_Click);
             // 
-            // gridColumn7
+            // timer_UpdateGrid
             // 
-            this.gridColumn7.Caption = "Approve";
-            this.gridColumn7.FieldName = "Approve";
-            this.gridColumn7.Name = "gridColumn7";
+            this.timer_UpdateGrid.Interval = 1000;
+            this.timer_UpdateGrid.Tick += new System.EventHandler(this.timer_UpdateGrid_Tick);
             // 
             // frmNS_NVBH_QuanLy
             // 
@@ -366,6 +373,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.SimpleButton btDeBat;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private System.Windows.Forms.Timer timer_UpdateGrid;
 
     }
 }
