@@ -733,3 +733,6 @@ G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_NVBH_DoanhSo_NV.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_QuanLy.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_Update.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC.exe.licenses
+G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_NVBH_DoanhSoNgay.resources
+G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_Insert.resources
+G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_QuanLy.resources

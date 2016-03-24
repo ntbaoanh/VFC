@@ -77,21 +77,23 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage_NghiViec = new DevExpress.XtraTab.XtraTabPage();
+            this.rdDeActive = new System.Windows.Forms.RadioButton();
+            this.rdActive = new System.Windows.Forms.RadioButton();
             this.dateNV = new DevExpress.XtraEditors.DateEdit();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.btDeActive = new DevExpress.XtraEditors.SimpleButton();
+            this.btUpdateDeActive = new DevExpress.XtraEditors.SimpleButton();
             this.txtNV_GhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPage_DeBat = new DevExpress.XtraTab.XtraTabPage();
             this.btDeBat = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbbDB_ChucVu = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dateDB = new DevExpress.XtraEditors.DateEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.txtDB_GhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDB_LuongCB = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             this.xtraScrollableControl1.SuspendLayout();
@@ -125,11 +127,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV_GhiChu.Properties)).BeginInit();
             this.xtraTabPage_DeBat.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbDB_ChucVu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDB.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDB_GhiChu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDB_LuongCB.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -329,7 +331,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgaySinh.Size = new System.Drawing.Size(263, 26);
+            this.dateNgaySinh.Size = new System.Drawing.Size(263, 20);
             this.dateNgaySinh.TabIndex = 26;
             // 
             // txtPhone
@@ -608,7 +610,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateLC.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateLC.Size = new System.Drawing.Size(275, 26);
+            this.dateLC.Size = new System.Drawing.Size(275, 20);
             this.dateLC.TabIndex = 17;
             // 
             // txtLC_GhiChu
@@ -714,14 +716,40 @@
             // 
             // xtraTabPage_NghiViec
             // 
+            this.xtraTabPage_NghiViec.Controls.Add(this.rdDeActive);
+            this.xtraTabPage_NghiViec.Controls.Add(this.rdActive);
             this.xtraTabPage_NghiViec.Controls.Add(this.dateNV);
             this.xtraTabPage_NghiViec.Controls.Add(this.labelControl14);
-            this.xtraTabPage_NghiViec.Controls.Add(this.btDeActive);
+            this.xtraTabPage_NghiViec.Controls.Add(this.btUpdateDeActive);
             this.xtraTabPage_NghiViec.Controls.Add(this.txtNV_GhiChu);
             this.xtraTabPage_NghiViec.Controls.Add(this.labelControl12);
             this.xtraTabPage_NghiViec.Name = "xtraTabPage_NghiViec";
             this.xtraTabPage_NghiViec.Size = new System.Drawing.Size(421, 396);
-            this.xtraTabPage_NghiViec.Text = "Nghỉ việc";
+            this.xtraTabPage_NghiViec.Text = "Tình trạng Công việc";
+            // 
+            // rdDeActive
+            // 
+            this.rdDeActive.AutoSize = true;
+            this.rdDeActive.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdDeActive.Location = new System.Drawing.Point(179, 146);
+            this.rdDeActive.Name = "rdDeActive";
+            this.rdDeActive.Size = new System.Drawing.Size(99, 22);
+            this.rdDeActive.TabIndex = 22;
+            this.rdDeActive.TabStop = true;
+            this.rdDeActive.Text = "De-Active";
+            this.rdDeActive.UseVisualStyleBackColor = true;
+            // 
+            // rdActive
+            // 
+            this.rdActive.AutoSize = true;
+            this.rdActive.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdActive.Location = new System.Drawing.Point(100, 146);
+            this.rdActive.Name = "rdActive";
+            this.rdActive.Size = new System.Drawing.Size(73, 22);
+            this.rdActive.TabIndex = 22;
+            this.rdActive.TabStop = true;
+            this.rdActive.Text = "Active";
+            this.rdActive.UseVisualStyleBackColor = true;
             // 
             // dateNV
             // 
@@ -734,7 +762,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNV.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNV.Size = new System.Drawing.Size(275, 26);
+            this.dateNV.Size = new System.Drawing.Size(275, 20);
             this.dateNV.TabIndex = 21;
             // 
             // labelControl14
@@ -746,16 +774,17 @@
             this.labelControl14.TabIndex = 20;
             this.labelControl14.Text = "Ngày  :";
             // 
-            // btDeActive
+            // btUpdateDeActive
             // 
-            this.btDeActive.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDeActive.Appearance.Options.UseFont = true;
-            this.btDeActive.Image = ((System.Drawing.Image)(resources.GetObject("btDeActive.Image")));
-            this.btDeActive.Location = new System.Drawing.Point(100, 146);
-            this.btDeActive.Name = "btDeActive";
-            this.btDeActive.Size = new System.Drawing.Size(145, 35);
-            this.btDeActive.TabIndex = 19;
-            this.btDeActive.Text = "Nghỉ việc";
+            this.btUpdateDeActive.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btUpdateDeActive.Appearance.Options.UseFont = true;
+            this.btUpdateDeActive.Image = ((System.Drawing.Image)(resources.GetObject("btUpdateDeActive.Image")));
+            this.btUpdateDeActive.Location = new System.Drawing.Point(100, 174);
+            this.btUpdateDeActive.Name = "btUpdateDeActive";
+            this.btUpdateDeActive.Size = new System.Drawing.Size(145, 35);
+            this.btUpdateDeActive.TabIndex = 19;
+            this.btUpdateDeActive.Text = "Cập nhật";
+            this.btUpdateDeActive.Click += new System.EventHandler(this.btDeActive_Click);
             // 
             // txtNV_GhiChu
             // 
@@ -779,14 +808,14 @@
             // xtraTabPage_DeBat
             // 
             this.xtraTabPage_DeBat.Controls.Add(this.btDeBat);
-            this.xtraTabPage_DeBat.Controls.Add(this.comboBoxEdit1);
+            this.xtraTabPage_DeBat.Controls.Add(this.cbbDB_ChucVu);
             this.xtraTabPage_DeBat.Controls.Add(this.dateDB);
             this.xtraTabPage_DeBat.Controls.Add(this.labelControl19);
             this.xtraTabPage_DeBat.Controls.Add(this.labelControl17);
             this.xtraTabPage_DeBat.Controls.Add(this.labelControl15);
             this.xtraTabPage_DeBat.Controls.Add(this.txtDB_GhiChu);
             this.xtraTabPage_DeBat.Controls.Add(this.labelControl16);
-            this.xtraTabPage_DeBat.Controls.Add(this.textEdit1);
+            this.xtraTabPage_DeBat.Controls.Add(this.txtDB_LuongCB);
             this.xtraTabPage_DeBat.Name = "xtraTabPage_DeBat";
             this.xtraTabPage_DeBat.Size = new System.Drawing.Size(421, 396);
             this.xtraTabPage_DeBat.Text = "Đề bạt";
@@ -801,22 +830,23 @@
             this.btDeBat.Size = new System.Drawing.Size(145, 35);
             this.btDeBat.TabIndex = 28;
             this.btDeBat.Text = "Đề bạt";
+            this.btDeBat.Click += new System.EventHandler(this.btDeBat_Click);
             // 
-            // comboBoxEdit1
+            // cbbDB_ChucVu
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(152, 43);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbbDB_ChucVu.Location = new System.Drawing.Point(152, 43);
+            this.cbbDB_ChucVu.Name = "cbbDB_ChucVu";
+            this.cbbDB_ChucVu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDB_ChucVu.Properties.Appearance.Options.UseFont = true;
+            this.cbbDB_ChucVu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
+            this.cbbDB_ChucVu.Properties.Items.AddRange(new object[] {
             "NVBH",
             "NVQ",
             "TL",
             "CHT"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(238, 26);
-            this.comboBoxEdit1.TabIndex = 27;
+            this.cbbDB_ChucVu.Size = new System.Drawing.Size(238, 26);
+            this.cbbDB_ChucVu.TabIndex = 27;
             // 
             // dateDB
             // 
@@ -829,7 +859,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateDB.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDB.Size = new System.Drawing.Size(238, 26);
+            this.dateDB.Size = new System.Drawing.Size(238, 20);
             this.dateDB.TabIndex = 26;
             // 
             // labelControl19
@@ -878,14 +908,14 @@
             this.labelControl16.TabIndex = 22;
             this.labelControl16.Text = "Ghi chú :";
             // 
-            // textEdit1
+            // txtDB_LuongCB
             // 
-            this.textEdit1.Location = new System.Drawing.Point(152, 11);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(238, 26);
-            this.textEdit1.TabIndex = 21;
+            this.txtDB_LuongCB.Location = new System.Drawing.Point(152, 11);
+            this.txtDB_LuongCB.Name = "txtDB_LuongCB";
+            this.txtDB_LuongCB.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDB_LuongCB.Properties.Appearance.Options.UseFont = true;
+            this.txtDB_LuongCB.Size = new System.Drawing.Size(238, 26);
+            this.txtDB_LuongCB.TabIndex = 21;
             // 
             // frmNS_NVBH_Update
             // 
@@ -940,11 +970,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNV_GhiChu.Properties)).EndInit();
             this.xtraTabPage_DeBat.ResumeLayout(false);
             this.xtraTabPage_DeBat.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbbDB_ChucVu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDB.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDB_GhiChu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDB_LuongCB.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -987,7 +1017,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.MemoEdit txtNV_GhiChu;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.SimpleButton btDeActive;
+        private DevExpress.XtraEditors.SimpleButton btUpdateDeActive;
         private DevExpress.XtraEditors.DateEdit dateLC;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.DateEdit dateNV;
@@ -998,8 +1028,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.MemoEdit txtDB_GhiChu;
         private DevExpress.XtraEditors.LabelControl labelControl16;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.TextEdit txtDB_LuongCB;
+        private DevExpress.XtraEditors.ComboBoxEdit cbbDB_ChucVu;
         private DevExpress.XtraEditors.SimpleButton btDeBat;
         private DevExpress.XtraEditors.TextEdit txtInfo_NVID;
         private DevExpress.XtraEditors.LabelControl labelControl18;
@@ -1014,6 +1044,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl21;
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraEditors.TextEdit txtInfo_LuongCanBan;
+        private System.Windows.Forms.RadioButton rdDeActive;
+        private System.Windows.Forms.RadioButton rdActive;
 
     }
 }

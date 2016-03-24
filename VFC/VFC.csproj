@@ -394,6 +394,18 @@
     <Compile Include="_NhaCungCap\frmNCC_NhaCungCap_Manage.Designer.cs">
       <DependentUpon>frmNCC_NhaCungCap_Manage.cs</DependentUpon>
     </Compile>
+    <Compile Include="_NhanSu\frmNS_NVBH_CheckInOut_Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_NhanSu\frmNS_NVBH_CheckInOut_Insert.Designer.cs">
+      <DependentUpon>frmNS_NVBH_CheckInOut_Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_NhanSu\frmNS_NVBH_CheckInOut_QuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_NhanSu\frmNS_NVBH_CheckInOut_QuanLy.Designer.cs">
+      <DependentUpon>frmNS_NVBH_CheckInOut_QuanLy.cs</DependentUpon>
+    </Compile>
     <Compile Include="_NhanSu\frmNS_NVBH_Insert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -513,6 +525,12 @@
     </Compile>
     <Compile Include="_Report\rp_SoLieu_XuLyCLKK.designer.cs">
       <DependentUpon>rp_SoLieu_XuLyCLKK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_Sale\frmSale_NVBH_DoanhSoNgay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Sale\frmSale_NVBH_DoanhSoNgay.Designer.cs">
+      <DependentUpon>frmSale_NVBH_DoanhSoNgay.cs</DependentUpon>
     </Compile>
     <Compile Include="_Sale\frmSale_NVBH_DoanhSo_NV.cs">
       <SubType>Form</SubType>
@@ -740,6 +758,12 @@
     <EmbeddedResource Include="_NhaCungCap\frmNCC_NhaCungCap_Manage.resx">
       <DependentUpon>frmNCC_NhaCungCap_Manage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_NhanSu\frmNS_NVBH_CheckInOut_Insert.resx">
+      <DependentUpon>frmNS_NVBH_CheckInOut_Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_NhanSu\frmNS_NVBH_CheckInOut_QuanLy.resx">
+      <DependentUpon>frmNS_NVBH_CheckInOut_QuanLy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_NhanSu\frmNS_NVBH_Insert.resx">
       <DependentUpon>frmNS_NVBH_Insert.cs</DependentUpon>
     </EmbeddedResource>
@@ -800,6 +824,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_Report\rp_SoLieu_XuLyCLKK.resx">
       <DependentUpon>rp_SoLieu_XuLyCLKK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Sale\frmSale_NVBH_DoanhSoNgay.resx">
+      <DependentUpon>frmSale_NVBH_DoanhSoNgay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_Sale\frmSale_NVBH_DoanhSo_NV.resx">
       <DependentUpon>frmSale_NVBH_DoanhSo_NV.cs</DependentUpon>

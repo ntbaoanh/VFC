@@ -112,12 +112,12 @@ namespace VFC
                 bt_CTKM_TriAnKH_112015.Enabled = true;
             }
 
-            if (frmMain._myAppConfig.StoreCode.Equals("NT8"))
-            {
-                timer_CheckInvoice.Enabled = true;
-                timer_CheckInvoice.Interval = 1 * 1 * 60 * 1000;//h*m*s*ms
-                timer_CheckInvoice.Start();
-            }
+            //if (frmMain._myAppConfig.StoreCode.Equals("NT8"))
+            //{
+            //    timer_CheckInvoice.Enabled = true;
+            //    timer_CheckInvoice.Interval = 1 * 1 * 60 * 1000;//h*m*s*ms
+            //    timer_CheckInvoice.Start();
+            //}
         }
 
         private void bt_MER_InventoryLookUp_ItemClick( object sender , ItemClickEventArgs e )
@@ -347,8 +347,8 @@ namespace VFC
 
         private void timer_CheckInvoice_Tick(object sender, EventArgs e)
         {
-            cl_DAL_ADMIN admin = new cl_DAL_ADMIN();
-            admin.MadeByMe(this.DSInvcSidRPro9(int.Parse(frmMain._myAppConfig.StoreNo)));
+            //cl_DAL_ADMIN admin = new cl_DAL_ADMIN();
+            //admin.MadeByMe(this.DSInvcSidRPro9(int.Parse(frmMain._myAppConfig.StoreNo)));
         }
 
         #region Action
@@ -356,29 +356,29 @@ namespace VFC
         {
             string rs = "";
 
-            string _query = "select i.INVC_SID "
-                    + " from INVOICE_v i"
-                    + " where i.created_date >= to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + " 00:00:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
-                      + " and i.created_date <= to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
-                      + " and i.store_no = " + _storeNo
-                      + " and i.invc_type in (0,2)"
-                      + " AND i.Proc_Status = 0";
+            //string _query = "select i.INVC_SID "
+            //        + " from INVOICE_v i"
+            //        + " where i.created_date >= to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + " 00:00:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
+            //          + " and i.created_date <= to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
+            //          + " and i.store_no = " + _storeNo
+            //          + " and i.invc_type in (0,2)"
+            //          + " AND i.Proc_Status = 0";
 
-            try
-            {
-                DAL.Utilities.ORACon _oraCon = new DAL.Utilities.ORACon();
-                DataTable _dt = new DataTable();
-                _dt = _oraCon.returnDataTable(_query, "PC-NT8");
+            //try
+            //{
+            //    DAL.Utilities.ORACon _oraCon = new DAL.Utilities.ORACon();
+            //    DataTable _dt = new DataTable();
+            //    _dt = _oraCon.returnDataTable(_query, "PC-NT8");
 
-                for (int i = 0; i < _dt.Rows.Count; i++)
-                { 
-                    rs += "'" + _dt.Rows[i]["INVC_SID"] + "',";
-                }
-            }
-            catch (Exception )
-            {
-                rs = "";
-            }
+            //    for (int i = 0; i < _dt.Rows.Count; i++)
+            //    { 
+            //        rs += "'" + _dt.Rows[i]["INVC_SID"] + "',";
+            //    }
+            //}
+            //catch (Exception )
+            //{
+            //    rs = "";
+            //}
 
             return rs.Substring(0, rs.Length - 1);
         }

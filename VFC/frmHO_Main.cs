@@ -62,6 +62,7 @@ namespace VFC
         private static _Vai.frmVai_Manage frmManageVai;
         private static _NhaCungCap.frmNCC_NhaCungCap_Manage frmManage_NCC;
         private static _NhanSu.frmNS_NVBH_QuanLy frmNS_NVBH_Manage;
+        private static _NhanSu.frmNS_NVBH_CheckInOut_QuanLy frmNS_ThemRaVao;
         #endregion
 
         public static bool showMenu = false;
@@ -863,6 +864,28 @@ namespace VFC
             else
             {
                 frmMessageBox.Show("Thông báo", "Bạn chưa có quyền sử dụng module này. [45]", "error");
+            }
+        }
+
+        private void bt_NS_ThemCheckInOut_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (lbUserLogin.Caption.Equals(_sysadmin) || _dalUser.checkUserRole(lbUserLogin.Caption.ToString(), "47"))
+            {
+                rbActive = ribbonPage_NhanSu;
+                if (frmNS_ThemRaVao == null || frmNS_ThemRaVao.IsDisposed)
+                {
+                    frmNS_ThemRaVao = new _NhanSu.frmNS_NVBH_CheckInOut_QuanLy();
+                    frmNS_ThemRaVao.MdiParent = this;
+                    frmNS_ThemRaVao.Show();
+                }
+                else
+                {
+                    frmNS_ThemRaVao.Activate();
+                }
+            }
+            else
+            {
+                frmMessageBox.Show("Thông báo", "Bạn chưa có quyền sử dụng module này. [47]", "error");
             }
         }
     }
