@@ -22,6 +22,17 @@ namespace VFC._NhanSu
         {
             string _rs = "";
 
+            if (dateCheckInOut.EditValue == null)
+            {
+                _rs += "Vui lòng chọn ngày";
+            }
+            else
+            {
+                if ((DateTime)(dateCheckInOut.EditValue) > DateTime.Now)
+                {
+                    _rs += "Ngày không được trước ngày hôm nay.";
+                }
+            }
 
             return _rs;
         }
@@ -67,6 +78,7 @@ namespace VFC._NhanSu
 	                success = Insert thành công
 	                fail = Insert thất bại
 	                checkinsoon = Check in trước 8am
+                    insertDouble = Không thể insert Vào hoặc Ra đơn lẻ.
                 */
 
                 switch (_rs)
@@ -92,6 +104,10 @@ namespace VFC._NhanSu
                         break;
                     case "success":
                         frmMessageBox.Show("Thông báo", "Thêm mới thành công", "done");
+                        this.Close();
+                        break;
+                    case "insertDouble":
+                        frmMessageBox.Show("Thông báo", "Không thể thêm đơn lẻ Vào hoặc ra."+ Environment.NewLine + "Bạn phải thêm 1 Vào và Ra chung 1 lần", "error");
                         this.Close();
                         break;
                     default:

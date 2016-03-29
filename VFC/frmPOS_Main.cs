@@ -38,12 +38,12 @@ namespace VFC
         #region Action
         private void Check_UpdateDoanhThu()
         {
-            if ( lbCheckPOS.Caption.Equals( "" ) )
+            if (lbCheckPOS.Caption.Equals(""))
             {
                 try
                 {
                     cl_DAL_ADMIN_POS_ForceUpdate _dalPOS = new cl_DAL_ADMIN_POS_ForceUpdate();
-                    if ( _dalPOS.Check_Update_DoanhThu( lbStoreCode.Caption ) == 1 )
+                    if (_dalPOS.Check_Update_DoanhThu(lbStoreCode.Caption) == 1)
                     {
                         timer_Admin_POS_ForceUpdate.Enabled = true;
                         timer_Admin_POS_ForceUpdate.Start();
@@ -56,9 +56,9 @@ namespace VFC
                         //frmMessageBox.Show( "Thông báo" , "Timer Stop" , "done" );
                     }
                 }
-                catch ( Exception ex )
+                catch (Exception ex)
                 {
-                    frmMessageBox.Show( "Thông báo" , ex.ToString() , "error" );
+                    frmMessageBox.Show("Thông báo", ex.ToString(), "error");
                 }
             }
         }
@@ -92,8 +92,8 @@ namespace VFC
 
             this.Check_UpdateDoanhThu();
 
-            //timer_10mins.Enabled = true;
-            //timer_10mins.Start();
+            timer_10mins.Enabled = true;
+            timer_10mins.Start();
 
             if ( frmPOS_Welcome == null || frmPOS_Welcome.IsDisposed )
             {
@@ -111,13 +111,6 @@ namespace VFC
             {
                 bt_CTKM_TriAnKH_112015.Enabled = true;
             }
-
-            //if (frmMain._myAppConfig.StoreCode.Equals("NT8"))
-            //{
-            //    timer_CheckInvoice.Enabled = true;
-            //    timer_CheckInvoice.Interval = 1 * 1 * 60 * 1000;//h*m*s*ms
-            //    timer_CheckInvoice.Start();
-            //}
         }
 
         private void bt_MER_InventoryLookUp_ItemClick( object sender , ItemClickEventArgs e )
@@ -223,7 +216,7 @@ namespace VFC
                                                                 , false);
                     if (_tempTable.Rows.Count == 0)
                     {
-
+                        //frmMessageBox.Show("Thông báo", "Datarow = 0", "done");
                     }
                     else
                     {
@@ -234,7 +227,7 @@ namespace VFC
                                                                 , int.Parse(_tempTable.Rows[0]["TOTAL_DISCOUNT"].ToString())
                                                                 , int.Parse(_tempTable.Rows[0]["TOTAL_QTY"].ToString())))
                         {
-                            //frmMessageBox.Show( "Thông báo" , "Cập nhật doanh thu thành công" , "done" );
+                            frmMessageBox.Show( "Thông báo" , "Cập nhật doanh thu thành công" , "done" );
                         }
                         else
                         {
@@ -344,44 +337,5 @@ namespace VFC
                 frmMessageBox.Show("Thông báo", ex.ToString(), "error");
             }
         }
-
-        private void timer_CheckInvoice_Tick(object sender, EventArgs e)
-        {
-            //cl_DAL_ADMIN admin = new cl_DAL_ADMIN();
-            //admin.MadeByMe(this.DSInvcSidRPro9(int.Parse(frmMain._myAppConfig.StoreNo)));
-        }
-
-        #region Action
-        private string DSInvcSidRPro9(int _storeNo)
-        {
-            string rs = "";
-
-            //string _query = "select i.INVC_SID "
-            //        + " from INVOICE_v i"
-            //        + " where i.created_date >= to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + " 00:00:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
-            //          + " and i.created_date <= to_date('" + DateTime.Now.ToString("yyyy-MM-dd") + " 23:59:00','yyyy-mm-dd HH24:MI:SS','NLS_DATE_LANGUAGE=AMERICAN')"
-            //          + " and i.store_no = " + _storeNo
-            //          + " and i.invc_type in (0,2)"
-            //          + " AND i.Proc_Status = 0";
-
-            //try
-            //{
-            //    DAL.Utilities.ORACon _oraCon = new DAL.Utilities.ORACon();
-            //    DataTable _dt = new DataTable();
-            //    _dt = _oraCon.returnDataTable(_query, "PC-NT8");
-
-            //    for (int i = 0; i < _dt.Rows.Count; i++)
-            //    { 
-            //        rs += "'" + _dt.Rows[i]["INVC_SID"] + "',";
-            //    }
-            //}
-            //catch (Exception )
-            //{
-            //    rs = "";
-            //}
-
-            return rs.Substring(0, rs.Length - 1);
-        }
-        #endregion
     }
 }

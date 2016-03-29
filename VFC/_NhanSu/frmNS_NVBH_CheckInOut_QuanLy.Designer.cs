@@ -48,6 +48,7 @@
             this.btOut = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.date = new DevExpress.XtraEditors.DateEdit();
+            this.btBoth = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_DSNhanVien)).BeginInit();
@@ -175,9 +176,9 @@
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.Controls.Add(this.gridControl_ListCheckInOut);
-            this.groupControl2.Location = new System.Drawing.Point(3, 117);
+            this.groupControl2.Location = new System.Drawing.Point(3, 163);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(406, 277);
+            this.groupControl2.Size = new System.Drawing.Size(406, 231);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Tình trạng check In - Out";
             // 
@@ -187,7 +188,7 @@
             this.gridControl_ListCheckInOut.Location = new System.Drawing.Point(2, 27);
             this.gridControl_ListCheckInOut.MainView = this.gridView_ListCheckInOut;
             this.gridControl_ListCheckInOut.Name = "gridControl_ListCheckInOut";
-            this.gridControl_ListCheckInOut.Size = new System.Drawing.Size(402, 248);
+            this.gridControl_ListCheckInOut.Size = new System.Drawing.Size(402, 202);
             this.gridControl_ListCheckInOut.TabIndex = 0;
             this.gridControl_ListCheckInOut.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_ListCheckInOut});
@@ -234,13 +235,14 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.btBoth);
             this.groupControl1.Controls.Add(this.btIn);
             this.groupControl1.Controls.Add(this.btOut);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.date);
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(406, 108);
+            this.groupControl1.Size = new System.Drawing.Size(406, 154);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin trích lọc";
             // 
@@ -291,6 +293,18 @@
             this.date.Size = new System.Drawing.Size(177, 20);
             this.date.TabIndex = 0;
             // 
+            // btBoth
+            // 
+            this.btBoth.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBoth.Appearance.Options.UseFont = true;
+            this.btBoth.Image = ((System.Drawing.Image)(resources.GetObject("btBoth.Image")));
+            this.btBoth.Location = new System.Drawing.Point(82, 105);
+            this.btBoth.Name = "btBoth";
+            this.btBoth.Size = new System.Drawing.Size(240, 40);
+            this.btBoth.TabIndex = 5;
+            this.btBoth.Text = "Vào + Ra";
+            this.btBoth.Click += new System.EventHandler(this.btBoth_Click);
+            // 
             // frmNS_NVBH_CheckInOut_QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,5 +353,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraEditors.SimpleButton btBoth;
     }
 }

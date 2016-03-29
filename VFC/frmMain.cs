@@ -121,18 +121,18 @@ namespace VFC
             }
             catch ( System.IO.IOException  )
             {
-                //frmMessageBox.Show( "Thông báo lỗi" , "Không kết nối được với máy chủ."
-                //    + Environment.NewLine
-                //    + " - Vui lòng kết nối VPN và thử lại.", "error" );
+                frmMessageBox.Show("Thông báo lỗi", "Không kết nối được với máy chủ."
+                    + Environment.NewLine
+                    + " - Vui lòng kết nối VPN và thử lại.", "error");
             }
-            catch ( Exception  )
+            catch ( Exception ex )
             {
-                //MessageBox.Show( ex.ToString() );
+                MessageBox.Show(ex.ToString());
             }
-            finally
-            {
+            //finally
+            //{
 
-            }
+            //}
         }
 
         private string readXML( string _url , string _name )

@@ -331,7 +331,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgaySinh.Size = new System.Drawing.Size(263, 20);
+            this.dateNgaySinh.Size = new System.Drawing.Size(263, 26);
             this.dateNgaySinh.TabIndex = 26;
             // 
             // txtPhone
@@ -610,7 +610,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateLC.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateLC.Size = new System.Drawing.Size(275, 20);
+            this.dateLC.Size = new System.Drawing.Size(275, 26);
             this.dateLC.TabIndex = 17;
             // 
             // txtLC_GhiChu
@@ -762,7 +762,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNV.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNV.Size = new System.Drawing.Size(275, 20);
+            this.dateNV.Size = new System.Drawing.Size(275, 26);
             this.dateNV.TabIndex = 21;
             // 
             // labelControl14
@@ -859,7 +859,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateDB.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDB.Size = new System.Drawing.Size(238, 20);
+            this.dateDB.Size = new System.Drawing.Size(238, 26);
             this.dateDB.TabIndex = 26;
             // 
             // labelControl19

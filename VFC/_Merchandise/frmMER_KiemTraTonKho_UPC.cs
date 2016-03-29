@@ -169,50 +169,26 @@ namespace VFC._Merchandise
                     {
                         frmMessageBox.Show( "Thông báo" , " - Không tồn tại mã hàng này. "
                                             + Environment.NewLine
-                                            + " - Mã hàng không có tồn trong kho."
-                                            + Environment.NewLine
-                                            + " - DataRow = 0" , "error" );
+                                            + " - Mã hàng không có tồn trong kho." , "error" );
 
                         gridControl1.DataSource = null;
+                        lbMaThietKe.Text = "";
+                        lbTenSanPham.Text = "";
                     }
                     else
                     {
                         gridControl1.DataSource = dt;
+                        lbMaThietKe.Text = dt.Rows[0]["DESCRIPTION1"].ToString();
+                        lbTenSanPham.Text = dt.Rows[0]["DESCRIPTION2"].ToString();
                     }
-                }
-                catch ( NullReferenceException ex )
-                {
-                    frmMessageBox.Show( "Thông báo lỗi" , " - Không tồn tại mã hàng này. "
-                                            + Environment.NewLine
-                                            + " - Mã hàng không có tồn trong kho."
-                                            + Environment.NewLine
-                                            + " - " + ex.ToString() , "error" );
                 }
                 catch ( Exception ex )
                 {
                     frmMessageBox.Show( "Thông báo lỗi" , " - Không tồn tại mã hàng này. "
                                             + Environment.NewLine
-                                            + " - Mã hàng không có tồn trong kho."
-                                            + Environment.NewLine
-                                            + " - " + ex.ToString() , "error" );
+                                            + " - Mã hàng không có tồn trong kho." , "error" );
 
                     gridControl1.DataSource = null;
-                }
-                finally
-                {
-                    try
-                    {
-                        if ( dt.Rows.Count > 0 )
-                        {
-                            lbMaThietKe.Text = dt.Rows[0]["DESCRIPTION1"].ToString();
-                            lbTenSanPham.Text = dt.Rows[0]["DESCRIPTION2"].ToString();
-                        }
-                    }
-                    catch ( Exception ex )
-                    {
-                        gridControl1.DataSource = null;
-                        frmMessageBox.Show( "Thông báo lỗi" , ex.ToString() , "error" );
-                    }
                 }
             }
 

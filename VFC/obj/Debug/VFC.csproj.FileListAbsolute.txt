@@ -736,3 +736,10 @@ G:\DevExpress13\VFC\VFC\obj\Debug\VFC.exe.licenses
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_NVBH_DoanhSoNgay.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_Insert.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_QuanLy.resources
+G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_InsertBoth.resources
+G:\DevExpress13\VFC\VFC\bin\Debug\DevExpress.XtraReports.v13.2.Extensions.dll
+G:\DevExpress13\VFC\VFC\bin\Debug\DevExpress.XtraReports.v13.2.Extensions.xml
+G:\DevExpress13\VFC\VFC\bin\Debug\de\DevExpress.XtraReports.v13.2.Extensions.resources.dll
+G:\DevExpress13\VFC\VFC\bin\Debug\es\DevExpress.XtraReports.v13.2.Extensions.resources.dll
+G:\DevExpress13\VFC\VFC\bin\Debug\ja\DevExpress.XtraReports.v13.2.Extensions.resources.dll
+G:\DevExpress13\VFC\VFC\bin\Debug\ru\DevExpress.XtraReports.v13.2.Extensions.resources.dll

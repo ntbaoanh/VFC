@@ -474,11 +474,6 @@
             this.timer_10mins.Interval = 600000;
             this.timer_10mins.Tick += new System.EventHandler(this.timer_10mins_Tick);
             // 
-            // timer_CheckInvoice
-            // 
-            this.timer_CheckInvoice.Interval = 6000;
-            this.timer_CheckInvoice.Tick += new System.EventHandler(this.timer_CheckInvoice_Tick);
-            // 
             // frmPOS_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

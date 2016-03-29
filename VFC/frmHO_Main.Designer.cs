@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHO_Main));
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.imageCollection_16 = new DevExpress.Utils.ImageCollection(this.components);
             this.bt_ProCode_UseCode = new DevExpress.XtraBars.BarButtonItem();
@@ -74,6 +77,7 @@
             this.bt_TK_NhaCungCap_QLy = new DevExpress.XtraBars.BarButtonItem();
             this.bt_TK_Vai_QLy = new DevExpress.XtraBars.BarButtonItem();
             this.bt_NS_Manage = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_NS_ThemCheckInOut = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection_64 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -106,7 +110,10 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.bt_NS_ThemCheckInOut = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup20 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btNS_ChiTiet_InOut = new DevExpress.XtraBars.BarButtonItem();
+            this.btNS_DoanhSoBill_NV = new DevExpress.XtraBars.BarButtonItem();
+            this.btNS_ChiTiet_Bill_NVBH = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_64)).BeginInit();
@@ -162,10 +169,13 @@
             this.bt_TK_NhaCungCap_QLy,
             this.bt_TK_Vai_QLy,
             this.bt_NS_Manage,
-            this.bt_NS_ThemCheckInOut});
+            this.bt_NS_ThemCheckInOut,
+            this.btNS_ChiTiet_InOut,
+            this.btNS_DoanhSoBill_NV,
+            this.btNS_ChiTiet_Bill_NVBH});
             this.ribbon.LargeImages = this.imageCollection_64;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 54;
+            this.ribbon.MaxItemId = 57;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage_Home,
@@ -588,6 +598,15 @@
             this.bt_NS_Manage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.bt_NS_Manage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NS_Manage_ItemClick);
             // 
+            // bt_NS_ThemCheckInOut
+            // 
+            this.bt_NS_ThemCheckInOut.Caption = "Thêm Ra - Vào";
+            this.bt_NS_ThemCheckInOut.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_NS_ThemCheckInOut.Glyph")));
+            this.bt_NS_ThemCheckInOut.Id = 53;
+            this.bt_NS_ThemCheckInOut.Name = "bt_NS_ThemCheckInOut";
+            this.bt_NS_ThemCheckInOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.bt_NS_ThemCheckInOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NS_ThemCheckInOut_ItemClick);
+            // 
             // imageCollection_64
             // 
             this.imageCollection_64.ImageSize = new System.Drawing.Size(96, 96);
@@ -821,7 +840,8 @@
             // ribbonPage_NhanSu
             // 
             this.ribbonPage_NhanSu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup18});
+            this.ribbonPageGroup18,
+            this.ribbonPageGroup20});
             this.ribbonPage_NhanSu.Name = "ribbonPage_NhanSu";
             this.ribbonPage_NhanSu.Text = "Bp. Nhân sự";
             // 
@@ -830,6 +850,7 @@
             this.ribbonPageGroup18.ItemLinks.Add(this.bt_NS_Manage);
             this.ribbonPageGroup18.ItemLinks.Add(this.bt_NS_ThemCheckInOut);
             this.ribbonPageGroup18.Name = "ribbonPageGroup18";
+            this.ribbonPageGroup18.Text = "Quản lý";
             // 
             // ribbonStatusBar
             // 
@@ -865,14 +886,45 @@
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // bt_NS_ThemCheckInOut
+            // ribbonPageGroup20
             // 
-            this.bt_NS_ThemCheckInOut.Caption = "Thêm Ra - Vào";
-            this.bt_NS_ThemCheckInOut.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_NS_ThemCheckInOut.Glyph")));
-            this.bt_NS_ThemCheckInOut.Id = 53;
-            this.bt_NS_ThemCheckInOut.Name = "bt_NS_ThemCheckInOut";
-            this.bt_NS_ThemCheckInOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.bt_NS_ThemCheckInOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NS_ThemCheckInOut_ItemClick);
+            this.ribbonPageGroup20.AllowTextClipping = false;
+            this.ribbonPageGroup20.ItemLinks.Add(this.btNS_ChiTiet_InOut);
+            this.ribbonPageGroup20.ItemLinks.Add(this.btNS_DoanhSoBill_NV);
+            this.ribbonPageGroup20.ItemLinks.Add(this.btNS_ChiTiet_Bill_NVBH);
+            this.ribbonPageGroup20.Name = "ribbonPageGroup20";
+            this.ribbonPageGroup20.Text = "Báo cáo";
+            // 
+            // btNS_ChiTiet_InOut
+            // 
+            this.btNS_ChiTiet_InOut.Caption = "Chi tiết Vào - Ra";
+            this.btNS_ChiTiet_InOut.Id = 54;
+            this.btNS_ChiTiet_InOut.Name = "btNS_ChiTiet_InOut";
+            this.btNS_ChiTiet_InOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem1.Appearance.Options.UseImage = true;
+            toolTipTitleItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem1.Image")));
+            toolTipTitleItem1.Text = "<b><color=\"red\">Chú thích</color></b>";
+            toolTipItem1.LeftIndent = 6;
+            toolTipItem1.Text = "Chi tiết ra vào của từng nhân viên\r\n";
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            superToolTip1.Items.Add(toolTipItem1);
+            this.btNS_ChiTiet_InOut.SuperTip = superToolTip1;
+            // 
+            // btNS_DoanhSoBill_NV
+            // 
+            this.btNS_DoanhSoBill_NV.Caption = "Doanh Số Bill";
+            this.btNS_DoanhSoBill_NV.Id = 55;
+            this.btNS_DoanhSoBill_NV.Name = "btNS_DoanhSoBill_NV";
+            this.btNS_DoanhSoBill_NV.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // btNS_ChiTiet_Bill_NVBH
+            // 
+            this.btNS_ChiTiet_Bill_NVBH.Caption = "Chi tiết Bill";
+            this.btNS_ChiTiet_Bill_NVBH.Id = 56;
+            this.btNS_ChiTiet_Bill_NVBH.Name = "btNS_ChiTiet_Bill_NVBH";
+            this.btNS_ChiTiet_Bill_NVBH.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // frmHO_Main
             // 
@@ -977,5 +1029,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage_NhanSu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
         private DevExpress.XtraBars.BarButtonItem bt_NS_ThemCheckInOut;
+        private DevExpress.XtraBars.BarButtonItem btNS_ChiTiet_InOut;
+        private DevExpress.XtraBars.BarButtonItem btNS_DoanhSoBill_NV;
+        private DevExpress.XtraBars.BarButtonItem btNS_ChiTiet_Bill_NVBH;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup20;
     }
 }

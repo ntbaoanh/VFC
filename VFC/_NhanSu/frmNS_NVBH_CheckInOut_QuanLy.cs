@@ -87,5 +87,23 @@ namespace VFC._NhanSu
         {
             this.Load_DSCheckInOut();
         }
+
+        private void btBoth_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int _nvSid = int.Parse(gridView_DSNhanVien.GetFocusedRowCellValue("NVSID").ToString());
+                int _storeNo = int.Parse(gridView_DSNhanVien.GetFocusedRowCellValue("StoreNo").ToString());
+                string _ten = gridView_DSNhanVien.GetFocusedRowCellValue("Ho").ToString() + " " + gridView_DSNhanVien.GetFocusedRowCellValue("Ten").ToString();
+                string _storeCode = gridView_DSNhanVien.GetFocusedRowCellValue("Store_Code").ToString();
+
+                _NhanSu.frmNS_NVBH_CheckInOut_InsertBoth myFrm = new frmNS_NVBH_CheckInOut_InsertBoth(_nvSid, _storeNo, _ten, _storeCode);
+                myFrm.ShowDialog();
+            }
+            catch (Exception)
+            {
+                frmMessageBox.Show("Thông báo", "Vui lòng chọn nhân viên", "error");
+            }
+        }
     }
 }
