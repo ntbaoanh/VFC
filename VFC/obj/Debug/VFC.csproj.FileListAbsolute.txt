@@ -733,7 +733,6 @@ G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_NVBH_DoanhSo_NV.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_QuanLy.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_Update.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC.exe.licenses
-G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_NVBH_DoanhSoNgay.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_Insert.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_QuanLy.resources
 G:\DevExpress13\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_InsertBoth.resources
@@ -743,3 +742,12 @@ G:\DevExpress13\VFC\VFC\bin\Debug\de\DevExpress.XtraReports.v13.2.Extensions.res
 G:\DevExpress13\VFC\VFC\bin\Debug\es\DevExpress.XtraReports.v13.2.Extensions.resources.dll
 G:\DevExpress13\VFC\VFC\bin\Debug\ja\DevExpress.XtraReports.v13.2.Extensions.resources.dll
 G:\DevExpress13\VFC\VFC\bin\Debug\ru\DevExpress.XtraReports.v13.2.Extensions.resources.dll
+G:\DevExpress13\VFC\VFC\obj\Debug\VFC._Sale.frmSale_NVBH_BaoCaoTongHop.resources
+G:\DevExpress13\VFC\VFC\obj\Debug\VFC.frmTest_PivotGrid.resources
+G:\DevExpress13\VFC\VFC\obj\Debug\VFC._IT.frm_IT_DoanhSo_TheoKetCau.resources
+G:\DevExpress13\VFC\VFC\bin\Debug\DevExpress.XtraPivotGrid.v13.2.dll
+G:\DevExpress13\VFC\VFC\bin\Debug\DevExpress.XtraPivotGrid.v13.2.xml
+G:\DevExpress13\VFC\VFC\bin\Debug\de\DevExpress.XtraPivotGrid.v13.2.resources.dll
+G:\DevExpress13\VFC\VFC\bin\Debug\es\DevExpress.XtraPivotGrid.v13.2.resources.dll
+G:\DevExpress13\VFC\VFC\bin\Debug\ja\DevExpress.XtraPivotGrid.v13.2.resources.dll
+G:\DevExpress13\VFC\VFC\bin\Debug\ru\DevExpress.XtraPivotGrid.v13.2.resources.dll

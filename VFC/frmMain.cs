@@ -119,20 +119,18 @@ namespace VFC
                     Application.Exit();
                 }
             }
-            catch ( System.IO.IOException  )
+            catch ( System.IO.IOException ex )
             {
                 frmMessageBox.Show("Thông báo lỗi", "Không kết nối được với máy chủ."
                     + Environment.NewLine
-                    + " - Vui lòng kết nối VPN và thử lại.", "error");
+                    + " - Vui lòng kết nối VPN và thử lại.", "error"
+                    + Environment.NewLine
+                    + ex.ToString());
             }
             catch ( Exception ex )
             {
                 MessageBox.Show(ex.ToString());
             }
-            //finally
-            //{
-
-            //}
         }
 
         private string readXML( string _url , string _name )

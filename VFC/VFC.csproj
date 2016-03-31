@@ -107,6 +107,9 @@
     <Reference Include="DevExpress.XtraNavBar.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
@@ -189,6 +192,12 @@
     </Compile>
     <Compile Include="frmPOS_Main.Designer.cs">
       <DependentUpon>frmPOS_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTest_PivotGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTest_PivotGrid.Designer.cs">
+      <DependentUpon>frmTest_PivotGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_PrintReport.cs">
       <SubType>Form</SubType>
@@ -310,6 +319,12 @@
     </Compile>
     <Compile Include="_IT\frmIT_ViewLogs.Designer.cs">
       <DependentUpon>frmIT_ViewLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_IT\frm_IT_DoanhSo_TheoKetCau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_IT\frm_IT_DoanhSo_TheoKetCau.Designer.cs">
+      <DependentUpon>frm_IT_DoanhSo_TheoKetCau.cs</DependentUpon>
     </Compile>
     <Compile Include="_IT\frm_IT_InMaVach.cs">
       <SubType>Form</SubType>
@@ -533,11 +548,11 @@
     <Compile Include="_Report\rp_SoLieu_XuLyCLKK.designer.cs">
       <DependentUpon>rp_SoLieu_XuLyCLKK.cs</DependentUpon>
     </Compile>
-    <Compile Include="_Sale\frmSale_NVBH_DoanhSoNgay.cs">
+    <Compile Include="_Sale\frmSale_NVBH_BaoCaoTongHop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_Sale\frmSale_NVBH_DoanhSoNgay.Designer.cs">
-      <DependentUpon>frmSale_NVBH_DoanhSoNgay.cs</DependentUpon>
+    <Compile Include="_Sale\frmSale_NVBH_BaoCaoTongHop.Designer.cs">
+      <DependentUpon>frmSale_NVBH_BaoCaoTongHop.cs</DependentUpon>
     </Compile>
     <Compile Include="_Sale\frmSale_NVBH_DoanhSo_NV.cs">
       <SubType>Form</SubType>
@@ -652,6 +667,9 @@
       <DependentUpon>frmPOS_Main.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTest_PivotGrid.resx">
+      <DependentUpon>frmTest_PivotGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_PrintReport.resx">
       <DependentUpon>frm_PrintReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -722,6 +740,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_IT\frmIT_ViewLogs.resx">
       <DependentUpon>frmIT_ViewLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_IT\frm_IT_DoanhSo_TheoKetCau.resx">
+      <DependentUpon>frm_IT_DoanhSo_TheoKetCau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_IT\frm_IT_InMaVach.resx">
       <DependentUpon>frm_IT_InMaVach.cs</DependentUpon>
@@ -835,8 +856,8 @@
     <EmbeddedResource Include="_Report\rp_SoLieu_XuLyCLKK.resx">
       <DependentUpon>rp_SoLieu_XuLyCLKK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_Sale\frmSale_NVBH_DoanhSoNgay.resx">
-      <DependentUpon>frmSale_NVBH_DoanhSoNgay.cs</DependentUpon>
+    <EmbeddedResource Include="_Sale\frmSale_NVBH_BaoCaoTongHop.resx">
+      <DependentUpon>frmSale_NVBH_BaoCaoTongHop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_Sale\frmSale_NVBH_DoanhSo_NV.resx">
       <DependentUpon>frmSale_NVBH_DoanhSo_NV.cs</DependentUpon>
@@ -907,10 +928,12 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{19A575FA-BBF6-451C-B4C5-5AA46D4BE143}</Project>
       <Name>DAL</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\PRO\PRO.csproj">
       <Project>{4522498B-CDF7-4823-83FC-A09F3B141687}</Project>
       <Name>PRO</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

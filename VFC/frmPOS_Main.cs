@@ -24,6 +24,8 @@ namespace VFC
         private static _CTKM.frm_CTKM_TriAnKH_112015 frmCTKM112015;
         public static _Sale.frmSale_NVBH_DoanhSo_NV frmDSNVBH;
         private static _Sale.frmSale_NVBH_CheckInOut frmChamCong;
+        private static _Sale.frmSale_NVBH_BaoCaoTongHop frmBCTongHop;
+        private static _IT.frm_IT_DoanhSo_TheoKetCau frmDS_KetCau;
         #endregion
 
         #region static variable
@@ -110,6 +112,11 @@ namespace VFC
             if (_myCTKM.CTKM_TriAnKH_112015_Check_Run(frmMain._myAppConfig.StoreNo))
             {
                 bt_CTKM_TriAnKH_112015.Enabled = true;
+            }
+
+            if (lbStoreCode.Caption.Equals("NT8"))
+            {
+                ribbonPageGroup_DS_TheoKetCau.Visible = true;
             }
         }
 
@@ -227,7 +234,7 @@ namespace VFC
                                                                 , int.Parse(_tempTable.Rows[0]["TOTAL_DISCOUNT"].ToString())
                                                                 , int.Parse(_tempTable.Rows[0]["TOTAL_QTY"].ToString())))
                         {
-                            frmMessageBox.Show( "Thông báo" , "Cập nhật doanh thu thành công" , "done" );
+                            //frmMessageBox.Show( "Thông báo" , "Cập nhật doanh thu thành công" , "done" );
                         }
                         else
                         {
@@ -335,6 +342,36 @@ namespace VFC
             catch (Exception ex)
             {
                 frmMessageBox.Show("Thông báo", ex.ToString(), "error");
+            }
+        }
+
+        private void bt_NVBH_BaoCao_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            rbActive = ribbonPage_POS;
+            if (frmBCTongHop == null || frmBCTongHop.IsDisposed)
+            {
+                frmBCTongHop = new _Sale.frmSale_NVBH_BaoCaoTongHop();
+                frmBCTongHop.MdiParent = this;
+                frmBCTongHop.Show();
+            }
+            else
+            {
+                frmBCTongHop.Activate();
+            }
+        }
+
+        private void bt_BC_DSo_Theo_KetCau_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            rbActive = ribbonPage_POS;
+            if (frmDS_KetCau == null || frmDS_KetCau.IsDisposed)
+            {
+                frmDS_KetCau = new _IT.frm_IT_DoanhSo_TheoKetCau();
+                frmDS_KetCau.MdiParent = this;
+                frmDS_KetCau.Show();
+            }
+            else
+            {
+                frmDS_KetCau.Activate();
             }
         }
     }

@@ -153,6 +153,38 @@ namespace DAL
 
             return check;
         }
+
+        public DataTable GET_NVBH_BaoCaoTongHop(string _fromDate, string _toDate, int _storeno)
+        {
+            dt = new DataTable();
+
+            try
+            {
+                _connSQL = new Utilities.SQLCon();
+                SqlDataAdapter _adp = new SqlDataAdapter();
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "SALES.spud_SELECT_NVBH_BaoCaoTongHop";
+                command.Parameters.AddWithValue("@fromDate", _fromDate);
+                command.Parameters.AddWithValue("@toDate", _toDate);
+                command.Parameters.AddWithValue("@StoreNo", _storeno);
+                command.Connection = _connSQL.getConnection();
+                _adp.SelectCommand = command;
+
+                DataSet _ds = new DataSet();
+
+                _adp.Fill(_ds);
+
+                dt = _ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                dt = null;
+                throw new Exception(ex.Message);
+            }
+
+            return dt;
+        }
         #endregion
 
         #region CHECK

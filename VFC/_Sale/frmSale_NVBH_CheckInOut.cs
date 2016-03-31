@@ -61,12 +61,23 @@ namespace VFC._Sale
             lbTen.Text = "";
             lbPhone.Text = "";
             lbGioiTinh.Text = "";
-            lbLastIn.Text = "";
-            lbLastOut.Text = "";
             lbNVID.Text = "";
             btIn.Enabled = false;
             btOut.Enabled = false;
             this.LoadDSNhanVien();
+        }
+
+        private void Load_DSCheckInOut()
+        {
+            try
+            {
+                cl_DAL_NhanVienBanHang _dalNvbh = new cl_DAL_NhanVienBanHang();
+                gridControl_ListCheckInOut.DataSource = _dalNvbh.GET_NVBH_ListCheckInOut(int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()), DateTime.Now.ToString("MM/dd/yyyy"));
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private string iValidate()
@@ -98,6 +109,7 @@ namespace VFC._Sale
                 lbGioiTinh.Text = gridView1.GetFocusedRowCellValue("GioiTinh").ToString();
                 this.GET_NVBH_Working_Status(int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
                 lbNVID.Text = gridView1.GetFocusedRowCellValue("NVSID").ToString();
+                this.Load_DSCheckInOut();
             }
             catch (Exception )
             {

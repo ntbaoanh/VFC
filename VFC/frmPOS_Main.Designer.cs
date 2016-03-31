@@ -48,6 +48,8 @@
             this.bt_Insert_DS_NVBH = new DevExpress.XtraBars.BarButtonItem();
             this.bt_NVBH_CheckInOut = new DevExpress.XtraBars.BarButtonItem();
             this.bt_NVBH_Insert = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_NVBH_BaoCao = new DevExpress.XtraBars.BarButtonItem();
+            this.bt_BC_DSo_Theo_KetCau = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection_64 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage_LookUp = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -55,6 +57,8 @@
             this.ribbonPage_POS = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup_DS_TheoKetCau = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_Promotion = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -95,10 +99,12 @@
             this.bt_CTKM_TriAnKH_112015,
             this.bt_Insert_DS_NVBH,
             this.bt_NVBH_CheckInOut,
-            this.bt_NVBH_Insert});
+            this.bt_NVBH_Insert,
+            this.bt_NVBH_BaoCao,
+            this.bt_BC_DSo_Theo_KetCau});
             this.ribbon.LargeImages = this.imageCollection_64;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 24;
+            this.ribbon.MaxItemId = 27;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage_LookUp,
@@ -312,6 +318,24 @@
             this.bt_NVBH_Insert.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.bt_NVBH_Insert.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NVBH_Insert_ItemClick);
             // 
+            // bt_NVBH_BaoCao
+            // 
+            this.bt_NVBH_BaoCao.Caption = "Báo cáo Tổng Hợp";
+            this.bt_NVBH_BaoCao.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_NVBH_BaoCao.Glyph")));
+            this.bt_NVBH_BaoCao.Id = 24;
+            this.bt_NVBH_BaoCao.Name = "bt_NVBH_BaoCao";
+            this.bt_NVBH_BaoCao.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.bt_NVBH_BaoCao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NVBH_BaoCao_ItemClick);
+            // 
+            // bt_BC_DSo_Theo_KetCau
+            // 
+            this.bt_BC_DSo_Theo_KetCau.Caption = "D.Số theo kết cấu";
+            this.bt_BC_DSo_Theo_KetCau.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_BC_DSo_Theo_KetCau.Glyph")));
+            this.bt_BC_DSo_Theo_KetCau.Id = 26;
+            this.bt_BC_DSo_Theo_KetCau.Name = "bt_BC_DSo_Theo_KetCau";
+            this.bt_BC_DSo_Theo_KetCau.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.bt_BC_DSo_Theo_KetCau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_BC_DSo_Theo_KetCau_ItemClick);
+            // 
             // imageCollection_64
             // 
             this.imageCollection_64.ImageSize = new System.Drawing.Size(96, 96);
@@ -367,7 +391,9 @@
             // 
             this.ribbonPage_POS.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup7,
-            this.ribbonPageGroup8});
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup9,
+            this.ribbonPageGroup_DS_TheoKetCau});
             this.ribbonPage_POS.Name = "ribbonPage_POS";
             this.ribbonPage_POS.Text = "Cửa hàng";
             // 
@@ -382,6 +408,18 @@
             this.ribbonPageGroup8.ItemLinks.Add(this.bt_NVBH_CheckInOut);
             this.ribbonPageGroup8.ItemLinks.Add(this.bt_NVBH_Insert);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.AllowTextClipping = false;
+            this.ribbonPageGroup9.ItemLinks.Add(this.bt_NVBH_BaoCao);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            // 
+            // ribbonPageGroup_DS_TheoKetCau
+            // 
+            this.ribbonPageGroup_DS_TheoKetCau.ItemLinks.Add(this.bt_BC_DSo_Theo_KetCau);
+            this.ribbonPageGroup_DS_TheoKetCau.Name = "ribbonPageGroup_DS_TheoKetCau";
+            this.ribbonPageGroup_DS_TheoKetCau.Visible = false;
             // 
             // ribbonPage_Promotion
             // 
@@ -538,5 +576,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem bt_NVBH_Insert;
         private System.Windows.Forms.Timer timer_CheckInvoice;
+        private DevExpress.XtraBars.BarButtonItem bt_NVBH_BaoCao;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.BarButtonItem bt_BC_DSo_Theo_KetCau;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup_DS_TheoKetCau;
     }
 }

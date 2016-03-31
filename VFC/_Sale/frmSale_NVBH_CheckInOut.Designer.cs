@@ -41,10 +41,6 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
             this.btOut = new DevExpress.XtraEditors.SimpleButton();
-            this.lbLastOut = new DevExpress.XtraEditors.LabelControl();
-            this.lbLastIn = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.lbGioiTinh = new DevExpress.XtraEditors.LabelControl();
@@ -56,6 +52,10 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.gridControl_ListCheckInOut = new DevExpress.XtraGrid.GridControl();
+            this.gridView_ListCheckInOut = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -65,6 +65,8 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_ListCheckInOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_ListCheckInOut)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -76,8 +78,8 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.xtraScrollableControl1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(733, 418);
-            this.splitContainerControl1.SplitterPosition = 396;
+            this.splitContainerControl1.Size = new System.Drawing.Size(800, 525);
+            this.splitContainerControl1.SplitterPosition = 435;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -87,7 +89,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(396, 418);
+            this.gridControl1.Size = new System.Drawing.Size(435, 525);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -165,22 +167,21 @@
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(332, 418);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(360, 525);
             this.xtraScrollableControl1.TabIndex = 0;
             // 
             // groupControl2
             // 
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.Controls.Add(this.gridControl_ListCheckInOut);
             this.groupControl2.Controls.Add(this.btIn);
             this.groupControl2.Controls.Add(this.btOut);
-            this.groupControl2.Controls.Add(this.lbLastOut);
-            this.groupControl2.Controls.Add(this.lbLastIn);
-            this.groupControl2.Controls.Add(this.labelControl15);
-            this.groupControl2.Controls.Add(this.labelControl16);
             this.groupControl2.Location = new System.Drawing.Point(0, 178);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(308, 174);
+            this.groupControl2.Size = new System.Drawing.Size(357, 344);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Thông tin chấm công";
             // 
@@ -189,9 +190,9 @@
             this.btIn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btIn.Appearance.Options.UseFont = true;
             this.btIn.Image = ((System.Drawing.Image)(resources.GetObject("btIn.Image")));
-            this.btIn.Location = new System.Drawing.Point(5, 80);
+            this.btIn.Location = new System.Drawing.Point(63, 30);
             this.btIn.Name = "btIn";
-            this.btIn.Size = new System.Drawing.Size(298, 40);
+            this.btIn.Size = new System.Drawing.Size(105, 40);
             this.btIn.TabIndex = 2;
             this.btIn.Text = "Vào";
             this.btIn.Click += new System.EventHandler(this.btIn_Click);
@@ -201,48 +202,12 @@
             this.btOut.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btOut.Appearance.Options.UseFont = true;
             this.btOut.Image = ((System.Drawing.Image)(resources.GetObject("btOut.Image")));
-            this.btOut.Location = new System.Drawing.Point(5, 126);
+            this.btOut.Location = new System.Drawing.Point(190, 30);
             this.btOut.Name = "btOut";
-            this.btOut.Size = new System.Drawing.Size(298, 40);
+            this.btOut.Size = new System.Drawing.Size(105, 40);
             this.btOut.TabIndex = 2;
             this.btOut.Text = "Ra";
             this.btOut.Click += new System.EventHandler(this.btOut_Click);
-            // 
-            // lbLastOut
-            // 
-            this.lbLastOut.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLastOut.Location = new System.Drawing.Point(135, 58);
-            this.lbLastOut.Name = "lbLastOut";
-            this.lbLastOut.Size = new System.Drawing.Size(53, 16);
-            this.lbLastOut.TabIndex = 1;
-            this.lbLastOut.Text = "lbLastOut";
-            // 
-            // lbLastIn
-            // 
-            this.lbLastIn.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLastIn.Location = new System.Drawing.Point(135, 36);
-            this.lbLastIn.Name = "lbLastIn";
-            this.lbLastIn.Size = new System.Drawing.Size(44, 16);
-            this.lbLastIn.TabIndex = 1;
-            this.lbLastIn.Text = "lbLastIn";
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl15.Location = new System.Drawing.Point(21, 58);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(108, 16);
-            this.labelControl15.TabIndex = 0;
-            this.labelControl15.Text = "Giờ ra gần nhất :";
-            // 
-            // labelControl16
-            // 
-            this.labelControl16.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl16.Location = new System.Drawing.Point(11, 36);
-            this.labelControl16.Name = "labelControl16";
-            this.labelControl16.Size = new System.Drawing.Size(118, 16);
-            this.labelControl16.TabIndex = 0;
-            this.labelControl16.Text = "Giờ vào gần nhất :";
             // 
             // groupControl1
             // 
@@ -260,7 +225,7 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(0, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(308, 169);
+            this.groupControl1.Size = new System.Drawing.Size(357, 169);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin Nhân viên";
             // 
@@ -269,9 +234,9 @@
             this.btRefresh.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRefresh.Appearance.Options.UseFont = true;
             this.btRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btRefresh.Image")));
-            this.btRefresh.Location = new System.Drawing.Point(5, 122);
+            this.btRefresh.Location = new System.Drawing.Point(63, 124);
             this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(298, 40);
+            this.btRefresh.Size = new System.Drawing.Size(232, 40);
             this.btRefresh.TabIndex = 2;
             this.btRefresh.Text = "Làm mới danh sách";
             this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
@@ -357,11 +322,62 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Họ :";
             // 
+            // gridControl_ListCheckInOut
+            // 
+            this.gridControl_ListCheckInOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControl_ListCheckInOut.Location = new System.Drawing.Point(5, 76);
+            this.gridControl_ListCheckInOut.MainView = this.gridView_ListCheckInOut;
+            this.gridControl_ListCheckInOut.Name = "gridControl_ListCheckInOut";
+            this.gridControl_ListCheckInOut.Size = new System.Drawing.Size(347, 263);
+            this.gridControl_ListCheckInOut.TabIndex = 3;
+            this.gridControl_ListCheckInOut.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_ListCheckInOut});
+            // 
+            // gridView_ListCheckInOut
+            // 
+            this.gridView_ListCheckInOut.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView_ListCheckInOut.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView_ListCheckInOut.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView_ListCheckInOut.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView_ListCheckInOut.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView_ListCheckInOut.Appearance.Row.Options.UseFont = true;
+            this.gridView_ListCheckInOut.Appearance.Row.Options.UseTextOptions = true;
+            this.gridView_ListCheckInOut.Appearance.Row.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView_ListCheckInOut.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn6,
+            this.gridColumn7});
+            this.gridView_ListCheckInOut.GridControl = this.gridControl_ListCheckInOut;
+            this.gridView_ListCheckInOut.Name = "gridView_ListCheckInOut";
+            this.gridView_ListCheckInOut.OptionsBehavior.Editable = false;
+            this.gridView_ListCheckInOut.OptionsBehavior.ReadOnly = true;
+            this.gridView_ListCheckInOut.OptionsView.ShowAutoFilterRow = true;
+            this.gridView_ListCheckInOut.OptionsView.ShowFooter = true;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Giờ";
+            this.gridColumn6.DisplayFormat.FormatString = "{0:HH:mm}";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn6.FieldName = "TimeOnly";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "In / Out";
+            this.gridColumn7.FieldName = "Status";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 1;
+            // 
             // frmSale_NVBH_CheckInOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 418);
+            this.ClientSize = new System.Drawing.Size(800, 525);
             this.Controls.Add(this.splitContainerControl1);
             this.Name = "frmSale_NVBH_CheckInOut";
             this.Text = "frmSale_NVBH_CheckInOut";
@@ -373,10 +389,11 @@
             this.xtraScrollableControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_ListCheckInOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_ListCheckInOut)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -399,10 +416,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton btIn;
         private DevExpress.XtraEditors.SimpleButton btOut;
-        private DevExpress.XtraEditors.LabelControl lbLastOut;
-        private DevExpress.XtraEditors.LabelControl lbLastIn;
-        private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -410,5 +423,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.SimpleButton btRefresh;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.GridControl gridControl_ListCheckInOut;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView_ListCheckInOut;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
     }
 }
