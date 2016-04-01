@@ -63,6 +63,7 @@ namespace VFC
         private static _NhaCungCap.frmNCC_NhaCungCap_Manage frmManage_NCC;
         private static _NhanSu.frmNS_NVBH_QuanLy frmNS_NVBH_Manage;
         private static _NhanSu.frmNS_NVBH_CheckInOut_QuanLy frmNS_ThemRaVao;
+        private static _Sale.frmSale_HO_NVBH_BaoCaoTongHop frmSales_NVBH_BCTongHop;
         #endregion
 
         public static bool showMenu = false;
@@ -886,6 +887,28 @@ namespace VFC
             else
             {
                 frmMessageBox.Show("Thông báo", "Bạn chưa có quyền sử dụng module này. [47]", "error");
+            }
+        }
+
+        private void btSales_NVBH_BaoCaoTongHop_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (lbUserLogin.Caption.Equals(_sysadmin) || _dalUser.checkUserRole(lbUserLogin.Caption.ToString(), "48"))
+            {
+                rbActive = ribbonPage_Sale;
+                if (frmSales_NVBH_BCTongHop == null || frmSales_NVBH_BCTongHop.IsDisposed)
+                {
+                    frmSales_NVBH_BCTongHop = new _Sale.frmSale_HO_NVBH_BaoCaoTongHop();
+                    frmSales_NVBH_BCTongHop.MdiParent = this;
+                    frmSales_NVBH_BCTongHop.Show();
+                }
+                else
+                {
+                    frmSales_NVBH_BCTongHop.Activate();
+                }
+            }
+            else
+            {
+                frmMessageBox.Show("Thông báo", "Bạn chưa có quyền sử dụng module này. [48]", "error");
             }
         }
     }

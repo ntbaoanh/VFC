@@ -50,7 +50,7 @@ namespace VFC._Sale
                 try
                 {
                     cl_DAL_NhanVienBanHang _dalNvbh = new cl_DAL_NhanVienBanHang();
-                    gridControl1.DataSource = _dalNvbh.GET_NVBH_BaoCaoTongHop(((DateTime)dateFrom.EditValue).ToString("MM/dd/yyyy"), ((DateTime)dateTo.EditValue).ToString("MM/dd/yyyy"), int.Parse(frmMain._myAppConfig.StoreNo));
+                    gridControl1.DataSource = _dalNvbh.GET_NVBH_BaoCaoTongHop(((DateTime)dateFrom.EditValue).ToString("MM/dd/yyyy"), ((DateTime)dateTo.EditValue).ToString("MM/dd/yyyy"), frmMain._myAppConfig.StoreNo);
                 }
                 catch (Exception ex)
                 {

@@ -548,6 +548,12 @@
     <Compile Include="_Report\rp_SoLieu_XuLyCLKK.designer.cs">
       <DependentUpon>rp_SoLieu_XuLyCLKK.cs</DependentUpon>
     </Compile>
+    <Compile Include="_Sale\frmSale_HO_NVBH_BaoCaoTongHop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Sale\frmSale_HO_NVBH_BaoCaoTongHop.Designer.cs">
+      <DependentUpon>frmSale_HO_NVBH_BaoCaoTongHop.cs</DependentUpon>
+    </Compile>
     <Compile Include="_Sale\frmSale_NVBH_BaoCaoTongHop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -855,6 +861,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_Report\rp_SoLieu_XuLyCLKK.resx">
       <DependentUpon>rp_SoLieu_XuLyCLKK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Sale\frmSale_HO_NVBH_BaoCaoTongHop.resx">
+      <DependentUpon>frmSale_HO_NVBH_BaoCaoTongHop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_Sale\frmSale_NVBH_BaoCaoTongHop.resx">
       <DependentUpon>frmSale_NVBH_BaoCaoTongHop.cs</DependentUpon>

@@ -10,3 +10,7 @@ G:\DevExpress13\VFC\PRO\bin\Debug\PRO.dll
 G:\DevExpress13\VFC\PRO\bin\Debug\PRO.pdb
 G:\DevExpress13\VFC\PRO\obj\Debug\PRO.dll
 G:\DevExpress13\VFC\PRO\obj\Debug\PRO.pdb
+C:\Users\Admin\Desktop\VFC\PRO\bin\Debug\PRO.dll
+C:\Users\Admin\Desktop\VFC\PRO\bin\Debug\PRO.pdb
+C:\Users\Admin\Desktop\VFC\PRO\obj\Debug\PRO.dll
+C:\Users\Admin\Desktop\VFC\PRO\obj\Debug\PRO.pdb

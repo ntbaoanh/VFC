@@ -21,3 +21,11 @@ G:\DevExpress13\VFC\DAL\bin\Debug\PRO.pdb
 G:\DevExpress13\VFC\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 G:\DevExpress13\VFC\DAL\obj\Debug\DAL.dll
 G:\DevExpress13\VFC\DAL\obj\Debug\DAL.pdb
+C:\Users\Admin\Desktop\VFC\DAL\bin\Debug\DAL.dll
+C:\Users\Admin\Desktop\VFC\DAL\bin\Debug\DAL.pdb
+C:\Users\Admin\Desktop\VFC\DAL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Admin\Desktop\VFC\DAL\bin\Debug\PRO.dll
+C:\Users\Admin\Desktop\VFC\DAL\bin\Debug\PRO.pdb
+C:\Users\Admin\Desktop\VFC\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\VFC\DAL\obj\Debug\DAL.dll
+C:\Users\Admin\Desktop\VFC\DAL\obj\Debug\DAL.pdb
