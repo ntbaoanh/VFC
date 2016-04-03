@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::VFC.SplashScreen1), true, true);
             this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
             this.SuspendLayout();

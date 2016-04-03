@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DAL;
 using DevExpress.XtraGrid.Views.Grid;
+using System.Diagnostics;
 
 namespace VFC._Sale
 {
@@ -43,6 +44,9 @@ namespace VFC._Sale
 
         private void btGo_Click(object sender, EventArgs e)
         {
+            splashScreenManager1.ShowWaitForm();
+            Stopwatch sw = Stopwatch.StartNew();  
+
             string _ivalidate = iValidate();
 
             if (_ivalidate.Equals(""))
@@ -61,6 +65,9 @@ namespace VFC._Sale
             {
                 frmMessageBox.Show("Thông báo", _ivalidate, "error");
             }
+            sw.Stop();
+            lbDuration.Text = sw.Elapsed.TotalSeconds + " s";
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)

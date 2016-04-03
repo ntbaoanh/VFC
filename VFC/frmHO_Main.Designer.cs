@@ -78,9 +78,9 @@
             this.bt_TK_Vai_QLy = new DevExpress.XtraBars.BarButtonItem();
             this.bt_NS_Manage = new DevExpress.XtraBars.BarButtonItem();
             this.bt_NS_ThemCheckInOut = new DevExpress.XtraBars.BarButtonItem();
-            this.btNS_ChiTiet_InOut = new DevExpress.XtraBars.BarButtonItem();
-            this.btNS_DoanhSoBill_NV = new DevExpress.XtraBars.BarButtonItem();
-            this.btNS_ChiTiet_Bill_NVBH = new DevExpress.XtraBars.BarButtonItem();
+            this.btSale_ChiTiet_InOut = new DevExpress.XtraBars.BarButtonItem();
+            this.btSale_DoanhSoBill_NV = new DevExpress.XtraBars.BarButtonItem();
+            this.btSales_NVBH_BaoCaoTongHop = new DevExpress.XtraBars.BarButtonItem();
             this.imageCollection_64 = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonPage_Home = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -99,6 +99,7 @@
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_Sale = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage_CS = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -114,8 +115,6 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup21 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btSales_NVBH_BaoCaoTongHop = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_64)).BeginInit();
@@ -172,9 +171,8 @@
             this.bt_TK_Vai_QLy,
             this.bt_NS_Manage,
             this.bt_NS_ThemCheckInOut,
-            this.btNS_ChiTiet_InOut,
-            this.btNS_DoanhSoBill_NV,
-            this.btNS_ChiTiet_Bill_NVBH,
+            this.btSale_ChiTiet_InOut,
+            this.btSale_DoanhSoBill_NV,
             this.btSales_NVBH_BaoCaoTongHop});
             this.ribbon.LargeImages = this.imageCollection_64;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
@@ -610,12 +608,12 @@
             this.bt_NS_ThemCheckInOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.bt_NS_ThemCheckInOut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_NS_ThemCheckInOut_ItemClick);
             // 
-            // btNS_ChiTiet_InOut
+            // btSale_ChiTiet_InOut
             // 
-            this.btNS_ChiTiet_InOut.Caption = "Chi tiết Vào - Ra";
-            this.btNS_ChiTiet_InOut.Id = 54;
-            this.btNS_ChiTiet_InOut.Name = "btNS_ChiTiet_InOut";
-            this.btNS_ChiTiet_InOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btSale_ChiTiet_InOut.Caption = "Chi tiết Vào - Ra";
+            this.btSale_ChiTiet_InOut.Id = 54;
+            this.btSale_ChiTiet_InOut.Name = "btSale_ChiTiet_InOut";
+            this.btSale_ChiTiet_InOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
             toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             toolTipTitleItem1.Appearance.Options.UseImage = true;
@@ -625,21 +623,24 @@
             toolTipItem1.Text = "Chi tiết ra vào của từng nhân viên\r\n";
             superToolTip1.Items.Add(toolTipTitleItem1);
             superToolTip1.Items.Add(toolTipItem1);
-            this.btNS_ChiTiet_InOut.SuperTip = superToolTip1;
+            this.btSale_ChiTiet_InOut.SuperTip = superToolTip1;
             // 
-            // btNS_DoanhSoBill_NV
+            // btSale_DoanhSoBill_NV
             // 
-            this.btNS_DoanhSoBill_NV.Caption = "Doanh Số Bill";
-            this.btNS_DoanhSoBill_NV.Id = 55;
-            this.btNS_DoanhSoBill_NV.Name = "btNS_DoanhSoBill_NV";
-            this.btNS_DoanhSoBill_NV.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btSale_DoanhSoBill_NV.Caption = "Doanh Số Bill";
+            this.btSale_DoanhSoBill_NV.Glyph = ((System.Drawing.Image)(resources.GetObject("btSale_DoanhSoBill_NV.Glyph")));
+            this.btSale_DoanhSoBill_NV.Id = 55;
+            this.btSale_DoanhSoBill_NV.Name = "btSale_DoanhSoBill_NV";
+            this.btSale_DoanhSoBill_NV.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // btNS_ChiTiet_Bill_NVBH
+            // btSales_NVBH_BaoCaoTongHop
             // 
-            this.btNS_ChiTiet_Bill_NVBH.Caption = "Chi tiết Bill";
-            this.btNS_ChiTiet_Bill_NVBH.Id = 56;
-            this.btNS_ChiTiet_Bill_NVBH.Name = "btNS_ChiTiet_Bill_NVBH";
-            this.btNS_ChiTiet_Bill_NVBH.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btSales_NVBH_BaoCaoTongHop.Caption = "Báo cáo tổng hợp NVBH";
+            this.btSales_NVBH_BaoCaoTongHop.Glyph = ((System.Drawing.Image)(resources.GetObject("btSales_NVBH_BaoCaoTongHop.Glyph")));
+            this.btSales_NVBH_BaoCaoTongHop.Id = 57;
+            this.btSales_NVBH_BaoCaoTongHop.Name = "btSales_NVBH_BaoCaoTongHop";
+            this.btSales_NVBH_BaoCaoTongHop.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btSales_NVBH_BaoCaoTongHop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btSales_NVBH_BaoCaoTongHop_ItemClick);
             // 
             // imageCollection_64
             // 
@@ -805,6 +806,14 @@
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Xem doanh thu";
             // 
+            // ribbonPageGroup21
+            // 
+            this.ribbonPageGroup21.ItemLinks.Add(this.btSales_NVBH_BaoCaoTongHop);
+            this.ribbonPageGroup21.ItemLinks.Add(this.btSale_DoanhSoBill_NV);
+            this.ribbonPageGroup21.ItemLinks.Add(this.btSale_ChiTiet_InOut);
+            this.ribbonPageGroup21.Name = "ribbonPageGroup21";
+            this.ribbonPageGroup21.Text = "NVBH";
+            // 
             // ribbonPage_CS
             // 
             this.ribbonPage_CS.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -877,6 +886,7 @@
             this.ribbonPage_NhanSu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup18,
             this.ribbonPageGroup20});
+            this.ribbonPage_NhanSu.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage_NhanSu.Image")));
             this.ribbonPage_NhanSu.Name = "ribbonPage_NhanSu";
             this.ribbonPage_NhanSu.Text = "Bp. Nhân sự";
             // 
@@ -890,9 +900,6 @@
             // ribbonPageGroup20
             // 
             this.ribbonPageGroup20.AllowTextClipping = false;
-            this.ribbonPageGroup20.ItemLinks.Add(this.btNS_ChiTiet_InOut);
-            this.ribbonPageGroup20.ItemLinks.Add(this.btNS_DoanhSoBill_NV);
-            this.ribbonPageGroup20.ItemLinks.Add(this.btNS_ChiTiet_Bill_NVBH);
             this.ribbonPageGroup20.Name = "ribbonPageGroup20";
             this.ribbonPageGroup20.Text = "Báo cáo";
             // 
@@ -929,21 +936,6 @@
             this.barButtonItem2.Id = 2;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // ribbonPageGroup21
-            // 
-            this.ribbonPageGroup21.ItemLinks.Add(this.btSales_NVBH_BaoCaoTongHop);
-            this.ribbonPageGroup21.Name = "ribbonPageGroup21";
-            this.ribbonPageGroup21.Text = "NVBH";
-            // 
-            // btSales_NVBH_BaoCaoTongHop
-            // 
-            this.btSales_NVBH_BaoCaoTongHop.Caption = "Báo cáo tổng hợp NVBH";
-            this.btSales_NVBH_BaoCaoTongHop.Glyph = ((System.Drawing.Image)(resources.GetObject("btSales_NVBH_BaoCaoTongHop.Glyph")));
-            this.btSales_NVBH_BaoCaoTongHop.Id = 57;
-            this.btSales_NVBH_BaoCaoTongHop.Name = "btSales_NVBH_BaoCaoTongHop";
-            this.btSales_NVBH_BaoCaoTongHop.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btSales_NVBH_BaoCaoTongHop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btSales_NVBH_BaoCaoTongHop_ItemClick);
             // 
             // frmHO_Main
             // 
@@ -1048,9 +1040,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage_NhanSu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup18;
         private DevExpress.XtraBars.BarButtonItem bt_NS_ThemCheckInOut;
-        private DevExpress.XtraBars.BarButtonItem btNS_ChiTiet_InOut;
-        private DevExpress.XtraBars.BarButtonItem btNS_DoanhSoBill_NV;
-        private DevExpress.XtraBars.BarButtonItem btNS_ChiTiet_Bill_NVBH;
+        private DevExpress.XtraBars.BarButtonItem btSale_ChiTiet_InOut;
+        private DevExpress.XtraBars.BarButtonItem btSale_DoanhSoBill_NV;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup20;
         private DevExpress.XtraBars.BarButtonItem btSales_NVBH_BaoCaoTongHop;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup21;

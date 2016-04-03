@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DAL;
 using DevExpress.XtraPivotGrid;
+using System.Diagnostics;
 
 namespace VFC._Sale
 {
@@ -94,6 +95,9 @@ namespace VFC._Sale
 
         private void btGo_Click(object sender, EventArgs e)
         {
+            splashScreenManager1.ShowWaitForm();
+            Stopwatch sw = Stopwatch.StartNew();  
+
             string _ivalidate = iValidate();
 
             if (_ivalidate.Equals(""))
@@ -111,6 +115,9 @@ namespace VFC._Sale
 
                     PivotGridField f_StoreCode = new PivotGridField("Store_Code", PivotArea.RowArea);
                     f_StoreCode.Caption = "Cửa hàng";
+
+                    PivotGridField f_Region = new PivotGridField("Region", PivotArea.RowArea);
+                    f_Region.Caption = "Khu vực";
 
                     PivotGridField f_TenNV = new PivotGridField("HoTen", PivotArea.RowArea);
                     f_TenNV.Caption = "Họ và tên";
@@ -144,7 +151,8 @@ namespace VFC._Sale
                     f_TongSoBill.CellFormat.FormatString = "{0:#,#}";
 
                     // Add the fields to the control's field collection.         
-                    pivotGridControl1.Fields.AddRange(new PivotGridField[] { f_StoreCode
+                    pivotGridControl1.Fields.AddRange(new PivotGridField[] { f_Region
+                                , f_StoreCode
                                 , f_NVID
                                 , f_TenNV
                                 , f_TongNC
@@ -154,6 +162,9 @@ namespace VFC._Sale
                                 , f_TongSoBill});
 
                     pivotGridControl1.CollapseAll();
+
+                    DAL.Utilities.Transaction _rd = new DAL.Utilities.Transaction();
+                    _rd.record("Xem BC Tổng hợp", "48", frmHO_Main._userLogin.UserName, System.Environment.MachineName.ToString());
                 }
                 catch (Exception ex)
                 {
@@ -164,6 +175,10 @@ namespace VFC._Sale
             {
                 frmMessageBox.Show("Thông báo", _ivalidate, "error");
             }
+
+            sw.Stop();
+            lbDuration.Text = sw.Elapsed.TotalSeconds + " s";
+            splashScreenManager1.CloseWaitForm();
         }
 
         private void chkAllCuaHang_CheckedChanged(object sender, EventArgs e)

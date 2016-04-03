@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSale_HO_NVBH_BaoCaoTongHop));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.gridControl_DuLieuTho = new DevExpress.XtraGrid.GridControl();
+            this.gridView_DuLieuTho = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btGo = new DevExpress.XtraEditors.SimpleButton();
             this.dateTo = new DevExpress.XtraEditors.DateEdit();
             this.dateFrom = new DevExpress.XtraEditors.DateEdit();
@@ -46,11 +48,13 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.btExportRawData = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControl_DuLieuTho = new DevExpress.XtraGrid.GridControl();
-            this.gridView_DuLieuTho = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
+            this.lbDuration = new DevExpress.XtraEditors.LabelControl();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::VFC.WaitForm1), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_DuLieuTho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_DuLieuTho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTo.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFrom.Properties.CalendarTimeProperties)).BeginInit();
@@ -66,8 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl_DuLieuTho)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView_DuLieuTho)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -76,6 +78,7 @@
             this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Red;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            this.groupControl1.Controls.Add(this.lbDuration);
             this.groupControl1.Controls.Add(this.gridControl_DuLieuTho);
             this.groupControl1.Controls.Add(this.btGo);
             this.groupControl1.Controls.Add(this.dateTo);
@@ -87,6 +90,22 @@
             this.groupControl1.Size = new System.Drawing.Size(334, 147);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "Thời gian";
+            // 
+            // gridControl_DuLieuTho
+            // 
+            this.gridControl_DuLieuTho.Location = new System.Drawing.Point(5, 28);
+            this.gridControl_DuLieuTho.MainView = this.gridView_DuLieuTho;
+            this.gridControl_DuLieuTho.Name = "gridControl_DuLieuTho";
+            this.gridControl_DuLieuTho.Size = new System.Drawing.Size(53, 30);
+            this.gridControl_DuLieuTho.TabIndex = 3;
+            this.gridControl_DuLieuTho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView_DuLieuTho});
+            this.gridControl_DuLieuTho.Visible = false;
+            // 
+            // gridView_DuLieuTho
+            // 
+            this.gridView_DuLieuTho.GridControl = this.gridControl_DuLieuTho;
+            this.gridView_DuLieuTho.Name = "gridView_DuLieuTho";
             // 
             // btGo
             // 
@@ -199,8 +218,9 @@
             // 
             // listCheckCuaHang
             // 
-            this.listCheckCuaHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listCheckCuaHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listCheckCuaHang.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listCheckCuaHang.Appearance.Options.UseFont = true;
             this.listCheckCuaHang.DisplayMember = "STORE_CODE";
@@ -209,7 +229,7 @@
             this.listCheckCuaHang.MultiColumn = true;
             this.listCheckCuaHang.Name = "listCheckCuaHang";
             this.listCheckCuaHang.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listCheckCuaHang.Size = new System.Drawing.Size(277, 117);
+            this.listCheckCuaHang.Size = new System.Drawing.Size(324, 112);
             this.listCheckCuaHang.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.listCheckCuaHang.TabIndex = 0;
             this.listCheckCuaHang.ValueMember = "STORE_NO";
@@ -286,25 +306,18 @@
             this.groupControl4.TabIndex = 3;
             this.groupControl4.Text = "Xuất ra Excel";
             // 
-            // gridControl_DuLieuTho
-            // 
-            this.gridControl_DuLieuTho.Location = new System.Drawing.Point(12, 107);
-            this.gridControl_DuLieuTho.MainView = this.gridView_DuLieuTho;
-            this.gridControl_DuLieuTho.Name = "gridControl_DuLieuTho";
-            this.gridControl_DuLieuTho.Size = new System.Drawing.Size(53, 30);
-            this.gridControl_DuLieuTho.TabIndex = 3;
-            this.gridControl_DuLieuTho.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView_DuLieuTho});
-            this.gridControl_DuLieuTho.Visible = false;
-            // 
-            // gridView_DuLieuTho
-            // 
-            this.gridView_DuLieuTho.GridControl = this.gridControl_DuLieuTho;
-            this.gridView_DuLieuTho.Name = "gridView_DuLieuTho";
-            // 
             // saveFileDialog2
             // 
             this.saveFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog2_FileOk);
+            // 
+            // lbDuration
+            // 
+            this.lbDuration.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDuration.Location = new System.Drawing.Point(5, 129);
+            this.lbDuration.Name = "lbDuration";
+            this.lbDuration.Size = new System.Drawing.Size(49, 13);
+            this.lbDuration.TabIndex = 4;
+            this.lbDuration.Text = "lbDuration";
             // 
             // frmSale_HO_NVBH_BaoCaoTongHop
             // 
@@ -322,6 +335,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_DuLieuTho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView_DuLieuTho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTo.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFrom.Properties.CalendarTimeProperties)).EndInit();
@@ -337,8 +352,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl_DuLieuTho)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView_DuLieuTho)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,5 +378,7 @@
         private DevExpress.XtraGrid.GridControl gridControl_DuLieuTho;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView_DuLieuTho;
         private System.Windows.Forms.SaveFileDialog saveFileDialog2;
+        private DevExpress.XtraEditors.LabelControl lbDuration;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

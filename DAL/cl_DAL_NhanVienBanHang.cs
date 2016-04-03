@@ -173,6 +173,12 @@ namespace DAL
 		                        + " , sum(TotalBill) as TotalBill"
 		                        + " , Active"
 		                        + " , Approve"
+                                + " , CASE Region "
+                                            + " WHEN 'HO CHI MINH' THEN N'Hồ Chí Minh'"
+                                            + " WHEN 'MIEN TRUNG' THEN N'Miền Trung'"
+                                            + " WHEN 'MIEN BAC' THEN N'Miền Bắc'"
+                                            + " WHEN 'MIEN TAY' THEN N'Miền Tây'"
+                                            + " ELSE N'Miền Đông' END as Region"
 	                        + " from sales.v_NVBH_BaoCaoTongHop "
                             + " where Date_Create between '" + _fromDate + "' and '" + _toDate + "' and DS_StoreNo in (" + _storeno + ")"
 	                        + " group by HoTen"
@@ -182,9 +188,39 @@ namespace DAL
 		                        + " , DS_StoreNo"
 		                        + " , CC_StoreNo"
 		                        + " , Active"
-		                        + " , Approve";
+                                + " , Approve"
+		                        + " , Region";
 
             dt = _connSQL.returnDataTable(query);
+
+            return dt;
+        }
+
+        public DataTable GET_NVBH_BaoCao_InOut(string _fromDate, string _toDate, string _storeno)
+        {
+            dt = new DataTable();
+
+            _connSQL = new Utilities.SQLCon();
+
+            string query = "select i.Ho + ' ' + i.Ten as HoTen"
+	                                +" , i.Store_Code"
+	                                +" , CASE WHEN i.Status = 'I' THEN 'Vào' ELSE 'Ra' END as VaoRa"
+	                                +" , i.DateOnly"
+	                                +" , i.TimeOnly"
+	                                +" , i.NVID"
+	                                +" , i.StoreNo"
+	                                +" , CASE i.Region "
+			                                +" WHEN 'HO CHI MINH' THEN N'Hồ Chí Minh'"
+			                                +" WHEN 'MIEN TRUNG' THEN N'Miền Trung'"
+			                                +" WHEN 'MIEN BAC' THEN N'Miền Bắc'"
+			                                +" WHEN 'MIEN TAY' THEN N'Miền Tây'"
+                                            + " ELSE N'Miền Đông' END as Region"
+                                +" from SALES.v_NVBH_CheckInOut i"
+                                +" where i.DateOnly between '"+ _fromDate +"' and '"+ _toDate +"'"
+                                +" and i.StoreNo in ("+ _storeno +")";
+
+            dt = _connSQL.returnDataTable(query);
+
 
             return dt;
         }

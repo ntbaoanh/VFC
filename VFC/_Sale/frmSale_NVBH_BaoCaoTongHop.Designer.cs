@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSale_NVBH_BaoCaoTongHop));
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::VFC.WaitForm1), true, true);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btGo = new DevExpress.XtraEditors.SimpleButton();
             this.dateTo = new DevExpress.XtraEditors.DateEdit();
@@ -46,6 +47,7 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lbDuration = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTo.Properties.CalendarTimeProperties)).BeginInit();
@@ -64,6 +66,7 @@
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
             this.groupControl1.Controls.Add(this.btGo);
             this.groupControl1.Controls.Add(this.dateTo);
+            this.groupControl1.Controls.Add(this.lbDuration);
             this.groupControl1.Controls.Add(this.dateFrom);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -280,6 +283,15 @@
             this.gridColumn9.FieldName = "Approve";
             this.gridColumn9.Name = "gridColumn9";
             // 
+            // lbDuration
+            // 
+            this.lbDuration.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDuration.Location = new System.Drawing.Point(9, 124);
+            this.lbDuration.Name = "lbDuration";
+            this.lbDuration.Size = new System.Drawing.Size(49, 13);
+            this.lbDuration.TabIndex = 0;
+            this.lbDuration.Text = "lbDuration";
+            // 
             // frmSale_NVBH_BaoCaoTongHop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +334,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraEditors.LabelControl lbDuration;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
 
 
     }
