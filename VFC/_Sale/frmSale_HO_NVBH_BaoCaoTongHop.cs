@@ -104,16 +104,27 @@ namespace VFC._Sale
             {
                 try
                 {
+                    string _active = "";
+
+                    if (rdActive.Checked == true)
+                    {
+                        _active = "1";
+                    }
+                    else
+                    {
+                        _active = "0";
+                    }
+
                     pivotGridControl1.Fields.Clear();
 
                     cl_DAL_NhanVienBanHang _dalNvbh = new cl_DAL_NhanVienBanHang();
                     DataTable _dt = new DataTable();
-                    _dt = _dalNvbh.GET_NVBH_BaoCaoTongHop(((DateTime)dateFrom.EditValue).ToString("MM/dd/yyyy"), ((DateTime)dateTo.EditValue).ToString("MM/dd/yyyy"), this.GET_Choose_CuaHang());;
+                    _dt = _dalNvbh.GET_NVBH_BaoCaoTongHop(((DateTime)dateFrom.EditValue).ToString("MM/dd/yyyy"), ((DateTime)dateTo.EditValue).ToString("MM/dd/yyyy"), this.GET_Choose_CuaHang(), "HO", _active);
                     
                     pivotGridControl1.DataSource = _dt;
                     gridControl_DuLieuTho.DataSource = _dt;
 
-                    PivotGridField f_StoreCode = new PivotGridField("Store_Code", PivotArea.RowArea);
+                    PivotGridField f_StoreCode = new PivotGridField("CC_STORE_CODE", PivotArea.RowArea);
                     f_StoreCode.Caption = "Cửa hàng";
 
                     PivotGridField f_Region = new PivotGridField("Region", PivotArea.RowArea);
@@ -150,6 +161,11 @@ namespace VFC._Sale
                     f_TongSoBill.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
                     f_TongSoBill.CellFormat.FormatString = "{0:#,#}";
 
+                    PivotGridField f_DateOnly = new PivotGridField("DateOnly", PivotArea.FilterArea);
+                    f_DateOnly.Caption = "Ngày";
+                    f_DateOnly.ValueFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+                    f_DateOnly.ValueFormat.FormatString = "dd/MM/yyyy";
+
                     // Add the fields to the control's field collection.         
                     pivotGridControl1.Fields.AddRange(new PivotGridField[] { f_Region
                                 , f_StoreCode
@@ -159,7 +175,8 @@ namespace VFC._Sale
                                 , f_TongK
                                 , f_TongDoanhSo
                                 , f_TongSlg
-                                , f_TongSoBill});
+                                , f_TongSoBill
+                                , f_DateOnly});
 
                     pivotGridControl1.CollapseAll();
 

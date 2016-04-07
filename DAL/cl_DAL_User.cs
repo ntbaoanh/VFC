@@ -11,7 +11,7 @@ namespace DAL
     public class cl_DAL_User
     {
         Utilities.SQLCon _conn;
-        DataTable _dt = new DataTable();
+        DataTable _dt;// = new DataTable();
         Utilities.HashMD5 MD5 = new Utilities.HashMD5();
 
         public bool CheckUserLogin( string _user , string _pass )
@@ -20,6 +20,7 @@ namespace DAL
 
             try
             {
+                _dt = new DataTable();
                 _conn = new Utilities.SQLCon();
                 _conn.getConnection();
                 _dt = _conn.returnDataTable( "SELECT * FROM tb_Users WHERE UserID = N'" + _user + "' and Password = N'" + MD5.toMD5( _pass ) + "'" );
@@ -49,6 +50,7 @@ namespace DAL
 
             try
             {
+                _dt = new DataTable();
                 _conn = new Utilities.SQLCon();
                 _conn.getConnection();
                 _dt = _conn.returnDataTable( "SELECT * FROM tb_Users WHERE UserID = N'" + _uName + "'" );
@@ -194,6 +196,74 @@ namespace DAL
 
             _conn.closeConnection();
             return check;
+        }
+
+        public bool UPDATE_UserRight(string _user, string _roleid, string _checkState)
+        {
+            bool check = true;
+
+            try
+            {
+                _conn = new Utilities.SQLCon();
+
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "[ADMIN].[spud_UserRight_Update]";
+                command.Parameters.AddWithValue("@roleid", _roleid);
+                command.Parameters.AddWithValue("@userid", _user);
+                command.Parameters.AddWithValue("@checkState", _checkState);
+
+                SqlParameter _output = command.Parameters.Add("@output", SqlDbType.NVarChar, 50);
+                _output.Direction = ParameterDirection.Output;
+
+                command.Connection = _conn.getConnection();
+
+                command.ExecuteNonQuery();
+
+                if (_output.Value.Equals("success"))
+                {
+                    check = true;
+                }
+                else
+                {
+                    check = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                check = false;
+                throw new Exception(ex.Message);
+            }
+            return check;
+        }
+
+        public DataTable GET_DS_User(string _active)
+        {
+            _dt = new DataTable();
+
+            string query = "select UserID, FullName, case when PhoneNumber is null then 0 else PhoneNumber end as PhoneNumber, DepartmentID, Active from tb_Users ";
+
+            if(_active.Equals("1"))
+            {
+                query += " where Active = 1";
+            }
+
+            _conn = new Utilities.SQLCon();
+            _dt = _conn.returnDataTable(query);
+
+            return _dt;
+        }
+
+        public DataTable GET_DS_UserRight(string _departmentID)
+        {
+            _dt = new DataTable();
+
+            string _query = "select * from ADMIN.v_User_Rights where DepartmentID = '" + _departmentID + "'";
+            _conn = new Utilities.SQLCon();
+
+            _dt = _conn.returnDataTable(_query);
+
+            return _dt;
         }
     }
 }

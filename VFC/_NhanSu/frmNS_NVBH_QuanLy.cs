@@ -30,7 +30,7 @@ namespace VFC._NhanSu
 
             if (_type.Equals("new"))
             {
-                _query += " where approve = 0";
+                _query += " where approve = 0 and active = 1";
             }
             else if (_type.Equals("active"))
             {
@@ -80,58 +80,103 @@ namespace VFC._NhanSu
 
         private void btDeActive_Click(object sender, EventArgs e)
         {
-            try
+            cl_DAL_User _user = new cl_DAL_User();
+
+            if (_user.CheckUserLogin(frmHO_Main._userLogin.ToString(), "49"))
             {
-                timer_UpdateGrid.Start();
-                _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("active", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
-                myFrm.ShowDialog();
+                try
+                {
+                    timer_UpdateGrid.Start();
+                    _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("active", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
+                    myFrm.ShowDialog();
+                }
+                catch (NullReferenceException)
+                {
+                    frmMessageBox.Show("Thông báo", "Vui lòng chọn nhân viên muốn chỉnh sửa [Active - DeActive].", "error");
+                }
             }
-            catch (NullReferenceException)
+            else
             {
-                frmMessageBox.Show("Thông báo", "Vui lòng chọn nhân viên muốn chỉnh sửa [Active - DeActive].", "error");
+                frmMessageBox.Show("Thông báo", "Bạn không có quyền sử dụng module này.[52]", "error");
             }
         }
 
         private void btChinhSua_Click(object sender, EventArgs e)
         {
-            try
+             cl_DAL_User _user = new cl_DAL_User();
+
+            if (_user.CheckUserLogin(frmHO_Main._userLogin.ToString(), "49"))
             {
-                timer_UpdateGrid.Start();
-                _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("edit", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
-                myFrm.ShowDialog();
+                try
+                {
+                    timer_UpdateGrid.Start();
+                    _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("edit", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
+                    myFrm.ShowDialog();
+                }
+                catch (NullReferenceException)
+                {
+                    frmMessageBox.Show("Thông báo","Vui lòng chọn nhân viên muốn chỉnh sửa.","error");
+                }
             }
-            catch (NullReferenceException)
+            else
             {
-                frmMessageBox.Show("Thông báo","Vui lòng chọn nhân viên muốn chỉnh sửa.","error");
+                frmMessageBox.Show("Thông báo", "Bạn không có quyền sử dụng module này.[49]", "error");
             }
         }
 
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
-            timer_UpdateGrid.Start();
-            _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update();
-            myFrm.ShowDialog();
+            cl_DAL_User _user = new cl_DAL_User();
+
+            if (_user.CheckUserLogin(frmHO_Main._userLogin.ToString(), "44"))
+            {
+                timer_UpdateGrid.Start();
+                _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update();
+                myFrm.ShowDialog();
+            }
+            else
+            {
+                frmMessageBox.Show("Thông báo", "Bạn không có quyền sử dụng module này.[44]", "error");
+            }
         }
 
         private void btDeBat_Click(object sender, EventArgs e)
         {
-            try
+            cl_DAL_User _user = new cl_DAL_User();
+
+            if (_user.CheckUserLogin(frmHO_Main._userLogin.ToString(), "51"))
             {
-                timer_UpdateGrid.Start();
-                _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("debat", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
-                myFrm.ShowDialog();
+                try
+                {
+                    timer_UpdateGrid.Start();
+                    _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("debat", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
+                    myFrm.ShowDialog();
+                }
+                catch (NullReferenceException)
+                {
+                    frmMessageBox.Show("Thông báo", "Vui lòng chọn nhân viên muốn chỉnh sửa [Đề bạt Nhân Viên].", "error");
+                }
             }
-            catch (NullReferenceException)
+            else
             {
-                frmMessageBox.Show("Thông báo", "Vui lòng chọn nhân viên muốn chỉnh sửa [Đề bạt Nhân Viên].", "error");
+                frmMessageBox.Show("Thông báo", "Bạn không có quyền sử dụng module này.[51]", "error");
             }
         }
 
         private void btThuyenChuyen_Click(object sender, EventArgs e)
         {
-            timer_UpdateGrid.Start();
-            _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("luanchuyen", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
-            myFrm.ShowDialog();
+            cl_DAL_User _user = new cl_DAL_User();
+
+            if (_user.CheckUserLogin(frmHO_Main._userLogin.ToString(), "50"))
+            {
+                timer_UpdateGrid.Start();
+                _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("luanchuyen", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));
+                myFrm.ShowDialog();
+            }
+            else
+            {
+                frmMessageBox.Show("Thông báo", "Bạn không có quyền sử dụng module này.[50]", "error");
+            }
         }
 
         private void gridView1_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)

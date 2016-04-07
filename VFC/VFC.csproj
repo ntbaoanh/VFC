@@ -248,6 +248,12 @@
     <Compile Include="_Admin\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="_Admin\frmAdmin_QuanLy_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_Admin\frmAdmin_QuanLy_NhanVien.Designer.cs">
+      <DependentUpon>frmAdmin_QuanLy_NhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="_Admin\frmOverrideLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,12 +427,6 @@
     </Compile>
     <Compile Include="_NhanSu\frmNS_NVBH_CheckInOut_Insert.Designer.cs">
       <DependentUpon>frmNS_NVBH_CheckInOut_Insert.cs</DependentUpon>
-    </Compile>
-    <Compile Include="_NhanSu\frmNS_NVBH_CheckInOut_InsertBoth.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="_NhanSu\frmNS_NVBH_CheckInOut_InsertBoth.Designer.cs">
-      <DependentUpon>frmNS_NVBH_CheckInOut_InsertBoth.cs</DependentUpon>
     </Compile>
     <Compile Include="_NhanSu\frmNS_NVBH_CheckInOut_QuanLy.cs">
       <SubType>Form</SubType>
@@ -717,6 +717,9 @@
     <EmbeddedResource Include="_Admin\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_Admin\frmAdmin_QuanLy_NhanVien.resx">
+      <DependentUpon>frmAdmin_QuanLy_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_Admin\frmOverrideLogin.resx">
       <DependentUpon>frmOverrideLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -803,9 +806,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_NhanSu\frmNS_NVBH_CheckInOut_Insert.resx">
       <DependentUpon>frmNS_NVBH_CheckInOut_Insert.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="_NhanSu\frmNS_NVBH_CheckInOut_InsertBoth.resx">
-      <DependentUpon>frmNS_NVBH_CheckInOut_InsertBoth.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_NhanSu\frmNS_NVBH_CheckInOut_QuanLy.resx">
       <DependentUpon>frmNS_NVBH_CheckInOut_QuanLy.cs</DependentUpon>

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSale_HO_NVBH_BaoCaoTongHop));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lbDuration = new DevExpress.XtraEditors.LabelControl();
             this.gridControl_DuLieuTho = new DevExpress.XtraGrid.GridControl();
             this.gridView_DuLieuTho = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btGo = new DevExpress.XtraEditors.SimpleButton();
@@ -49,8 +50,9 @@
             this.btExportRawData = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
-            this.lbDuration = new DevExpress.XtraEditors.LabelControl();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::VFC.WaitForm1), true, true);
+            this.rdAll = new System.Windows.Forms.RadioButton();
+            this.rdActive = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_DuLieuTho)).BeginInit();
@@ -78,6 +80,8 @@
             this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Red;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            this.groupControl1.Controls.Add(this.rdAll);
+            this.groupControl1.Controls.Add(this.rdActive);
             this.groupControl1.Controls.Add(this.lbDuration);
             this.groupControl1.Controls.Add(this.gridControl_DuLieuTho);
             this.groupControl1.Controls.Add(this.btGo);
@@ -87,9 +91,18 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(334, 147);
+            this.groupControl1.Size = new System.Drawing.Size(341, 147);
             this.groupControl1.TabIndex = 3;
             this.groupControl1.Text = "Thời gian";
+            // 
+            // lbDuration
+            // 
+            this.lbDuration.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDuration.Location = new System.Drawing.Point(5, 129);
+            this.lbDuration.Name = "lbDuration";
+            this.lbDuration.Size = new System.Drawing.Size(49, 13);
+            this.lbDuration.TabIndex = 4;
+            this.lbDuration.Text = "lbDuration";
             // 
             // gridControl_DuLieuTho
             // 
@@ -132,7 +145,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateTo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateTo.Size = new System.Drawing.Size(160, 26);
+            this.dateTo.Size = new System.Drawing.Size(114, 26);
             this.dateTo.TabIndex = 1;
             // 
             // dateFrom
@@ -148,7 +161,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateFrom.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateFrom.Size = new System.Drawing.Size(160, 26);
+            this.dateFrom.Size = new System.Drawing.Size(114, 26);
             this.dateFrom.TabIndex = 1;
             // 
             // labelControl2
@@ -212,7 +225,7 @@
             this.groupControl3.Controls.Add(this.chkAllCuaHang);
             this.groupControl3.Location = new System.Drawing.Point(3, 311);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(334, 177);
+            this.groupControl3.Size = new System.Drawing.Size(341, 177);
             this.groupControl3.TabIndex = 3;
             this.groupControl3.Text = "Cửa hàng";
             // 
@@ -229,7 +242,7 @@
             this.listCheckCuaHang.MultiColumn = true;
             this.listCheckCuaHang.Name = "listCheckCuaHang";
             this.listCheckCuaHang.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listCheckCuaHang.Size = new System.Drawing.Size(324, 112);
+            this.listCheckCuaHang.Size = new System.Drawing.Size(331, 112);
             this.listCheckCuaHang.SortOrder = System.Windows.Forms.SortOrder.Ascending;
             this.listCheckCuaHang.TabIndex = 0;
             this.listCheckCuaHang.ValueMember = "STORE_NO";
@@ -251,9 +264,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraScrollableControl1.Controls.Add(this.pivotGridControl1);
-            this.xtraScrollableControl1.Location = new System.Drawing.Point(343, 3);
+            this.xtraScrollableControl1.Location = new System.Drawing.Point(350, 3);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
-            this.xtraScrollableControl1.Size = new System.Drawing.Size(455, 485);
+            this.xtraScrollableControl1.Size = new System.Drawing.Size(448, 485);
             this.xtraScrollableControl1.TabIndex = 4;
             // 
             // pivotGridControl1
@@ -261,7 +274,7 @@
             this.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pivotGridControl1.Location = new System.Drawing.Point(0, 0);
             this.pivotGridControl1.Name = "pivotGridControl1";
-            this.pivotGridControl1.Size = new System.Drawing.Size(455, 485);
+            this.pivotGridControl1.Size = new System.Drawing.Size(448, 485);
             this.pivotGridControl1.TabIndex = 0;
             // 
             // btExport
@@ -300,7 +313,7 @@
             this.groupControl4.AppearanceCaption.Options.UseForeColor = true;
             this.groupControl4.Controls.Add(this.btExportRawData);
             this.groupControl4.Controls.Add(this.btExport);
-            this.groupControl4.Location = new System.Drawing.Point(160, 156);
+            this.groupControl4.Location = new System.Drawing.Point(167, 156);
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(177, 149);
             this.groupControl4.TabIndex = 3;
@@ -310,14 +323,27 @@
             // 
             this.saveFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog2_FileOk);
             // 
-            // lbDuration
+            // rdAll
             // 
-            this.lbDuration.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDuration.Location = new System.Drawing.Point(5, 129);
-            this.lbDuration.Name = "lbDuration";
-            this.lbDuration.Size = new System.Drawing.Size(49, 13);
-            this.lbDuration.TabIndex = 4;
-            this.lbDuration.Text = "lbDuration";
+            this.rdAll.AutoSize = true;
+            this.rdAll.Location = new System.Drawing.Point(252, 73);
+            this.rdAll.Name = "rdAll";
+            this.rdAll.Size = new System.Drawing.Size(55, 17);
+            this.rdAll.TabIndex = 6;
+            this.rdAll.Text = "Tất cả";
+            this.rdAll.UseVisualStyleBackColor = true;
+            // 
+            // rdActive
+            // 
+            this.rdActive.AutoSize = true;
+            this.rdActive.Checked = true;
+            this.rdActive.Location = new System.Drawing.Point(252, 50);
+            this.rdActive.Name = "rdActive";
+            this.rdActive.Size = new System.Drawing.Size(85, 17);
+            this.rdActive.TabIndex = 5;
+            this.rdActive.TabStop = true;
+            this.rdActive.Text = "Còn làm việc";
+            this.rdActive.UseVisualStyleBackColor = true;
             // 
             // frmSale_HO_NVBH_BaoCaoTongHop
             // 
@@ -380,5 +406,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog2;
         private DevExpress.XtraEditors.LabelControl lbDuration;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private System.Windows.Forms.RadioButton rdAll;
+        private System.Windows.Forms.RadioButton rdActive;
     }
 }

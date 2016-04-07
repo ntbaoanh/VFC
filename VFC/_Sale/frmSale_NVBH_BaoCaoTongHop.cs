@@ -53,8 +53,19 @@ namespace VFC._Sale
             {
                 try
                 {
+                    string _active = "";
+
+                    if (rdActive.Checked == true)
+                    {
+                        _active = "1";
+                    }
+                    else
+                    {
+                        _active = "0";
+                    }
+                    
                     cl_DAL_NhanVienBanHang _dalNvbh = new cl_DAL_NhanVienBanHang();
-                    gridControl1.DataSource = _dalNvbh.GET_NVBH_BaoCaoTongHop(((DateTime)dateFrom.EditValue).ToString("MM/dd/yyyy"), ((DateTime)dateTo.EditValue).ToString("MM/dd/yyyy"), frmMain._myAppConfig.StoreNo);
+                    gridControl1.DataSource = _dalNvbh.GET_NVBH_BaoCaoTongHop(((DateTime)dateFrom.EditValue).ToString("MM/dd/yyyy"), ((DateTime)dateTo.EditValue).ToString("MM/dd/yyyy"), frmMain._myAppConfig.StoreNo, "POS", _active);
                 }
                 catch (Exception ex)
                 {

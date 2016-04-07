@@ -154,7 +154,7 @@ namespace DAL
             return check;
         }
 
-        public DataTable GET_NVBH_BaoCaoTongHop(string _fromDate, string _toDate, string _storeno)
+        public DataTable GET_NVBH_BaoCaoTongHop(string _fromDate, string _toDate, string _storeno, string _moitruong, string _active)
         {
             dt = new DataTable();
 
@@ -163,32 +163,41 @@ namespace DAL
             string query = "select HoTen"
 		                        + " , NVID"
 		                        + " , NVSID"
-		                        + " , Store_Code"
-		                        + " , DS_StoreNo"
+                                + " , CC_STORE_CODE"
 		                        + " , sum(NC) as Total_NC"
 		                        + " , sum(K) as Total_K"
-		                        + " , CC_StoreNo"
 		                        + " , sum(TongDoanhSo) as TongDoanhSo"
 		                        + " , sum(TongSoLuong) as TongSoLuong"
 		                        + " , sum(TotalBill) as TotalBill"
-		                        + " , Active"
-		                        + " , Approve"
+		                        + " , Active";
+            if(_moitruong.Equals("HO"))
+            {
+                                query += " , DateOnly";
+            }
+                                query += " , Approve"
                                 + " , CASE Region "
                                             + " WHEN 'HO CHI MINH' THEN N'Hồ Chí Minh'"
                                             + " WHEN 'MIEN TRUNG' THEN N'Miền Trung'"
                                             + " WHEN 'MIEN BAC' THEN N'Miền Bắc'"
                                             + " WHEN 'MIEN TAY' THEN N'Miền Tây'"
                                             + " ELSE N'Miền Đông' END as Region"
-	                        + " from sales.v_NVBH_BaoCaoTongHop "
-                            + " where Date_Create between '" + _fromDate + "' and '" + _toDate + "' and DS_StoreNo in (" + _storeno + ")"
-	                        + " group by HoTen"
+                            + " from sales.v_NVBH_BaoCaoTongHop "
+                            + " where DateOnly between '" + _fromDate + "' and '" + _toDate + "' and DS_StoreNo in (" + _storeno + ")";
+            if(_active.Equals("1"))
+            {
+                            query += " and active = 1";
+            }
+                            query += " group by HoTen"
 		                        + " , NVID"
 		                        + " , NVSID"
-		                        + " , Store_Code"
 		                        + " , DS_StoreNo"
-		                        + " , CC_StoreNo"
-		                        + " , Active"
-                                + " , Approve"
+		                        + " , Active";
+            if(_moitruong.Equals("HO"))
+            {
+                                query += " , DateOnly";
+            }
+                                query += " , Approve"
+                                + " , CC_STORE_CODE"
 		                        + " , Region";
 
             dt = _connSQL.returnDataTable(query);

@@ -33,6 +33,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btGo = new DevExpress.XtraEditors.SimpleButton();
             this.dateTo = new DevExpress.XtraEditors.DateEdit();
+            this.lbDuration = new DevExpress.XtraEditors.LabelControl();
             this.dateFrom = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -47,7 +48,8 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lbDuration = new DevExpress.XtraEditors.LabelControl();
+            this.rdActive = new System.Windows.Forms.RadioButton();
+            this.rdAll = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTo.Properties.CalendarTimeProperties)).BeginInit();
@@ -64,6 +66,8 @@
             this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Red;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            this.groupControl1.Controls.Add(this.rdAll);
+            this.groupControl1.Controls.Add(this.rdActive);
             this.groupControl1.Controls.Add(this.btGo);
             this.groupControl1.Controls.Add(this.dateTo);
             this.groupControl1.Controls.Add(this.lbDuration);
@@ -72,7 +76,7 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Location = new System.Drawing.Point(3, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(347, 142);
+            this.groupControl1.Size = new System.Drawing.Size(417, 142);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "Thời gian";
             // 
@@ -103,6 +107,15 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateTo.Size = new System.Drawing.Size(160, 26);
             this.dateTo.TabIndex = 1;
+            // 
+            // lbDuration
+            // 
+            this.lbDuration.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDuration.Location = new System.Drawing.Point(9, 124);
+            this.lbDuration.Name = "lbDuration";
+            this.lbDuration.Size = new System.Drawing.Size(49, 13);
+            this.lbDuration.TabIndex = 0;
+            this.lbDuration.Text = "lbDuration";
             // 
             // dateFrom
             // 
@@ -283,14 +296,27 @@
             this.gridColumn9.FieldName = "Approve";
             this.gridColumn9.Name = "gridColumn9";
             // 
-            // lbDuration
+            // rdActive
             // 
-            this.lbDuration.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDuration.Location = new System.Drawing.Point(9, 124);
-            this.lbDuration.Name = "lbDuration";
-            this.lbDuration.Size = new System.Drawing.Size(49, 13);
-            this.lbDuration.TabIndex = 0;
-            this.lbDuration.Text = "lbDuration";
+            this.rdActive.AutoSize = true;
+            this.rdActive.Checked = true;
+            this.rdActive.Location = new System.Drawing.Point(302, 97);
+            this.rdActive.Name = "rdActive";
+            this.rdActive.Size = new System.Drawing.Size(85, 17);
+            this.rdActive.TabIndex = 3;
+            this.rdActive.TabStop = true;
+            this.rdActive.Text = "Còn làm việc";
+            this.rdActive.UseVisualStyleBackColor = true;
+            // 
+            // rdAll
+            // 
+            this.rdAll.AutoSize = true;
+            this.rdAll.Location = new System.Drawing.Point(302, 120);
+            this.rdAll.Name = "rdAll";
+            this.rdAll.Size = new System.Drawing.Size(55, 17);
+            this.rdAll.TabIndex = 3;
+            this.rdAll.Text = "Tất cả";
+            this.rdAll.UseVisualStyleBackColor = true;
             // 
             // frmSale_NVBH_BaoCaoTongHop
             // 
@@ -336,6 +362,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraEditors.LabelControl lbDuration;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private System.Windows.Forms.RadioButton rdAll;
+        private System.Windows.Forms.RadioButton rdActive;
 
 
     }

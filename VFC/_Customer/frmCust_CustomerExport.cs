@@ -30,7 +30,7 @@ namespace VFC._Customer
 
         private void btRun_Click( object sender , EventArgs e )
         {
-            splashScreenManager1.ShowWaitForm();
+            splashScreenManager2.ShowWaitForm();
             Stopwatch sw = Stopwatch.StartNew();  
             try
             {
@@ -50,7 +50,7 @@ namespace VFC._Customer
             }
             sw.Stop();
             lbDuration.Text = sw.Elapsed.TotalSeconds + " s";
-            splashScreenManager1.CloseWaitForm();
+            splashScreenManager2.CloseWaitForm();
         }
 
         private void btExport_Click( object sender , EventArgs e )

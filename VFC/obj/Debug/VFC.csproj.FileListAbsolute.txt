@@ -795,7 +795,6 @@ C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC._Message.frmMessage_ShowMessageInfo
 C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC._NhaCungCap.frmNCC_NhaCungCap_Insert.resources
 C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC._NhaCungCap.frmNCC_NhaCungCap_Manage.resources
 C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_Insert.resources
-C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_InsertBoth.resources
 C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_CheckInOut_QuanLy.resources
 C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_Insert.resources
 C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC._NhanSu.frmNS_NVBH_QuanLy.resources
@@ -1024,3 +1023,4 @@ C:\Users\Admin\Desktop\VFC\VFC\bin\Debug\ru\DevExpress.XtraTreeList.v13.2.resour
 C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC.exe
 C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC.pdb
 C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC.SplashScreen1.resources
+C:\Users\Admin\Desktop\VFC\VFC\obj\Debug\VFC._Admin.frmAdmin_QuanLy_NhanVien.resources

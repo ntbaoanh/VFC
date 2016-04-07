@@ -107,7 +107,7 @@ namespace VFC._NhanSu
                         this.Close();
                         break;
                     case "insertDouble":
-                        frmMessageBox.Show("Thông báo", "Không thể thêm đơn lẻ Vào hoặc ra."+ Environment.NewLine + "Bạn phải thêm 1 Vào và Ra chung 1 lần", "error");
+                        frmMessageBox.Show("Thông báo", "Không thể thêm đơn lẻ Vào hoặc Ra giữa ca làm việc khác.", "error");
                         this.Close();
                         break;
                     default:
