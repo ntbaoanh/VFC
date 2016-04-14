@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DAL;
 using DevExpress.XtraEditors.Controls;
+using PRO;
 
 namespace VFC._Admin
 {
@@ -75,10 +76,23 @@ namespace VFC._Admin
         private void Load_DS_Region(string _user)
         {
             _dalUser = new cl_DAL_User();
+            chkRegion.Items.Clear();
+
+            CheckedListBoxItem itemHCM = new CheckedListBoxItem("HO CHI MINH", "Hồ Chí Minh");
+            CheckedListBoxItem itemMDONG = new CheckedListBoxItem("MIEN DONG", "Miền Đông");
+            CheckedListBoxItem itemMTAY = new CheckedListBoxItem("MIEN TAY", "Miền Tây");
+            CheckedListBoxItem itemMTRUNG = new CheckedListBoxItem("MIEN TRUNG", "Miền Trung");
+            CheckedListBoxItem itemMBAC = new CheckedListBoxItem("MIEN BAC", "Miền Bắc");
+
+            chkRegion.Items.Add(itemHCM);
+            chkRegion.Items.Add(itemMDONG);
+            chkRegion.Items.Add(itemMTAY);
+            chkRegion.Items.Add(itemMTRUNG);
+            chkRegion.Items.Add(itemMBAC);
 
             for (int i = 0; i < chkRegion.Items.Count; i++)
-            { 
-                if(_dalUser.checkUserRegion(_user, chkRegion.Items[i].Value.ToString()))
+            {
+                if (_dalUser.checkUserRegion(_user, chkRegion.Items[i].Value.ToString()))
                 {
                     chkRegion.Items[i].CheckState = CheckState.Checked;
                 }
@@ -87,6 +101,8 @@ namespace VFC._Admin
                     chkRegion.Items[i].CheckState = CheckState.Unchecked;
                 }
             }
+
+            lbFirst.Text = "2";
         }
         #endregion
 
@@ -116,7 +132,6 @@ namespace VFC._Admin
 
                 string _departmentId = gridView1.GetFocusedRowCellValue("DepartmentID").ToString();
                 listBoPhan.EditValue = _departmentId;
-                //chkListRights.Items.Clear();
                 listBoPhan_Right.EditValue = null;
             }
             catch (Exception)
@@ -174,12 +189,118 @@ namespace VFC._Admin
 
         private void btSave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                _dalUser = new cl_DAL_User();
+                cl_PRO_User _proUser = new cl_PRO_User();
 
+                _proUser.UserName = lbUserName.Text;
+                _proUser.Phone = txtPhone.Text.Trim();
+                _proUser.FullName = txtFName.Text.Trim();
+                _proUser.DepartmentID = listBoPhan.EditValue.ToString();
+                if(rdActive.Checked == true)
+                {
+                    _proUser.Active = "1";
+                }
+                else
+                {
+                    _proUser.Active = "0";
+                }
+
+
+                if (_dalUser.UPDATE_User(_proUser))
+                {
+                    frmMessageBox.Show("Thông báo", "Cập nhật thông tin nhân viên thành công", "done");
+                }
+                else
+                {
+                    frmMessageBox.Show("Thông báo", "Cập nhật thông tin nhân viên thất bại", "error");
+                }
+
+            }
+            catch (Exception)
+            { 
+            
+            }
         }
+
+        //private void btResetPass_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (lbUserName.Text.Equals(""))
+        //        {
+        //            frmMessageBox.Show("Thông báo", "Vui lòng chọn nhân viên", "error");
+        //        }
+        //        else
+        //        {
+        //            Random rd = new Random();
+        //            string _newPass = rd.Next(1000000, 9999999).ToString();
+
+        //            cl_DAL_User _user = new cl_DAL_User();
+        //            if (_user.updatePassword(_newPass, lbUserName.Text))
+        //            {
+        //                DAL.Utilities.SendEmail _myMail = new DAL.Utilities.SendEmail();
+        //                string _to = "nhannt@ninomaxx.com.vn";
+        //                string _subject = "[No-Reply] Reset mật khẩu";
+        //                string _body = "<h3><font face=\"Times New Roman\">Xin chào "+ txtFName.Text.Trim() +"</font></h3>";
+        //                _body += "<p><font face=\"Times New Roman\">&emsp;&emsp;&emsp;Mật khẩu của bạn đã được đổi thành </font><b><font  size=\"6\" color=\"red\">"+ _newPass +"</font><b></p>";
+        //                _body += "<p><font face=\"Times New Roman\">Regards,</font></p>";
+        //                _body += "<p><font face=\"Times New Roman\" size=\"2\"><i>Đây là mail hệ thống. Vui lòng không trả lời lại email này.</i></font></p>";
+
+        //                if (_myMail.NNSendMail(_to, _subject, _body, null))
+        //                {
+        //                    frmMessageBox.Show("Thông báo", "Đã gửi mail mật khẩu mới thành công", "done");
+        //                }
+        //                else
+        //                {
+        //                    frmMessageBox.Show("Thông báo", "Thật là vi diệu", "error");
+        //                }
+        //            }
+        //            else
+        //            {
+        //                frmMessageBox.Show("Thông báo", "Cập nhật không thành công", "error");
+        //            }
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //    }            
+        //}
 
         private void btResetPass_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (lbUserName.Text.Equals(""))
+                {
+                    frmMessageBox.Show("Thông báo", "Vui lòng chọn nhân viên", "error");
+                }
+                else
+                {
+                    Random rd = new Random();
+                    string _newPass = rd.Next(1000000, 9999999).ToString();
 
+                    cl_DAL_User _user = new cl_DAL_User();
+                    if (_user.updatePassword(_newPass, lbUserName.Text))
+                    {
+                        DAL.Utilities.SendEmail _myMail = new DAL.Utilities.SendEmail();
+                        if (_myMail.SQLSendMail_ResetPassword(lbUserName.Text, _newPass))
+                        {
+                            frmMessageBox.Show("Thông báo", "Gửi mail Reset mật khẩu ["+lbUserName.Text+"] thành công", "done");
+                        }
+                    }
+                    else
+                    {
+                        frmMessageBox.Show("Thông báo", "Cập nhật không thành công", "error");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void chkListRights_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
@@ -200,6 +321,31 @@ namespace VFC._Admin
                 if (!_dalUser.UPDATE_UserRight(_user, _roleid, "0"))
                 {
                     frmMessageBox.Show("Thông báo", "Cập nhật thất bại", "error");
+                }
+            }
+        }
+
+        private void chkRegion_ItemCheck(object sender, DevExpress.XtraEditors.Controls.ItemCheckEventArgs e)
+        {
+            if (!lbFirst.Text.Equals("1"))
+            {
+                _dalUser = new cl_DAL_User();
+                string _user = lbUserName.Text;
+                string _region = chkRegion.Items[e.Index].Value.ToString();
+
+                if (e.State == CheckState.Checked)
+                {
+                    if (!_dalUser.UPDATE_UserRegion(_user, _region, "1"))
+                    {
+                        //frmMessageBox.Show("thông báo", "cập nhật thất bại", "error");
+                    }
+                }
+                else
+                {
+                    if (!_dalUser.UPDATE_UserRegion(_user, _region, "0"))
+                    {
+                        frmMessageBox.Show("thông báo", "cập nhật thất bại", "error");
+                    }
                 }
             }
         }

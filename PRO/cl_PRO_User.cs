@@ -12,6 +12,20 @@ namespace PRO
         private string _fname;
         private string _departmentID;
         private string _forceChangePass;
+        private string _active;
+        private string _phone;
+
+        public string Phone
+        {
+            get { return _phone; }
+            set { _phone = value; }
+        }
+
+        public string Active
+        {
+            get { return _active; }
+            set { _active = value; }
+        }
 
         public string UserName
         {

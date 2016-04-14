@@ -82,7 +82,7 @@ namespace VFC._NhanSu
         {
             cl_DAL_User _user = new cl_DAL_User();
 
-            if (_user.CheckUserLogin(frmHO_Main._userLogin.ToString(), "49"))
+            if (_user.checkUserRole(frmHO_Main._userLogin.UserName.ToString(), "49"))
             {
                 try
                 {
@@ -105,7 +105,7 @@ namespace VFC._NhanSu
         {
              cl_DAL_User _user = new cl_DAL_User();
 
-            if (_user.CheckUserLogin(frmHO_Main._userLogin.ToString(), "49"))
+            if (_user.checkUserRole(frmHO_Main._userLogin.UserName.ToString(), "49"))
             {
                 try
                 {
@@ -128,7 +128,7 @@ namespace VFC._NhanSu
         {
             cl_DAL_User _user = new cl_DAL_User();
 
-            if (_user.CheckUserLogin(frmHO_Main._userLogin.ToString(), "44"))
+            if (_user.checkUserRole(frmHO_Main._userLogin.UserName.ToString(), "44"))
             {
                 timer_UpdateGrid.Start();
                 _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update();
@@ -144,7 +144,7 @@ namespace VFC._NhanSu
         {
             cl_DAL_User _user = new cl_DAL_User();
 
-            if (_user.CheckUserLogin(frmHO_Main._userLogin.ToString(), "51"))
+            if (_user.checkUserRole(frmHO_Main._userLogin.UserName.ToString(), "51"))
             {
                 try
                 {
@@ -167,7 +167,7 @@ namespace VFC._NhanSu
         {
             cl_DAL_User _user = new cl_DAL_User();
 
-            if (_user.CheckUserLogin(frmHO_Main._userLogin.ToString(), "50"))
+            if (_user.checkUserRole(frmHO_Main._userLogin.UserName.ToString(), "50"))
             {
                 timer_UpdateGrid.Start();
                 _NhanSu.frmNS_NVBH_Update myFrm = new frmNS_NVBH_Update("luanchuyen", int.Parse(gridView1.GetFocusedRowCellValue("NVSID").ToString()));

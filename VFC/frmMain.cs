@@ -20,6 +20,18 @@ namespace VFC
         public static string _myVersion;
         public static string _myEnvironment;
 
+        #region Action
+        private void UpdateNewURL()
+        {
+            string _newPatch = @"\\112.78.1.236\VFCUpdate\";
+
+            cl_DAL_AppConfig _config = new cl_DAL_AppConfig();
+
+            _myAppConfig.SourceUpdate = _newPatch;
+            _config.writeConfigurationXML(_myAppConfig, Application.StartupPath.ToString() + @"\xConfig.xml", frmMain._mySecrect);
+        }
+        #endregion
+
         public frmMain()
         {
             InitializeComponent();
@@ -53,6 +65,9 @@ namespace VFC
 
             timer_Update.Interval = 5 * 60 * 1000;
             timer_Update.Start();
+
+            //Function dùng để update file xConfig.xml bằng VFC
+            //this.UpdateNewURL();
         }
 
         private void btStore_Click( object sender , EventArgs e )

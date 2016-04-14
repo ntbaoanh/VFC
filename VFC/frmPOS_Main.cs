@@ -64,6 +64,8 @@ namespace VFC
                 }
             }
         }
+
+        
         #endregion
 
         public frmPOS_Main()
@@ -79,6 +81,8 @@ namespace VFC
 
         private void frmPOS_Main_Load( object sender , EventArgs e )
         {
+            
+
             lbComputerName.Caption = System.Environment.MachineName.ToString();
             lbStoreCode.Caption = frmMain._myAppConfig.StoreCode;
             lbStoreNo.Caption = frmMain._myAppConfig.StoreNo;            

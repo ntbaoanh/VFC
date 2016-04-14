@@ -62,6 +62,7 @@ namespace DAL
                     _uLogin.Password = _dt.Rows[0]["Password"].ToString();
                     _uLogin.DepartmentID = _dt.Rows[0]["DepartmentID"].ToString();
                     _uLogin.ForceChangePass = _dt.Rows[0]["ForceChangePass"].ToString();
+                    _uLogin.Active = _dt.Rows[0]["Active"].ToString();
                 }
             }
             catch ( Exception  )
@@ -72,6 +73,47 @@ namespace DAL
             _conn.closeConnection();
 
             return _uLogin;
+        }
+
+        public bool UPDATE_User(cl_PRO_User _user)
+        {
+            bool check = true;
+
+            try
+            {
+                _conn = new Utilities.SQLCon();
+
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "[USER].[spud_Update_User]";
+                command.Parameters.AddWithValue("@UserID", _user.UserName);
+                command.Parameters.AddWithValue("@FName", _user.FullName);
+                command.Parameters.AddWithValue("@Phone", _user.Phone);
+                command.Parameters.AddWithValue("@DepartmentID", _user.DepartmentID);
+                command.Parameters.AddWithValue("@Active", _user.Active);
+
+                SqlParameter _output = command.Parameters.Add("@output", SqlDbType.NVarChar, 50);
+                _output.Direction = ParameterDirection.Output;
+
+                command.Connection = _conn.getConnection();
+
+                command.ExecuteNonQuery();
+
+                if (_output.Value.Equals("success"))
+                {
+                    check = true;
+                }
+                else
+                {
+                    check = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                check = false;
+                throw new Exception(ex.Message);
+            }
+            return check;
         }
 
         public bool updatePassword( string _newPass , string _userID )
@@ -208,8 +250,47 @@ namespace DAL
 
                 SqlCommand command = new SqlCommand();
                 command.CommandType = CommandType.StoredProcedure;
-                command.CommandText = "[ADMIN].[spud_UserRight_Update]";
+                command.CommandText = "[USER].[spud_UserRight_Update]";
                 command.Parameters.AddWithValue("@roleid", _roleid);
+                command.Parameters.AddWithValue("@userid", _user);
+                command.Parameters.AddWithValue("@checkState", _checkState);
+
+                SqlParameter _output = command.Parameters.Add("@output", SqlDbType.NVarChar, 50);
+                _output.Direction = ParameterDirection.Output;
+
+                command.Connection = _conn.getConnection();
+
+                command.ExecuteNonQuery();
+
+                if (_output.Value.Equals("success"))
+                {
+                    check = true;
+                }
+                else
+                {
+                    check = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                check = false;
+                throw new Exception(ex.Message);
+            }
+            return check;
+        }
+
+        public bool UPDATE_UserRegion(string _user, string _region, string _checkState)
+        {
+            bool check = true;
+
+            try
+            {
+                _conn = new Utilities.SQLCon();
+
+                SqlCommand command = new SqlCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "[USER].[spud_UserRegion_Update]";
+                command.Parameters.AddWithValue("@region", _region);
                 command.Parameters.AddWithValue("@userid", _user);
                 command.Parameters.AddWithValue("@checkState", _checkState);
 

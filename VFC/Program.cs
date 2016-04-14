@@ -56,7 +56,7 @@ namespace VFC
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle( "DevExpress Style" );
             //Application.Run( new _Merchandise.frm_InMaVach_Parse_Excel() );
-            Application.Run( new _Admin.frmAdmin_QuanLy_NhanVien() );
+            Application.Run( new frmMain() );
             //Application.Run(new _NhanSu.frmNS_NVBH_CheckInOut_Insert()) ;
         }
     }

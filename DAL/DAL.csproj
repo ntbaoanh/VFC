@@ -69,6 +69,7 @@
     <Compile Include="cl_DAL_Store.cs" />
     <Compile Include="Utilities\GetRandomAlphanumericString.cs" />
     <Compile Include="Utilities\ORACon.cs" />
+    <Compile Include="Utilities\SendEmail.cs" />
     <Compile Include="Utilities\SQLCon.cs" />
     <Compile Include="Utilities\Transaction.cs" />
     <Compile Include="Utilities\VFCEncryption.cs" />

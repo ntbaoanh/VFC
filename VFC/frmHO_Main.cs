@@ -64,6 +64,7 @@ namespace VFC
         private static _NhanSu.frmNS_NVBH_QuanLy frmNS_NVBH_Manage;
         private static _NhanSu.frmNS_NVBH_CheckInOut_QuanLy frmNS_ThemRaVao;
         private static _Sale.frmSale_HO_NVBH_BaoCaoTongHop frmSales_NVBH_BCTongHop;
+        private static _Admin.frmAdmin_QuanLy_NhanVien frmAdmin_ManageUser;
         #endregion
 
         public static bool showMenu = false;
@@ -909,6 +910,28 @@ namespace VFC
             else
             {
                 frmMessageBox.Show("Thông báo", "Bạn chưa có quyền sử dụng module này. [48]", "error");
+            }
+        }
+
+        private void bt_IT_ManageUser_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (lbUserLogin.Caption.Equals(_sysadmin))
+            {
+                rbActive = ribbonPage_IT;
+                if (frmAdmin_ManageUser == null || frmAdmin_ManageUser.IsDisposed)
+                {
+                    frmAdmin_ManageUser = new _Admin.frmAdmin_QuanLy_NhanVien();
+                    frmAdmin_ManageUser.MdiParent = this;
+                    frmAdmin_ManageUser.Show();
+                }
+                else
+                {
+                    frmAdmin_ManageUser.Activate();
+                }
+            }
+            else
+            {
+                frmMessageBox.Show("Thông báo", "Bạn chưa có quyền sử dụng module này. [SYSADMIN]", "error");
             }
         }
     }

@@ -55,6 +55,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lbFirst = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -224,6 +225,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbFirst);
             this.groupBox1.Controls.Add(this.rdDeActive);
             this.groupBox1.Controls.Add(this.rdActive);
             this.groupBox1.Controls.Add(this.btSave);
@@ -299,16 +301,11 @@
             // 
             this.chkRegion.Appearance.Font = new System.Drawing.Font("Tahoma", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRegion.Appearance.Options.UseFont = true;
-            this.chkRegion.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("HO CHI MINH", "Hồ Chí Minh"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("MIEN BAC", "Miền Bắc"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("MIEN TRUNG", "Miền Trung"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("MIEN DONG", "Miền Đông"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("MIEN TAY", "Miền Tây")});
             this.chkRegion.Location = new System.Drawing.Point(482, 63);
             this.chkRegion.Name = "chkRegion";
             this.chkRegion.Size = new System.Drawing.Size(131, 121);
             this.chkRegion.TabIndex = 3;
+            this.chkRegion.ItemCheck += new DevExpress.XtraEditors.Controls.ItemCheckEventHandler(this.chkRegion_ItemCheck);
             // 
             // listBoPhan
             // 
@@ -393,6 +390,15 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Tên đăng nhập : ";
             // 
+            // lbFirst
+            // 
+            this.lbFirst.Location = new System.Drawing.Point(6, 171);
+            this.lbFirst.Name = "lbFirst";
+            this.lbFirst.Size = new System.Drawing.Size(6, 13);
+            this.lbFirst.TabIndex = 6;
+            this.lbFirst.Text = "1";
+            this.lbFirst.Visible = false;
+            // 
             // frmAdmin_QuanLy_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -448,5 +454,6 @@
         private System.Windows.Forms.RadioButton rdDeActive;
         private System.Windows.Forms.RadioButton rdActive;
         private System.Windows.Forms.CheckBox chkAll;
+        private DevExpress.XtraEditors.LabelControl lbFirst;
     }
 }

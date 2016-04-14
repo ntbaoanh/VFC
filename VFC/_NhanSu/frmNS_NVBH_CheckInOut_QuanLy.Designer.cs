@@ -48,6 +48,7 @@
             this.btOut = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.date = new DevExpress.XtraEditors.DateEdit();
+            this.lbNVSID = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_DSNhanVien)).BeginInit();
@@ -234,6 +235,7 @@
             // 
             this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
+            this.groupControl1.Controls.Add(this.lbNVSID);
             this.groupControl1.Controls.Add(this.btIn);
             this.groupControl1.Controls.Add(this.btOut);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -291,6 +293,14 @@
             this.date.Size = new System.Drawing.Size(177, 20);
             this.date.TabIndex = 0;
             // 
+            // lbNVSID
+            // 
+            this.lbNVSID.Location = new System.Drawing.Point(5, 91);
+            this.lbNVSID.Name = "lbNVSID";
+            this.lbNVSID.Size = new System.Drawing.Size(63, 13);
+            this.lbNVSID.TabIndex = 6;
+            this.lbNVSID.Text = "labelControl2";
+            // 
             // frmNS_NVBH_CheckInOut_QuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,5 +349,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraEditors.LabelControl lbNVSID;
     }
 }

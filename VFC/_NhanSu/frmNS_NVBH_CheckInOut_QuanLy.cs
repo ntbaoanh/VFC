@@ -86,6 +86,15 @@ namespace VFC._NhanSu
         private void gridView_DSNhanVien_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             this.Load_DSCheckInOut();
+            try
+            {
+                lbNVSID.Text = gridView_DSNhanVien.GetFocusedRowCellValue("NVSID").ToString() +  "-" +
+                    gridView_DSNhanVien.GetFocusedRowCellValue("NVID").ToString() ;
+            }
+            catch (Exception)
+            {
+                lbNVSID.Text = "";
+            }
         }
     }
 }

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHO_Main));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.imageCollection_16 = new DevExpress.Utils.ImageCollection(this.components);
             this.bt_ProCode_UseCode = new DevExpress.XtraBars.BarButtonItem();
@@ -115,6 +115,8 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup22 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.bt_IT_ManageUser = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection_64)).BeginInit();
@@ -173,10 +175,11 @@
             this.bt_NS_ThemCheckInOut,
             this.btSale_ChiTiet_InOut,
             this.btSale_DoanhSoBill_NV,
-            this.btSales_NVBH_BaoCaoTongHop});
+            this.btSales_NVBH_BaoCaoTongHop,
+            this.bt_IT_ManageUser});
             this.ribbon.LargeImages = this.imageCollection_64;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 58;
+            this.ribbon.MaxItemId = 59;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage_Home,
@@ -554,7 +557,6 @@
             this.btEncryption.Caption = "Encryption";
             this.btEncryption.Id = 45;
             this.btEncryption.Name = "btEncryption";
-            this.btEncryption.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btEncryption.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btEncryption_ItemClick);
             // 
             // bt_MER_InMaVach
@@ -571,7 +573,6 @@
             this.btGenerateXXX.Caption = "Generate XXX";
             this.btGenerateXXX.Id = 47;
             this.btGenerateXXX.Name = "btGenerateXXX";
-            this.btGenerateXXX.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btGenerateXXX.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btGenerateXXX_ItemClick);
             // 
             // bt_TK_NhaCungCap_QLy
@@ -614,16 +615,16 @@
             this.btSale_ChiTiet_InOut.Id = 54;
             this.btSale_ChiTiet_InOut.Name = "btSale_ChiTiet_InOut";
             this.btSale_ChiTiet_InOut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            superToolTip1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
-            toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipTitleItem1.Appearance.Options.UseImage = true;
-            toolTipTitleItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem1.Image")));
-            toolTipTitleItem1.Text = "<b><color=\"red\">Chú thích</color></b>";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "Chi tiết ra vào của từng nhân viên\r\n";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.btSale_ChiTiet_InOut.SuperTip = superToolTip1;
+            superToolTip2.AllowHtmlText = DevExpress.Utils.DefaultBoolean.True;
+            toolTipTitleItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem2.Appearance.Options.UseImage = true;
+            toolTipTitleItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem2.Image")));
+            toolTipTitleItem2.Text = "<b><color=\"red\">Chú thích</color></b>";
+            toolTipItem2.LeftIndent = 6;
+            toolTipItem2.Text = "Chi tiết ra vào của từng nhân viên\r\n";
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            superToolTip2.Items.Add(toolTipItem2);
+            this.btSale_ChiTiet_InOut.SuperTip = superToolTip2;
             // 
             // btSale_DoanhSoBill_NV
             // 
@@ -705,7 +706,8 @@
             this.ribbonPageGroup10,
             this.ribbonPageGroup2,
             this.ribbonPageGroup16,
-            this.ribbonPageGroup11});
+            this.ribbonPageGroup11,
+            this.ribbonPageGroup22});
             this.ribbonPage_IT.ImageIndex = 2;
             this.ribbonPage_IT.Name = "ribbonPage_IT";
             this.ribbonPage_IT.Text = "Bp. IT - Số Liệu";
@@ -937,6 +939,21 @@
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // ribbonPageGroup22
+            // 
+            this.ribbonPageGroup22.AllowTextClipping = false;
+            this.ribbonPageGroup22.ItemLinks.Add(this.bt_IT_ManageUser);
+            this.ribbonPageGroup22.Name = "ribbonPageGroup22";
+            // 
+            // bt_IT_ManageUser
+            // 
+            this.bt_IT_ManageUser.Caption = "Quản lý Users";
+            this.bt_IT_ManageUser.Glyph = ((System.Drawing.Image)(resources.GetObject("bt_IT_ManageUser.Glyph")));
+            this.bt_IT_ManageUser.Id = 58;
+            this.bt_IT_ManageUser.Name = "bt_IT_ManageUser";
+            this.bt_IT_ManageUser.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.bt_IT_ManageUser.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bt_IT_ManageUser_ItemClick);
+            // 
             // frmHO_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1045,5 +1062,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup20;
         private DevExpress.XtraBars.BarButtonItem btSales_NVBH_BaoCaoTongHop;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup21;
+        private DevExpress.XtraBars.BarButtonItem bt_IT_ManageUser;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup22;
     }
 }

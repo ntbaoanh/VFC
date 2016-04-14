@@ -52,5 +52,13 @@ namespace VFC
 
             return dt;
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            DAL.Utilities.SendEmail _mail = new DAL.Utilities.SendEmail();
+            //_mail.DendMyMail_2();
+
+            _mail.NNSendMail("nhannt@ninomaxx.com.vn", "Test thử cái nữa coi nào", "Hello mấy <b><i><font color=\"red\">cưng</font></b></i>. Có phẻ hok?", null);
+        }
     }
 }
